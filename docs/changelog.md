@@ -63,12 +63,11 @@ documentation and specification changes.
   moved to `docs/changelog.md`; both are published in the
   `docs/index.md` toctree. Root `README.md` remains the GitHub
   entry point.
-* CI runners pinned to Ubuntu 26.04 LTS in
-  `.github/workflows/docs.yml` and `.github/workflows/gh-pages.yml`
-  (GitHub-hosted runners still publish `ubuntu-26.04` as preview;
-  Ubuntu 24.04 LTS remains the stable fallback). `.readthedocs.yaml`
-  keeps `ubuntu-24.04` - the latest LTS currently documented by
-  Read the Docs.
+* GitHub Actions runners: `.github/workflows/gh-pages.yml` pinned to
+  Ubuntu 24.04 LTS; `.github/workflows/docs.yml` pinned to Ubuntu
+  26.04 LTS (still published as preview on GitHub-hosted runners;
+  Ubuntu 24.04 LTS is the stable fallback). `.readthedocs.yaml` keeps
+  `ubuntu-24.04` - the latest LTS documented by Read the Docs.
 * GitHub Pages moved to the official Actions deployment model
   (`actions/upload-pages-artifact` + `actions/deploy-pages`) in
   `.github/workflows/gh-pages.yml`: the site is now deployed through
