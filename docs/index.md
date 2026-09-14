@@ -31,142 +31,18 @@ therefore uses one of the labels: `Stable`, `Experimental`, `Research`,
 ## Contents
 
 ```{toctree}
-:maxdepth: 1
-:caption: Getting started
-
-getting-started/overview
-getting-started/installation
-getting-started/development-environment
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Concepts
-
-concepts/overview
-concepts/architecture-principles
-concepts/partitioning
-concepts/isolation
-concepts/execution-model
-concepts/assurance
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Architecture
-
-architecture/overview
-architecture/layered-model
-architecture/partition-contract
-architecture/ir
-architecture/backend-model
-architecture/runtime-model
-architecture/recovery-model
-architecture/frozen-baseline
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Ecosystem components
-
-components/gomyrobotrt
-components/ros2-rolling
-components/gomyrobotbsp
-components/gomyrobotguard
-components/gomyrobotfault
-components/gomyrobotbench
-components/gomyrobotverify
-components/gomyrobotassure
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Partition Contract
-
-contract/overview
-contract/specification
-contract/schema
-contract/examples/flight-control
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Platforms
-
-platforms/x86-64
-platforms/ng-ultra
-platforms/hpsc
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Backends
-
-backends/overview
-backends/xen
-backends/xtratum
-backends/xng
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Validation
-
-validation/methodology
-validation/temporal-isolation
-validation/spatial-isolation
-validation/interference
-validation/fault-injection
-validation/recovery
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Assurance
-
-assurance/evidence-model
-assurance/reproducibility
-assurance/evidence-graph
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Research
-
-research/agenda
-research/research-problems
-research/publications
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Milestones
-
-milestones/overview
-milestones/m0
-milestones/m1
-milestones/m2
-milestones/m3
-milestones/m4
-milestones/m5
-milestones/m6
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Compatibility
-
-compatibility/ros2
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Development
-
-development/contributing
-development/testing
-development/architecture-decisions
-development/architecture-v2
-changelog
+getting-started/index
+concepts/index
+architecture/index
+components/index
+contract/index
+platforms/index
+backends/index
+validation/index
+assurance/index
+research/index
+milestones/index
+compatibility/index
+development/index
 ```
 

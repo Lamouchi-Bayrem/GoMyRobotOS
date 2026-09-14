@@ -27,13 +27,15 @@ extensions = [
     "sphinx_copybutton",
 ]
 
-# Parity with the ROS 2 documentation build (ros2_documentation@lyrical):
-# keep the sidebar navigation fully expanded and unbounded in depth,
-# use the same highlight palette, and suppress the same copybutton lines.
+# Same sidebar behavior as the control.ros.org documentation site
+# (ros-controls/control.ros.org): every section is listed at the root of
+# the toctree, the per-section tree collapses to the current branch, and
+# only the logo is shown in the sidebar header.
 html_theme_options = {
-    "collapse_navigation": False,
+    "collapse_navigation": True,
     "sticky_navigation": True,
     "navigation_depth": -1,
+    "logo_only": True,
     # Breadcrumb link target: "edit" -> the GitHub *edit* screen of the
     # exact source file of each page (default "blob" only shows the file).
     "vcs_pageview_mode": "edit",
@@ -58,9 +60,6 @@ html_logo = "_static/gomyrobotos-logo.svg"
 # Content-width overlay, kept identical to the ROS 2 documentation
 # site (docs.ros.org/_static/custom.css).
 html_css_files = ["custom.css"]
-# Groups the already-complete sidebar toctree into collapsible sections
-# (see the comments in the JS file).
-html_js_files = ["toc-tree.js"]
 
 # "View on GitHub" and "Edit on GitHub" links in the theme footer:
 # every rendered page links to its own source file in the repository.
