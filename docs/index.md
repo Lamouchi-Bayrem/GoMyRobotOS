@@ -167,5 +167,6 @@ development/contributing
 development/testing
 development/architecture-decisions
 development/architecture-v2
+changelog
 ```
 

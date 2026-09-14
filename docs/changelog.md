@@ -21,7 +21,9 @@ documentation and specification changes.
   (`docs/milestones/`).
 * ROS 2 Rolling compatibility reference
   (`docs/compatibility/ros2.md`).
-* Root `README.md` and `CONTRIBUTING.md`.
+* Root `README.md` (repository entry point) and all documentation
+  sources under `docs/` (contributing guide and changelog included
+  as site pages).
 * **Contract v1 amendment** (ADR-0014, ADR-0015, ADR-0016, ADR-0017):
   IPC channel classes (`sampling` / `queuing`) with channel properties,
   `timing.wcet_bound_us` + `wcet_evidence_class`,
@@ -55,6 +57,23 @@ documentation and specification changes.
   into `docs/` (ADR-0018).
 * ADR list extended: ADR-0001 through ADR-0018
   (`docs/development/architecture-decisions.md`).
+* Documentation consolidated under a single folder: root
+  `CONTRIBUTING.md` merged into `docs/development/contributing.md`
+  (now the single contributing reference) and root `CHANGELOG.md`
+  moved to `docs/changelog.md`; both are published in the
+  `docs/index.md` toctree. Root `README.md` remains the GitHub
+  entry point.
+* CI runners pinned to Ubuntu 26.04 LTS in
+  `.github/workflows/docs.yml` and `.github/workflows/gh-pages.yml`
+  (GitHub-hosted runners still publish `ubuntu-26.04` as preview;
+  Ubuntu 24.04 LTS remains the stable fallback). `.readthedocs.yaml`
+  keeps `ubuntu-24.04` - the latest LTS currently documented by
+  Read the Docs.
+* GitHub Pages moved to the official Actions deployment model
+  (`actions/upload-pages-artifact` + `actions/deploy-pages`) in
+  `.github/workflows/gh-pages.yml`: the site is now deployed through
+  the Pages infrastructure (Settings → Pages → Source: GitHub
+  Actions) and no longer pushed to a `gh-pages` branch.
 
 ### Fixed
 
