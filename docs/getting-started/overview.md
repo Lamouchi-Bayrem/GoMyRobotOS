@@ -5,7 +5,7 @@ safety-critical space computers. It defines a hypervisor-independent contract
 for execution, isolation, communication, startup, and recovery, and then
 realizes that contract through target-specific execution backends.
 
-One addition from the Final Architecture: GoMyRobotOS is **not** an RTOS, a
+One addition from the M0 baseline: GoMyRobotOS is **not** an RTOS, a
 hypervisor, a Linux distribution, a ROS 2 replacement, a BSP, a simulator, a
 fault-injection platform, or a safety-case platform. Those capabilities belong
 to sibling products in the GoMyRobot ecosystem.

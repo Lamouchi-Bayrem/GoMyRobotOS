@@ -24,7 +24,7 @@ RTEMS
 GoMyRobotRT
 ```
 
-## Ecosystem basis (recorded facts from the Final Architecture)
+## Ecosystem basis (recorded facts from the M0 baseline)
 
 The architecture records that NG-ULTRA has an established ecosystem around
 RTEMS and XtratuM/XNG, that existing RTEMS work lists an ARMv8-R NG-ULTRA

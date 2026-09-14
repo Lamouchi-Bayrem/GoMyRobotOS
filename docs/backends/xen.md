@@ -35,7 +35,7 @@ isolation, communication, basic fault containment.
 Xen on RISC-V (i.e., hosting RTEMS/Linux guests on PIC64-HPSC) is an
 **active development area upstream**: contemporary Xen development is
 still adding and refining RISC-V guest ISA and interrupt infrastructure.
-Per the Final Architecture:
+Per the M0 baseline:
 
 > **Do not claim production RTEMS-on-Xen-HPSC support until you have
 > demonstrated it.**

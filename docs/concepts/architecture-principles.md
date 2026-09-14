@@ -1,6 +1,6 @@
 # Architecture principles
 
-These are the rules that the Final Architecture requires every design
+These are the rules that the M0 baseline requires every design
 decision to respect. Each maps to one or more ADRs - see
 [Architecture decisions](../development/architecture-decisions).
 

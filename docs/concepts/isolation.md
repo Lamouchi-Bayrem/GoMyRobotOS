@@ -30,7 +30,7 @@ IOMMU / interrupt controllers on Xen; partition configuration on XtratuM;
 hardware guard bands such as WorldGuard on HPSC).
 
 ```{warning} No "interference-free" claims
-The Final Architecture explicitly forbids claiming complete freedom from
+The M0 baseline explicitly forbids claiming complete freedom from
 interference. What the architecture does claim is that interference has
 *measured, contractual boundaries* - and that those boundaries must be
 *measured*, not asserted (see

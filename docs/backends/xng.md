@@ -26,7 +26,7 @@ model](../architecture/backend-model).
 
 ## Why a separate page
 
-The Final Architecture and its target matrix write the backend as
+The M0 baseline and its target matrix write the backend as
 "XNG/XtratuM"; keeping the two names distinct here:
 
 * prevents documenting XtratuM configuration as if it *were* the XNG

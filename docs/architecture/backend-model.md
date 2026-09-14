@@ -95,8 +95,9 @@ compile   match  -> build fails
 Rule: **no silent semantic downgrade.** Every waived field is a named,
 reviewable exception tied to evidence, never a dropped line.
 
-Status: manifest format - spec frozen with M0; enforcement in the
-pipeline lands with the M1 parser/validator.
+Status: the manifest *concept* freezes with M0; the manifest schema
+itself is not yet published (planned with the M1 parser/validator).
+Enforcement in the pipeline lands at M1.
 
 ## Bare-metal backends
 

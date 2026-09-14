@@ -7,7 +7,7 @@ XNG/XtratuM realization is `Planned` (M2).
 
 ## Why NG-ULTRA
 
-Per the Final Architecture: NG-ULTRA is the first genuine space-oriented
+Per the M0 baseline: NG-ULTRA is the first genuine space-oriented
 execution reference. The platform has four Cortex-R52 cores and an
 established ecosystem around RTEMS and XtratuM/XNG - existing RTEMS work
 explicitly lists an ARMv8-R NG-ULTRA BSP, and NanoXplore's ecosystem
@@ -46,7 +46,7 @@ conceptual flight partition* as x86-64
 ## Honest status notes
 
 * The RTEMS BSP and XtratuM/XNG ecosystem facts above are **recorded
-  ecosystem facts** from the Final Architecture, not claims made by this
+  ecosystem facts** from the M0 baseline documentation, not claims made by this
   repository.
 * "GoMyRobotOS on NG-ULTRA" is **not** a claim of implemented support:
   the GoMyRobotOS NG-ULTRA backend (contract → IR → XNG/XtratuM → RTEMS)

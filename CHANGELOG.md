@@ -19,8 +19,48 @@ documentation and specification changes.
   target (`examples/x86-64`, `examples/ng-ultra`, `examples/hpsc`).
 * Milestone plan **M0-M6** and acceptance gates
   (`docs/milestones/`).
-* Architecture Decision Records ADR-0001 … ADR-0013
-  (`docs/development/architecture-decisions.md`).
 * ROS 2 Rolling compatibility reference
   (`docs/compatibility/ros2.md`).
 * Root `README.md` and `CONTRIBUTING.md`.
+* **Contract v1 amendment** (ADR-0014, ADR-0015, ADR-0016, ADR-0017):
+  IPC channel classes (`sampling` / `queuing`) with channel properties,
+  `timing.wcet_bound_us` + `wcet_evidence_class`,
+  `recovery.guard_independence_stage`, and
+  `partition.capabilities_required` - all additive; the three
+  illustrative examples stay in lockstep.
+* Five architecture items selected from the reviewed v2 draft
+  (ADR-0014 through ADR-0018): backend capability manifest and the
+  no-silent-downgrade rule, IPC channel semantics, Guard independence
+  staging, WCET evidence classification, and the space-fault
+  responsibility split.
+* `docs/architecture/frozen-baseline.md`: scope notes for the frozen
+  baseline (naming rule, v1 exclusions, platform position).
+* `docs/development/architecture-v2.md`: superseded-v2 pointer page
+  recording what was taken from the draft and what was explicitly
+  excluded.
+* External product-page links (gomyrobot.com) for GoMyRobotRT,
+  GoMyRobotGuard, GoMyRobotBSP, GoMyRobotAssure, GoMyRobotFault,
+  GoMyRobotVerify, GoMyRobotBench, and GoMyRobotSecure references in the
+  docs.
+
+### Changed
+
+* Visual parity with the ROS 2 documentation: `sphinx_rtd_theme`,
+  64rem content width, copyable code buttons, `sphinx` Pygments style,
+  `language="en"`.
+* ASCII dash normalization: every en/em dash replaced by a plain ASCII
+  hyphen across docs, examples, and schemas.
+* The documentation site becomes the architecture source of truth: root
+  `GoMyRobotOS.md` and `docs.md` removed, baseline scope notes folded
+  into `docs/` (ADR-0018).
+* ADR list extended: ADR-0001 through ADR-0018
+  (`docs/development/architecture-decisions.md`).
+
+### Fixed
+
+* Architecture doc fixes: Guard/Sim restored in the stack diagram,
+  target-matrix status label, section 1 heading level, WorldGuard
+  spelling, watchdog classification (fault indicator, not an
+  environmental fault class), legacy `nano-ros` naming note.
+* M0 milestone page deliverable count ("seven" to "five").
+* One remaining em dash in `docs/_static/custom.css`.

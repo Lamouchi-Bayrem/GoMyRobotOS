@@ -4,13 +4,16 @@
 **Status:** `Research` (M4). This is a research platform - **do not
 present HPSC as a supported production platform anywhere.**
 
-## What the Final Architecture records
+## What the M0 baseline records
 
-Microchip currently documents RTEMS and Xen support for PIC64-HPSC, as
-well as hardware virtualization and WorldGuard end-to-end spatial
-partitioning across cores, cache, interconnect, peripherals, and memory.
+It is reported in Microchip's public materials that PIC64-HPSC supports
+RTEMS and Xen and provides hardware virtualization plus an end-to-end
+hardware-partitioning mechanism (referred to as "WorldGuard" in vendor
+materials) across cores, cache, interconnect, peripherals, and memory.
 The device also includes an independent system-controller processor
-suitable for monitoring and fault management.
+suitable for monitoring and fault management. These vendor claims are
+**not yet verified against an archived primary source** in this project;
+treat them as unverified vendor claims until a source is archived.
 
 > **Do not claim production RTEMS-on-Xen-HPSC support until it has been
 > demonstrated.**

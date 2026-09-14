@@ -33,7 +33,12 @@ GoMyRobotRT
 | deterministic executors     | executor behavior adapted to flight-grade determinism  |
 | robotics middleware         | the ROS 2 concepts the flight workloads are written in |
 | hardware abstraction        | the seam between workload code and flight hardware     |
-| flight application interfaces | the stable interfaces mission software programs  against |
+| flight application interfaces | the stable interfaces mission software programs against |
+
+**Naming note:** `nano-ros` is the legacy name of the embedded robotics
+middleware project; in ecosystem usage it is now generally called
+**Space ROS**. This page keeps the legacy name because the integration
+work targets that codebase's API surface.
 
 GoMyRobotOS consumes or hosts GoMyRobotRT inside managed partitions - the
 hosting mechanics are in the

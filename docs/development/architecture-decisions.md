@@ -2,7 +2,7 @@
 
 GoMyRobotOS architecture changes are made through Architecture Decision
 Records. Every ADR has: **context**, **decision**, **consequences**,
-**status**. The M0 baseline is ADR-0001 … ADR-0013.
+**status**. The M0 baseline is ADR-0001 through ADR-0018.
 
 Rules: the next free number is used for new decisions; an accepted ADR is
 never silently edited - it is *superseded* by a new ADR that points back;
@@ -25,6 +25,11 @@ existing numbers are never re-used.
 | 0011 | [GoMyRobotGuard](https://gomyrobot.com/products/guard/) must be independent of the failure domain it recovers | Accepted |
 | 0012 | Verification and assurance are external platform services | Accepted |
 | 0013 | Documentation is versioned with the software       | Accepted |
+| 0014 | IPC is described by channel class, not transport mechanism | Accepted |
+| 0015 | Backends publish a capability manifest; no silent semantic downgrade | Accepted |
+| 0016 | Guard independence is staged (0 / 1 / 2)           | Accepted |
+| 0017 | WCET claims carry an evidence class (proven / measured / unbounded) | Accepted |
+| 0018 | The documentation site is the architecture source of truth | Accepted |
 
 ---
 
@@ -203,6 +208,94 @@ existing numbers are never re-used.
 * **Status.** Accepted.
 
 ---
+
+### ADR-0014 - IPC is described by channel class, not transport mechanism
+
+* **Context.** The communication references in the v2 architecture draft
+  enumerated transport mechanisms (grant tables, event channels, virtio),
+  which would couple the contract to a specific backend. The contract
+  must express only the channel *semantics* (ADR-0002, ADR-0003).
+* **Decision.** Communication endpoints of a partition are typed by
+  channel class - `sampling` (periodic state, last value wins) or
+  `queuing` (bounded queue with explicit overflow policy) - and carry
+  `max_message_size`, `max_rate_hz`, `latency_budget_us`,
+  `buffer_ownership`, and, for queuing channels, `overflow_policy`.
+  Mapping those semantics to a concrete mechanism is backend
+  implementation detail and must never appear in the contract or the IR.
+* **Consequences.** `communication.endpoints` fields grow (all optional,
+  schema-compatible). Backend documentation may explain mechanisms;
+  contract fields that introduce mechanism names must be rejected in
+  review.
+* **Status.** Accepted.
+
+### ADR-0015 - Backends publish a capability manifest; no silent semantic downgrade
+
+* **Context.** A single target cannot realize every contract field at the
+  same fidelity (cache-partitioning granularity, DMA remap, interrupt
+  virtualization). A compile that silently drops a field is a
+  correctness failure: the evidence graph would then claim semantics the
+  target does not provide.
+* **Decision.** Each backend publishes a **capability manifest** (which
+  contract fields and value ranges it realizes, at what fidelity).
+  Before compile, the pipeline checks the contract's
+  `capabilities_required` list against it: no match fails the build;
+  partial match compiles only with a reviewable waiver recorded in the
+  evidence graph. Rule: **no silent semantic downgrade**.
+* **Consequences.** The manifest concept freezes with M0; its *schema* is
+  not yet published (planned with the M1 parser/validator). The contract
+  gains `partition.capabilities_required` (optional).
+* **Status.** Accepted.
+
+### ADR-0016 - Guard independence is staged (0 / 1 / 2)
+
+* **Context.** "Guard is independent" is a spectrum, not a boolean: a
+  co-resident software guard cannot claim against a common-mode
+  hypervisor failure, while a companion system controller can
+  (ADR-0011).
+* **Decision.** Guard independence operates at three stages:
+  **0** software guard (no common-mode protections claimed),
+  **1** companion MCU / system controller (common-mode independence),
+  **2** validated with per-fault-class detect / contain / recover
+  timing in the evidence graph. The contract declares
+  `recovery.guard_independence_stage`; every recovery claim records the
+  stage it was demonstrated under.
+* **Consequences.** M1-M3 operate at stage 0; M5 requires stage
+  recording on claims; M6 requires stage-2 quantification for the
+  reference system. A specific platform's system controller is one
+  possible stage-1 realization, not a core assumption.
+* **Status.** Accepted.
+
+### ADR-0017 - WCET claims carry an evidence class
+
+* **Context.** "Measured under budget" and "WCET proven" are different
+  claims; presenting one as the other is a classic over-certification
+  error in documentation.
+* **Decision.** Every timing claim carries an explicit evidence class:
+  `proven` (formal / static WCET analysis), `measured` (validated under
+  a defined stress pattern), or `unbounded`. The contract carries
+  `execution.timing_budget.wcet_bound_us` and
+  `wcet_evidence_class`; documentation and artifacts must never present
+  `measured` as `proven`.
+* **Consequences.** The `timing_bound` test and every timing assertion in
+  M3+ comparison pages must state the class; a timing claim without a
+  class is a review defect.
+* **Status.** Accepted.
+
+### ADR-0018 - The documentation site is the architecture source of truth
+
+* **Context.** The M0 freeze initially named the root-level
+  `GoMyRobotOS.md` as the source of truth and the rendered site as a
+  secondary rendering, inviting drift between the two. The site is the
+  visible, versioned, CI-built artifact.
+* **Decision.** This documentation site's sources (`docs/`) are the
+  primary source of truth for architecture, contract, and process.
+  `GoMyRobotOS.md` and `docs.md` are removed; the normative scope notes
+  of the removed document (naming rule, v1 exclusions, platform
+  position) are captured in the
+  [frozen baseline page](../architecture/frozen-baseline).
+* **Consequences.** Architecture changes are made against `docs/` pages
+  through this ADR process; nothing may cite the deleted root documents.
+* **Status.** Accepted.
 
 ## Supersession log
 

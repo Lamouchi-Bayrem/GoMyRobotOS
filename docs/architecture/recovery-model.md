@@ -44,7 +44,7 @@ and the associated research-measured recovery model:
 T_detect  T_contain  T_recover  T_resume
 ```
 
-The Final Architecture requires the end result to be a **measurable
+The frozen M0 baseline requires the end result to be a **measurable
 recovery model** - not merely a statement that "recovery exists". Until
 milestone M3+ produces these measurements, no recovery time claims exist
 in this documentation.

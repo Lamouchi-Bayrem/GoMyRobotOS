@@ -1,7 +1,8 @@
 # Example contract: `flight-control`
 
-This is the canonical v1 example carried in the Final Architecture
-(GoMyRobotOS - Final Architecture, §4). It is identical in
+This is the canonical v1 example carried in the M0 baseline
+(documented in the [contract overview](../overview) of this
+site). It is identical in
 `examples/x86-64/flight-control.yml`,
 `examples/ng-ultra/flight-control.yml`, and
 `examples/hpsc/flight-control.yml` - the whole point being that *one*

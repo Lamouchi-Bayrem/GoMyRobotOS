@@ -1,6 +1,7 @@
 # Research problems
 
-The five research problems (RP1-RP5) come from the Final Architecture.
+The five research problems (RP1-RP5) are defined in the frozen M0
+architecture baseline, documented in this site.
 They are **open problems with proposed measurement programs** - none is
 solved, and none is presented here as a capability.
 

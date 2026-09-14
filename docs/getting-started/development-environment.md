@@ -39,7 +39,7 @@ moving to space targets. It provides:
 `Status: Flight Reference / Development` as a platform role; integration
 work `Status: Planned` (M2).
 
-The Final Architecture records that NG-ULTRA (four Cortex-R52 cores) has an
+The M0 baseline records that NG-ULTRA (four Cortex-R52 cores) has an
 established ecosystem around RTEMS and XtratuM/XNG, and that existing RTEMS
 work lists an ARMv8-R NG-ULTRA BSP. The NG-ULTRA development environment
 therefore builds on that ecosystem - the GoMyRobotOS integration itself is
