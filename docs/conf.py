@@ -42,7 +42,12 @@ pygments_style = "sphinx"
 copybutton_exclude = ".linenos, .gp, .go"
 
 html_theme = "sphinx_rtd_theme"
-html_title = "GoMyRobotOS Documentation"
+# Intentionally empty: with a value set, Sphinx appends
+# " - <html_title>" to every page's <title>, which put a dash in
+# every browser tab. The empty value makes the tab exactly the
+# page name; the site name still appears in the sidebar brand
+# via `project`.
+html_title = ""
 html_logo = "_static/gomyrobotos-logo.svg"
 
 # Content-width overlay, kept identical to the ROS 2 documentation

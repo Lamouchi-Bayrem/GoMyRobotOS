@@ -88,6 +88,11 @@ documentation and specification changes.
   single-segment form). No double-hyphen sequences remain in
   documentation prose - only structural markdown table-divider lines
   and section rules, plus the logo SVG's XML comment, are untouched.
+* Browser tab titles now show exactly the page name: `html_title` is
+  left empty in `docs/conf.py`, so the " - GoMyRobotOS Documentation"
+  suffix (and its dash) no longer follows every page title in the tab
+  bar; the sidebar brand still comes from `project` and is
+  unaffected.
 
 ### Fixed
 
