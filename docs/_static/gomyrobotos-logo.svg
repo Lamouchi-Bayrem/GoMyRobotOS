@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="GoMyRobotOS">
+  <!-- GoMyRobotOS mark for the Read-the-Docs theme sidebar.
+       Simple white robot-head mark, echoing the
+       white-on-dark treatment used by the ROS 2 documentation logo. -->
+  <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round">
+    <line x1="60" y1="36" x2="60" y2="18"/>
+    <rect x="14" y="36" width="92" height="64" rx="14"/>
+  </g>
+  <circle cx="60" cy="12" r="7" fill="#ffffff"/>
+  <circle cx="42" cy="62" r="8" fill="#ffffff"/>
+  <circle cx="78" cy="62" r="8" fill="#ffffff"/>
+  <line x1="44" y1="84" x2="76" y2="84" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+</svg>

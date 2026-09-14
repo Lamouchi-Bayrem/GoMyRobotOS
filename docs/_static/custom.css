@@ -1,0 +1,5 @@
+/* Content-width overlay — kept identical to the ROS 2 documentation
+   site (docs.ros.org/_static/custom.css). */
+.wy-nav-content {
+    max-width: 64rem;
+}
