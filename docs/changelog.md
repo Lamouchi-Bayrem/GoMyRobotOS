@@ -12,7 +12,7 @@ documentation and specification changes.
 ### Added
 
 * **M0 documentation baseline**: Sphinx + MyST documentation site
-  (`docs/`) published to Read the Docs and built by GitHub Actions.
+  (`docs/`) published to GitHub Pages and built by GitHub Actions.
 * **Partition Contract v1**: conceptual field specification
   (`docs/contract/`), JSON Schema
   (`schemas/partition-contract.schema.json`), and illustrative examples per
@@ -66,8 +66,7 @@ documentation and specification changes.
 * GitHub Actions runners: `.github/workflows/gh-pages.yml` pinned to
   Ubuntu 24.04 LTS; `.github/workflows/docs.yml` pinned to Ubuntu
   26.04 LTS (still published as preview on GitHub-hosted runners;
-  Ubuntu 24.04 LTS is the stable fallback). `.readthedocs.yaml` keeps
-  `ubuntu-24.04`, the latest LTS documented by Read the Docs.
+  Ubuntu 24.04 LTS is the stable fallback).
 * GitHub Pages moved to the official Actions deployment model
   (`actions/upload-pages-artifact` + `actions/deploy-pages`) in
   `.github/workflows/gh-pages.yml`: the site is now deployed through
@@ -77,10 +76,16 @@ documentation and specification changes.
   that opens the edit screen of exactly that page's source file
   (`html_context` + `vcs_pageview_mode: edit`, repo
   `gomyrobot/GoMyRobotOS`, branch `main`, sources under `docs/`).
-* Documentation home is now the GitHub Pages site
-  (<https://gomyrobot.github.io/GoMyRobotOS/>); the Read the Docs site
-  continues as a read-only mirror for the transition period (README and
-  `docs/getting-started/installation.md` updated accordingly).
+* Documentation home is the GitHub Pages site
+  (<https://gomyrobot.github.io/GoMyRobotOS/>), the single published
+  location (README and
+  `docs/getting-started/installation.md` point at it).
+* Read the Docs hosting has been retired for the documentation: `.readthedocs.yaml`
+  is deleted, every "mirror" reference is removed (development
+  environment table, project testing table, contributing and M0
+  milestone checklists), and the host clause in ADR-0013 now names the
+  GitHub Pages site. The GitHub Actions deployment
+  (`.github/workflows/gh-pages.yml`) is the single published site.
 * Double-dash cleanup in `docs/architecture/backend-model.md`: the
   capability-check figure now uses the single-hyphen arrow style the
   rest of the diagram already uses (the 5-character left arrow became

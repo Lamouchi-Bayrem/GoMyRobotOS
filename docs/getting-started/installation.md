@@ -45,8 +45,7 @@ python -m sphinx -b html docs docs/_build/html
 Open `docs/_build/html/index.html` in a browser. The same build runs in
 GitHub Actions (`.github/workflows/gh-pages.yml`) and deploys the live
 site (<https://gomyrobot.github.io/GoMyRobotOS/>) on every push to
-`main`; a read-only mirror is kept on Read the Docs
-(<https://gomyrobotos.readthedocs.io>).
+`main`.
 
 ## What M1 will add
 

@@ -103,7 +103,7 @@ happen.
   traceable to (a) the final architecture, (b) an ADR, or (c) a recorded
   milestone gate.
 * Build hygiene: the doc build must pass with zero warnings
-  (CI `docs` job; Read the Docs `fail_on_warning: true`).
+  (CI `docs` job, built with `-W` so any warning fails it).
 * The toctree in [index.md](../index) reflects the structure, new
   pages must be added to a toctree or they are not part of the site.
 
@@ -120,8 +120,8 @@ version claims out of the documentation.
 * Architecture inconsistencies: file an issue referencing the
   conflicting documentation pages.
 * Documentation build failures: detected automatically by the `docs`
-  GitHub Action (`.github/workflows/docs.yml`) and by Read the Docs
-  (`fail_on_warning: true`).
+  GitHub Action (`.github/workflows/docs.yml`), whose build runs with
+  `-W`: any warning fails the workflow.
 
 ## License
 

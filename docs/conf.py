@@ -56,7 +56,6 @@ html_css_files = ["custom.css"]
 
 # "View on GitHub" and "Edit on GitHub" links in the theme footer:
 # every rendered page links to its own source file in the repository.
-# Works identically for the GitHub Pages build and Read the Docs.
 html_context = {
     "display_github": True,
     "github_user": "gomyrobot",

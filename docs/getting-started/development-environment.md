@@ -11,7 +11,6 @@ status labels.
 | Python 3        | build runtime for Sphinx              | Available |
 | Sphinx          | documentation builder                 | Available |
 | MyST Markdown   | document authoring format             | Available |
-| Read the Docs   | hosted, versioned documentation       | Available |
 | GitHub Actions  | documentation build CI                | Available |
 
 Local build: see [Installation](installation).

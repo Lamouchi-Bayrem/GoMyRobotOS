@@ -8,7 +8,7 @@ the documentation build and the contract schema (both in CI today).
 
 | Check                       | Where                                |
 | --------------------------- | ------------------------------------ |
-| documentation builds cleanly | GitHub Actions `docs` job + Read the Docs (fail_on_warning) |
+| documentation builds cleanly | GitHub Actions `docs` job (built with `-W`: warnings fail) |
 | example contracts validate   | GitHub Actions `schema` job (JSON Schema draft 2020-12) |
 
 No software exists yet to be tested; the tables below are the committed

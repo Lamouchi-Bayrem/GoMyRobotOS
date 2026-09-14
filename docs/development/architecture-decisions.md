@@ -201,7 +201,7 @@ existing numbers are never re-used.
   implementation.
 * **Decision.** The documentation lives in-repo (`docs/`), is built by
   CI, is versioned with the code, and carries the project's status-label
-  discipline; Read the Docs is the host.
+  discipline; the GitHub Pages site is the host.
 * **Consequences.** Doc build failures block merges (CI `docs` job);
   maturity labels are mandatory on every capability statement; the ADR
   process documented here is that authority.
