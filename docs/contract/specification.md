@@ -19,6 +19,8 @@ partition:
   name: Flight Control      # human display name
   criticality: high         # low | medium | high | critical
   trust_domain: flight      # free-form domain label
+  capabilities_required:    # backend-neutral capability tags
+    - cache_partitioning
 ```
 
 | Field                    | Type   | Required | Meaning                                    |
@@ -27,6 +29,7 @@ partition:
 | `partition.name`           | string | yes  | display name                                 |
 | `partition.criticality`    | enum   | yes  | `low`, `medium`, `high`, `critical` - drives how strictly the backend must realize the isolation semantics |
 | `partition.trust_domain`   | string | yes  | `flight`, `service`, `platform`, or custom   |
+| `partition.capabilities_required` | str[] | no | capability tags the target backend must cover (checked against its Capability Manifest; partial match = waiver, no match = build fails - no silent semantic downgrade) |
 
 ```{note}
 `criticality` and `trust_domain` are *semantic* tags. The contract does not
@@ -45,6 +48,8 @@ execution:
   timing_budget:
     period_us: 1000
     budget_us: 300
+    wcet_bound_us: 300      # explicit WCET bound, or null/omitted
+    wcet_evidence_class: measured
 ```
 
 | Field                             | Type   | Required                     | Meaning                        |
@@ -54,11 +59,16 @@ execution:
 | `execution.scheduling.priority`     | int   | yes (for fixed-priority policies) | static priority          |
 | `execution.timing_budget.period_us` | int   | no                           | period of the recurring budget, µs |
 | `execution.timing_budget.budget_us` | int   | no                           | CPU budget per period, µs      |
+| `execution.timing_budget.wcet_bound_us` | int\|null | no                     | explicit WCET bound in µs; absent/null = no bound claimed |
+| `execution.timing_budget.wcet_evidence_class` | enum | no | `proven` (formal/static WCET analysis) \| `measured` (validated under a defined stress pattern) \| `unbounded` |
 
 The timing budget is a **declaration** of the required temporal envelope.
 Whether the target realizes it (and with what fidelity) is measured - see
 [Temporal isolation](../validation/temporal-isolation). Never treat the
-presence of a budget as a WCET certification.
+presence of a budget as a WCET certification, and never document
+`measured` as `proven`: the two classes mean different things
+([evidence model - timing evidence
+classification](../assurance/evidence-model)).
 
 ## 3. Memory
 
@@ -113,8 +123,11 @@ dma:
 communication:
   endpoints:
     - name: telemetry
+      channel: sampling
       max_message_size: 1024
       max_rate_hz: 100
+      latency_budget_us: 100
+      buffer_ownership: consumer
 ```
 
 | Field                                        | Type  | Required | Meaning                |
@@ -123,6 +136,15 @@ communication:
 | `communication.endpoints[].name`                 | str  | yes  | endpoint label           |
 | `communication.endpoints[].max_message_size`     | int  | yes  | bytes per message        |
 | `communication.endpoints[].max_rate_hz`          | num  | yes  | maximum message rate (Hz) |
+| `communication.endpoints[].channel`               | enum | no   | `sampling` (last-value-wins) \| `queuing` (bounded queue) - a channel class, not a transport |
+| `communication.endpoints[].latency_budget_us`     | int  | no   | end-to-end latency budget (µs) |
+| `communication.endpoints[].buffer_ownership`      | enum | no   | `producer` \| `consumer` \| `shared` |
+| `communication.endpoints[].overflow_policy`       | enum | no   | queuing channels: `block` \| `drop_oldest` \| `drop_newest` \| `fault` |
+
+The channel class is the *semantic* of the endpoint; which mechanism
+implements it on a target (shared-memory region, hypervisor-mediated port,
+grant table, ...) is backend implementation detail - see [contract
+overview](overview).
 
 Communication between partitions runs **only** over declared endpoints.
 ROS 2 traffic (where present) maps onto these endpoints; it is *not* an
@@ -169,6 +191,7 @@ recovery:
   restart_policy: restart
   safe_state: predefined
   escalation_policy: supervisor
+  guard_independence_stage: 0
 ```
 
 | Field                      | Type   | Required | Meaning                              |
@@ -177,10 +200,12 @@ recovery:
 | `recovery.restart_policy`     | str  | yes  | `restart` \| `safe_state` \| escalate-style policy |
 | `recovery.safe_state`         | str  | yes  | predefined fallback state               |
 | `recovery.escalation_policy`  | str  | yes  | who decides on failed recovery (e.g. `supervisor`) |
+| `recovery.guard_independence_stage` | enum | no | `0` (co-resident software Guard) \| `1` (companion MCU / system controller) \| `2` (validated, per-fault timing in the evidence graph) - every recovery claim records the stage it was demonstrated under |
 
 Semantics are specified here; the independent mechanism that *enforces*
 them belongs to GoMyRobotGuard (ADR-0011) -
-[Recovery model](../architecture/recovery-model).
+[Recovery model](../architecture/recovery-model) and [independence
+staging](../components/gomyrobotguard).
 
 ## 9. Requirements and verification
 

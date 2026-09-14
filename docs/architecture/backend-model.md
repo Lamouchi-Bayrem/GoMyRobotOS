@@ -62,6 +62,50 @@ platform context:
 [NG-ULTRA](../platforms/ng-ultra),
 [HPSC](../platforms/hpsc).
 
+## Backend Capability Manifest
+
+A backend may not be able to realize every contract field at the same
+fidelity. The gap is made explicit rather than silently lost.
+
+Every backend publishes a **Capability Manifest**: the set of contract
+fields and value ranges it can realize, and at what fidelity (for example,
+cache-partitioning granularity, DMA remap granularity, interrupt
+virtualization latency class).
+
+Before a contract is compiled against a backend, the pipeline checks the
+contract's `capabilities_required` list against that backend's manifest:
+
+```text
+Partition Contract
+       |
+       v
+Capability check  <----  Backend Capability Manifest
+       |
+   +---+---+
+   |       |
+match   partial / no match
+   |       |
+   v       v
+compile   match  -> build fails
+          partial -> exception recorded in the evidence graph as a
+                     reviewable waiver; the artifact must not be used in a
+                     flight configuration before sign-off
+```
+
+Rule: **no silent semantic downgrade.** Every waived field is a named,
+reviewable exception tied to evidence, never a dropped line.
+
+Status: manifest format - spec frozen with M0; enforcement in the
+pipeline lands with the M1 parser/validator.
+
+## Bare-metal backends
+
+The row in the table above marks bare-metal / native hardware partitioning
+as a Research backend: no platform is targeted for it in the M0 baseline.
+The contract and Backend API are shaped so that a bare-metal realization
+(closed or modal execution engine with hardware isolation) can be added
+later without contract changes.
+
 ## What backends must never do
 
 * read the raw contract format directly (they take the IR)

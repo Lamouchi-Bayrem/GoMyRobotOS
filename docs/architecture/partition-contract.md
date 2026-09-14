@@ -87,6 +87,14 @@ consumed by GoMyRobotBSP, not in the contract. This rule is what separates
 "GoMyRobotOS is a platform" (ADR-0002, ADR-0003) from "GoMyRobotOS is a set
 of hypervisor configuration generators."
 
+## Contract ≠ IR
+
+This page describes the **Partition Contract**: the user-facing,
+declarative specification - what a partition may do, with requirements.
+The **GoMyRobotOS IR** (see [IR](ir)) is the internal, normalized
+compiler representation every backend consumes. The two are related but
+must not be used interchangeably in documents, interfaces, or commits.
+
 ## Status
 
 ```text

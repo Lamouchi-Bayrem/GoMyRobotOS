@@ -70,6 +70,22 @@ Consequently:
 The documentation never demotes upstream claims and never levels up:
 "correlated with an SEU model" is not "radiation-hardened".
 
+## Space fault responsibility split
+
+GoMyRobotOS defines the detect / contain / recover **semantics**. The
+physical mechanisms below are deliberately not core GoMyRobotOS
+requirements; they belong to the **Hardware Profile**, the **Guard
+implementation**, or the **assurance profile**:
+
+| Fault                                   | Defined by                                          |
+| --------------------------------------- | --------------------------------------------------- |
+| SEU: SRAM / register corruption         | Hardware Profile (ECC / scrubbing) + Guard re-verification |
+| Configuration / hypervisor-state corruption | Guard re-verification on watchdog cadence       |
+| Single-event latchup                    | power-domain handling (current limiting, power cycling) under Guard control - not a software partitioning feature |
+| Common-mode hypervisor failure          | only claimable from Guard Stage 1 onwards ([GoMyRobotGuard](../components/gomyrobotguard)) |
+
+GoMyRobotOS does not become a hardware platform specification.
+
 ## Status
 
 ```text

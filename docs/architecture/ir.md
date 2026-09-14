@@ -28,6 +28,13 @@ the contract format would silently become the union of every backend's
 quirks. The IR is what protects the portability claim: backends compete at
 the IR, not at the YAML.
 
+## Naming: contract vs IR
+
+The **Partition Contract** is the user-facing declarative specification
+(see [contract overview](../contract/overview)). The **GoMyRobotOS IR** is
+the internal representation for tooling and backend compilation. Related,
+but never used interchangeably.
+
 ## Shape
 
 A GoMyRobotOS IR partition carries the full semantic content of its

@@ -44,6 +44,26 @@ semantics are triggered.
   the watcher + actuator that must survive the failure of any single
   domain, including the one it is about to act on.
 
+## Independence staging
+
+Independence is staged, and every claim records the stage it was
+demonstrated under:
+
+| Stage | Guard realization                                    | Independence claim                                              |
+| ----- | ---------------------------------------------------- | --------------------------------------------------------------- |
+| 0 (software)  | resident in the same flight domain as the hypervisor | no claim against common-mode hypervisor failure                |
+| 1 (companion MCU / system controller) | independent watchdog and reset lines; independent of the primary SoC hypervisor/OS state | common-mode independence of the flight domain |
+| 2 (evidence)  | Guard feeds the evidence graph directly, with per-fault-class detect / contain / recover timing | recovery claim quantified in time per fault class |
+
+A contract may declare `recovery.guard_independence_stage`, and every
+recovery claim in the evidence graph records the stage it was demonstrated
+under.
+
+Hardware-level space-fault mechanisms (ECC, scrubbing, latchup current
+limiting, power cycling) are implemented by the **Hardware Profile** and
+the **Guard implementation**; GoMyRobotOS defines the detect / contain /
+recover semantics only (see [Fault injection](../validation/fault-injection)).
+
 ## HPSC: hardware independence
 
 On HPSC this boundary becomes concrete: the device includes an independent

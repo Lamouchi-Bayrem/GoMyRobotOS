@@ -165,5 +165,6 @@ compatibility/ros2
 development/contributing
 development/testing
 development/architecture-decisions
+development/architecture-v2
 ```
 

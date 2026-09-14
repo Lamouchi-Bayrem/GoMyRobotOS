@@ -51,10 +51,27 @@ GMR-FLIGHT-MEM-002  →  memory.regions       →   memory_isolation    →   (M
    partition level*; external products decide aggregation and argument
    structure.
 
+## Timing evidence classification
+
+Every timing claim in the evidence graph carries an explicit evidence
+class:
+
+* **proven** - backed by a formal / static WCET analysis
+* **measured** - validated by benchmarking under a defined stress pattern
+* **unbounded** - no bound; only for workload classes explicitly declared
+  unbounded
+
+Documentation and artifacts must never present `measured` as `proven`:
+"validated under a 2 ms budget" and "WCET proven at 2 ms" are different
+claims. The contract carries the class via
+`execution.timing_budget.wcet_evidence_class`.
+
 ## What this is not
 
 Not a safety case, not a claim of any standard (e.g., DO-178C or similar)
 conformance, not a "guarantee". It is a *data plane for assurance*,
-used however rigorously the external assurance process chooses. At M0, it
-contains no measured values at all - only the *structure* of what future
-measurements will take.
+used however rigorously the external assurance process chooses. GoMyRobotOS
+maps evidence onto existing standards (the ECSS Q ST 80C / ECSS E ST 40C
+lineage, and ARINC 653 where useful); it creates no new certification
+standard. At M0, it contains no measured values at
+all - only the *structure* of what future measurements will take.
