@@ -3,3 +3,46 @@
 .wy-nav-content {
     max-width: 64rem;
 }
+
+/* Expandable/collapsible sections in the sidebar navigation.
+   Companion to docs/_static/toc-tree.js, which groups each
+   "caption + list" pair into a <details> element. */
+.wy-menu-vertical details.gmros-section {
+    padding: 0.15em 0 0.35em 0;
+}
+.wy-menu-vertical summary.gmros-section-toggle {
+    display: block;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    -webkit-user-select: none;
+    padding: 0.35em 0.75em 0.35em 0.25em;
+    font-size: 1.05em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #d9d9d9;
+    border-left: 3px solid transparent;
+}
+.wy-menu-vertical summary.gmros-section-toggle::-webkit-details-marker {
+    display: none;
+}
+.wy-menu-vertical summary.gmros-section-toggle::after {
+    content: "\25B8"; /* right-pointing triangle */
+    float: right;
+    margin-right: 0.5em;
+    transition: transform 0.15s ease-out;
+    font-size: 0.85em;
+}
+.wy-menu-vertical details.gmros-section[open]
+    summary.gmros-section-toggle::after {
+    transform: rotate(90deg);
+}
+.wy-menu-vertical summary.gmros-section-toggle:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+.wy-menu-vertical summary.gmros-section-toggle.is-current {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: #ffffff;
+}

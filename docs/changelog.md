@@ -86,6 +86,17 @@ documentation and specification changes.
   milestone checklists), and the host clause in ADR-0013 now names the
   GitHub Pages site. The GitHub Actions deployment
   (`.github/workflows/gh-pages.yml`) is the single published site.
+* Sidebar navigation now behaves like the ROS 2 documentation: all
+  sections are listed at once, and clicking a section (Getting
+  started, Concepts, etc.) selects it and expands what is under it;
+  sections not containing the page you are reading start collapsed
+  and stay under user control. Implemented in the site's own
+  `docs/_static/toc-tree.js` (+ `custom.css`), without touching the
+  theme.
+* Shipping fix: `html_static_path` is now declared in `docs/conf.py`.
+  Without it, the project's `_static/` assets (the ROS 2
+  content-width overlay and the new navigation script) were never
+  copied into the build, even though the pages referenced them.
 * Double-dash cleanup in `docs/architecture/backend-model.md`: the
   capability-check figure now uses the single-hyphen arrow style the
   rest of the diagram already uses (the 5-character left arrow became

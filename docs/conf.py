@@ -42,6 +42,11 @@ pygments_style = "sphinx"
 copybutton_exclude = ".linenos, .gp, .go"
 
 html_theme = "sphinx_rtd_theme"
+# Without this, Sphinx 7+ does not copy the project's _static/ directory
+# at all - static assets (this site's custom.css and toc-tree.js) must be
+# declared explicitly. (html_logo and html_js_files still reference them
+# from the page; this makes the files actually ship.)
+html_static_path = ["_static"]
 # Intentionally empty: with a value set, Sphinx appends
 # " - <html_title>" to every page's <title>, which put a dash in
 # every browser tab. The empty value makes the tab exactly the
@@ -53,6 +58,9 @@ html_logo = "_static/gomyrobotos-logo.svg"
 # Content-width overlay, kept identical to the ROS 2 documentation
 # site (docs.ros.org/_static/custom.css).
 html_css_files = ["custom.css"]
+# Groups the already-complete sidebar toctree into collapsible sections
+# (see the comments in the JS file).
+html_js_files = ["toc-tree.js"]
 
 # "View on GitHub" and "Edit on GitHub" links in the theme footer:
 # every rendered page links to its own source file in the repository.
