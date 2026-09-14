@@ -1,0 +1,79 @@
+# GoMyRobotOS Partition Contract — v1 illustrative example
+#
+# Target:   x86-64 (development / reference)
+# Backend:  Xen — Status: Planned (M1)
+#
+# This contract is the SPECIFICATION EXAMPLE from the Final Architecture
+# (M0 deliverable). It is validated against
+# schemas/partition-contract.schema.json by CI, but NO backend has
+# realized it yet. The identical conceptual partition is used on
+# NG-ULTRA and HPSC — that invariance is the research design (RP1).
+
+partition:
+  id: flight-control
+  name: Flight Control
+  criticality: high
+  trust_domain: flight
+
+execution:
+  cpu_set: [0]
+  scheduling:
+    policy: fixed_priority
+    priority: 10
+  timing_budget:
+    period_us: 1000
+    budget_us: 300
+
+memory:
+  regions:
+    - name: code
+      size: 8M
+      permissions: rx
+    - name: data
+      size: 16M
+      permissions: rw
+
+devices:
+  ownership:
+    - uart0
+    - spw0
+
+interrupts:
+  owned:
+    - timer0
+    - irq12
+
+dma:
+  permitted_regions:
+    - flight_buffer
+
+communication:
+  endpoints:
+    - name: telemetry
+      max_message_size: 1024
+      max_rate_hz: 100
+
+startup:
+  boot_artifact: gomr-flight.img
+  dependencies: []
+
+security:
+  image_identity: "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  secure_boot_required: true
+
+recovery:
+  watchdog: true
+  restart_policy: restart
+  safe_state: predefined
+  escalation_policy: supervisor
+
+requirements:
+  - GMR-FLIGHT-CPU-001
+  - GMR-FLIGHT-MEM-002
+
+verification:
+  required_tests:
+    - cpu_isolation
+    - memory_isolation
+    - irq_isolation
+    - timing_bound

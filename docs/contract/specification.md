@@ -1,0 +1,214 @@
+# Partition Contract v1 — Specification
+
+This is the field reference for **Partition Contract v1**, frozen with
+milestone M0. Fields are grouped as they appear in YAML. Normative status:
+the JSON Schema in
+`schemas/partition-contract.schema.json` is the machine-checkable form of
+this page; if the two ever disagree, an ADR decides which side changes —
+they must never silently diverge.
+
+The running example in this spec is
+`examples/*/flight-control.yml` — see
+[the annotated example](examples/flight-control).
+
+## 1. Identity
+
+```yaml
+partition:
+  id: flight-control        # machine identifier
+  name: Flight Control      # human display name
+  criticality: high         # low | medium | high | critical
+  trust_domain: flight      # free-form domain label
+```
+
+| Field                    | Type   | Required | Meaning                                    |
+| ------------------------ | ------ | -------- | -------------------------------------------- |
+| `partition.id`             | string | yes  | unique partition identifier; must stay stable across targets |
+| `partition.name`           | string | yes  | display name                                 |
+| `partition.criticality`    | enum   | yes  | `low`, `medium`, `high`, `critical` — drives how strictly the backend must realize the isolation semantics |
+| `partition.trust_domain`   | string | yes  | `flight`, `service`, `platform`, or custom   |
+
+```{note}
+`criticality` and `trust_domain` are *semantic* tags. The contract does not
+say *how* a `high`/`critical` partition is protected on a given target —
+the backend (plus the backend profile) decides the enforcement mechanism.
+```
+
+## 2. Execution
+
+```yaml
+execution:
+  cpu_set: [0]
+  scheduling:
+    policy: fixed_priority
+    priority: 10
+  timing_budget:
+    period_us: 1000
+    budget_us: 300
+```
+
+| Field                             | Type   | Required                     | Meaning                        |
+| --------------------------------- | ------ | ---------------------------- | ------------------------------ |
+| `execution.cpu_set`                 | int[]| yes                        | cpus the partition may run on  |
+| `execution.scheduling.policy`       | string | yes                        | e.g. `fixed_priority`; policy names are target-agnostic, the set may grow by ADR |
+| `execution.scheduling.priority`     | int   | yes (for fixed-priority policies) | static priority          |
+| `execution.timing_budget.period_us` | int   | no                           | period of the recurring budget, µs |
+| `execution.timing_budget.budget_us` | int   | no                           | CPU budget per period, µs      |
+
+The timing budget is a **declaration** of the required temporal envelope.
+Whether the target realizes it (and with what fidelity) is measured — see
+[Temporal isolation](../validation/temporal-isolation). Never treat the
+presence of a budget as a WCET certification.
+
+## 3. Memory
+
+```yaml
+memory:
+  regions:
+    - name: code
+      size: 8M
+      permissions: rx
+    - name: data
+      size: 16M
+      permissions: rw
+```
+
+| Field                           | Type   | Required | Meaning                  |
+| ------------------------------- | ------ | -------- | ------------------------- |
+| `memory.regions`                  | list  | yes  | named memory regions      |
+| `memory.regions[].name`           | string | yes  | region label              |
+| `memory.regions[].size`           | string | yes  | human-readable size (e.g., `8M`, `512K`) |
+| `memory.regions[].permissions`    | string (r/w/x flags) | yes | per-region permissions |
+
+Region names are referenced elsewhere (e.g., `dma.permitted_regions`) —
+they are the portable "address-space geometry" of the partition.
+
+## 4. Devices, interrupts, DMA
+
+```yaml
+devices:
+  ownership:
+    - uart0
+    - spw0
+
+interrupts:
+  owned:
+    - timer0
+    - irq12
+
+dma:
+  permitted_regions:
+    - flight_buffer
+```
+
+| Field                     | Type   | Required | Meaning                                         |
+| ------------------------- | ------ | -------- | ------------------------------------------------ |
+| `devices.ownership`         | str[]| no   | devices the partition owns (exclusively)          |
+| `interrupts.owned`          | str[]| no   | interrupts owned by the partition; one interrupt is owned by at most one partition |
+| `dma.permitted_regions`     | str[]| no   | memory regions DMA may touch                     |
+
+## 5. Communication
+
+```yaml
+communication:
+  endpoints:
+    - name: telemetry
+      max_message_size: 1024
+      max_rate_hz: 100
+```
+
+| Field                                        | Type  | Required | Meaning                |
+| -------------------------------------------- | ----- | -------- | ------------------------ |
+| `communication.endpoints`                        | list | no   | declared cross-partition channels |
+| `communication.endpoints[].name`                 | str  | yes  | endpoint label           |
+| `communication.endpoints[].max_message_size`     | int  | yes  | bytes per message        |
+| `communication.endpoints[].max_rate_hz`          | num  | yes  | maximum message rate (Hz) |
+
+Communication between partitions runs **only** over declared endpoints.
+ROS 2 traffic (where present) maps onto these endpoints; it is *not* an
+implicit topic graph crossing partition boundaries.
+
+## 6. Startup
+
+```yaml
+startup:
+  boot_artifact: gomr-flight.img
+  dependencies: []
+```
+
+| Field                  | Type   | Required | Meaning                     |
+| ---------------------- | ------ | -------- | ----------------------------- |
+| `startup.boot_artifact`    | string | yes  | image/artifact identifier     |
+| `startup.dependencies`     | str[]  | yes  | partition ids that must start first (empty = none) |
+
+`dependencies` together with `boot_artifact` defines the boot order — the
+contractual "startup" concern from the core definition.
+
+## 7. Security
+
+```yaml
+security:
+  image_identity: sha256:...
+  secure_boot_required: true
+```
+
+| Field                         | Type  | Required | Meaning                          |
+| ----------------------------- | ----- | -------- | ---------------------------------- |
+| `security.image_identity`         | str | yes  | content identity of the partition image |
+| `security.secure_boot_required`   | bool | yes  | whether the boot path must verify the image identity |
+
+`update` / `rollback` semantics (part of the conceptual minimum field set)
+are carried in v1 by GoMyRobotSecure / GoMyRobotBSP metadata; the contract
+pins `image_identity` so those processes have a stable target.
+
+## 8. Recovery
+
+```yaml
+recovery:
+  watchdog: true
+  restart_policy: restart
+  safe_state: predefined
+  escalation_policy: supervisor
+```
+
+| Field                      | Type   | Required | Meaning                              |
+| -------------------------- | ------ | -------- | -------------------------------------- |
+| `recovery.watchdog`           | bool | yes  | contractual heartbeat required           |
+| `recovery.restart_policy`     | str  | yes  | `restart` \| `safe_state` \| escalate-style policy |
+| `recovery.safe_state`         | str  | yes  | predefined fallback state               |
+| `recovery.escalation_policy`  | str  | yes  | who decides on failed recovery (e.g. `supervisor`) |
+
+Semantics are specified here; the independent mechanism that *enforces*
+them belongs to GoMyRobotGuard (ADR-0011) —
+[Recovery model](../architecture/recovery-model).
+
+## 9. Requirements and verification
+
+```yaml
+requirements:
+  - GMR-FLIGHT-CPU-001
+  - GMR-FLIGHT-MEM-002
+
+verification:
+  required_tests:
+    - cpu_isolation
+    - memory_isolation
+    - irq_isolation
+    - timing_bound
+```
+
+These two groups are the traceability hooks consumed by GoMyRobotVerify
+and GoMyRobotAssure ([evidence
+model](../assurance/evidence-model)). Requirement identifiers follow the
+`GMR-<CONTEXT>-<AREA>-<NNN>` scheme; test names are stable slugs.
+
+## Non-goals of the contract
+
+The contract intentionally does **not** express:
+
+* backend identifiers (`xen_domN`, `xtratum_partition_id`, …) — they live
+  in the **backend profile**
+* image *contents* — only image *identity*
+* network-level topology — only declared endpoints with bounds
+* any certification claim — the contract is evidence *input*, not
+  evidence

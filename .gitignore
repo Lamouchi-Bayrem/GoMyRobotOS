@@ -1,0 +1,12 @@
+# Sphinx build output
+docs/_build/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db

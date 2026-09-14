@@ -1,0 +1,4 @@
+# Documentation build requirements (Sphinx site: docs/)
+sphinx>=8.1
+myst-parser>=4.0
+furo>=2024.12.30
