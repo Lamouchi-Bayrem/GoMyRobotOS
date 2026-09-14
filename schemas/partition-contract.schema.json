@@ -27,6 +27,11 @@
           "type": "string",
           "minLength": 1,
           "description": "e.g. flight, service, platform."
+        },
+        "capabilities_required": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Backend-neutral capability tags the target backend's Capability Manifest must cover (e.g. cache_partitioning, dma_remap, irq_passthrough). Checked before compile: no match fails the build; partial match requires a waiver recorded in the evidence graph. No silent semantic downgrade."
         }
       }
     },
@@ -56,7 +61,17 @@
           "additionalProperties": false,
           "properties": {
             "period_us": { "type": "integer", "minimum": 1 },
-            "budget_us": { "type": "integer", "minimum": 1 }
+            "budget_us": { "type": "integer", "minimum": 1 },
+            "wcet_bound_us": {
+              "type": ["integer", "null"],
+              "minimum": 1,
+              "description": "Explicit WCET bound for this budget. null (or omitted) means no bound is claimed."
+            },
+            "wcet_evidence_class": {
+              "type": "string",
+              "enum": ["proven", "measured", "unbounded"],
+              "description": "proven = formal/static WCET analysis; measured = validated under a defined stress pattern; unbounded = no bound. Never mislabelled: measured is not proven."
+            }
           }
         }
       }
@@ -127,8 +142,24 @@
             "additionalProperties": false,
             "properties": {
               "name": { "type": "string", "minLength": 1 },
+              "channel": {
+                "type": "string",
+                "enum": ["sampling", "queuing"],
+                "description": "Sampling = periodic state, last value wins. Queuing = bounded event/command queue. Channel class, not transport: the backend maps it to its own mechanism."
+              },
               "max_message_size": { "type": "integer", "minimum": 1 },
-              "max_rate_hz": { "type": "number", "exclusiveMinimum": 0 }
+              "max_rate_hz": { "type": "number", "exclusiveMinimum": 0 },
+              "latency_budget_us": { "type": "integer", "minimum": 1, "description": "End-to-end latency budget in microseconds." },
+              "buffer_ownership": {
+                "type": "string",
+                "enum": ["producer", "consumer", "shared"],
+                "description": "Who owns the message buffer the channel uses."
+              },
+              "overflow_policy": {
+                "type": "string",
+                "enum": ["block", "drop_oldest", "drop_newest", "fault"],
+                "description": "Behavior when a queuing channel's buffer is full."
+              }
             }
           }
         }
@@ -164,7 +195,12 @@
         "watchdog": { "type": "boolean" },
         "restart_policy": { "type": "string", "minLength": 1 },
         "safe_state": { "type": "string", "minLength": 1 },
-        "escalation_policy": { "type": "string", "minLength": 1 }
+        "escalation_policy": { "type": "string", "minLength": 1 },
+        "guard_independence_stage": {
+          "type": "integer",
+          "enum": [0, 1, 2],
+          "description": "Stage under which the recovery model is claimed (0 = co-resident software Guard, 1 = companion MCU / system controller, 2 = validated with per-fault timing in the evidence graph). Every recovery claim records the stage it was demonstrated under."
+        }
       }
     },
     "requirements": {

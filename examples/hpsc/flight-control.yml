@@ -13,6 +13,13 @@ partition:
   name: Flight Control
   criticality: high
   trust_domain: flight
+  # Capability tags for the backend Capability Manifest check
+  # (see GoMyRobotOS.md section 5). Partial match = waiver in the
+  # evidence graph; no match = build failure.
+  capabilities_required:
+    - cache_partitioning
+    - dma_remap
+    - irq_passthrough
 
 execution:
   cpu_set: [0]
@@ -22,6 +29,10 @@ execution:
   timing_budget:
     period_us: 1000
     budget_us: 300
+    # Illustrative: measured under the declared stress pattern;
+    # never presented as a proven WCET bound.
+    wcet_bound_us: 300
+    wcet_evidence_class: measured
 
 memory:
   regions:
@@ -49,8 +60,11 @@ dma:
 communication:
   endpoints:
     - name: telemetry
+      channel: sampling
       max_message_size: 1024
       max_rate_hz: 100
+      latency_budget_us: 100
+      buffer_ownership: consumer
 
 startup:
   boot_artifact: gomr-flight.img
@@ -65,6 +79,8 @@ recovery:
   restart_policy: restart
   safe_state: predefined
   escalation_policy: supervisor
+  # Stage 0 (co-resident software Guard): no common-mode claim.
+  guard_independence_stage: 0
 
 requirements:
   - GMR-FLIGHT-CPU-001
