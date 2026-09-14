@@ -211,6 +211,31 @@ The example is meant to be representative; the full field set (including cache p
 
 The contract describes **intent and constraints**, not backend syntax.
 
+## IPC semantics
+
+Communication is described by **channel class**, not by transport
+mechanism. Two classes, modeled on the ARINC 653 sampling/queuing port
+distinction:
+
+* **Sampling channel**: periodic state data; last value wins; bounded
+  staleness. Used for continuously updated telemetry-style data (joint
+  state, sensor readings).
+* **Queuing channel**: event or command data; bounded queue depth; explicit
+  overflow policy. Used for commands, mode transitions and discrete events.
+
+Every channel carries the same properties:
+
+* `max_message_size`
+* `max_rate_hz`
+* `latency_budget`
+* `buffer_ownership`
+* `overflow_policy` (queuing channels: `block`, `drop_oldest`,
+  `drop_newest`, or `fault`)
+
+Each backend maps those semantics to its own mechanism (shared-memory
+regions, hypervisor-mediated ports, grant tables, and so on). The transport
+choice is backend implementation detail and never appears in the contract.
+
 ---
 
 # 5. Partition Contract → IR → Backend
@@ -256,6 +281,40 @@ Partition
 ```
 
 The backend then determines how those semantics are expressed on the target.
+
+## Backend Capability Manifest
+
+The contract describes intent; a backend may not be able to realize every
+field at the same fidelity. The gap is made explicit rather than silently
+lost.
+
+Every backend publishes a **Capability Manifest**: the set of contract
+fields and value ranges it can realize, and at what fidelity (for example,
+cache-partitioning granularity, DMA remap granularity, interrupt
+virtualization latency class).
+
+Before a contract is compiled against a backend, the pipeline checks the
+contract's `capabilities_required` list against that backend's manifest:
+
+```text
+Partition Contract
+       |
+       v
+Capability check  <----  Backend Capability Manifest
+       |
+   +---+---+
+   |       |
+match   partial / no match
+   |       |
+   v       v
+compile   no match  -> build fails
+          partial   -> exception recorded in the evidence graph as a
+                       reviewable waiver; the artifact must not be used
+                       in a flight configuration before sign off
+```
+
+Rule: **No silent semantic downgrade.** Every waived field is a named,
+reviewable exception tied to evidence, never a dropped line.
 
 ---
 
@@ -494,6 +553,24 @@ GoMyRobotOS should expose **recovery semantics**.
 
 GoMyRobotGuard should implement the independent recovery mechanism.
 
+## Independence staging
+
+Independence is staged and recorded, not declared:
+
+* **Stage 0** - software Guard, resident in the same flight domain as the
+  hypervisor. Reduced independence: no claim of protection against
+  common-mode hypervisor failure at this stage.
+* **Stage 1** - Guard moves to a companion MCU or system controller with
+  its own watchdog and reset lines, independent of the primary SoC
+  hypervisor and OS state.
+* **Stage 2** - Guard participates directly in the evidence graph,
+  recording detect / contain / recover timing per fault class.
+
+Every recovery claim in the evidence graph records the stage it was
+demonstrated under. Where a platform provides an independent system
+controller (for example, the PIC64-HPSC system controller), that is one
+possible Stage 1 realization, not a property of the core architecture.
+
 ---
 
 # 13. GoMyRobotVerify
@@ -598,6 +675,23 @@ radiation / SEE testing
 correlation
 ```
 
+## Space fault responsibility split
+
+GoMyRobotOS defines the detect / contain / recover **semantics**. The
+mechanisms below are deliberately not core GoMyRobotOS requirements; they
+live in the **Hardware Profile**, the **Guard implementation**, or the
+**assurance profile**:
+
+| Fault                                        | Defined in                              |
+| -------------------------------------------- | --------------------------------------- |
+| SEU: SRAM / register corruption              | Hardware Profile (ECC / scrubbing) + Guard re-verification |
+| Configuration / hypervisor-state corruption  | Guard re-verification on watchdog cadence  |
+| Single-event latchup                         | Power-domain handling (current limiting, power cycling) under Guard control - not a software partitioning feature |
+| Common-mode hypervisor failure               | Only claimable from Guard Stage 1 onwards    |
+
+Keep the boundary: GoMyRobotOS does not become a hardware platform
+specification.
+
 ---
 
 # 15. GoMyRobotBench
@@ -655,6 +749,19 @@ This is a much cleaner product architecture.
 GoMyRobotOS **produces evidence inputs**.
 
 GoMyRobotAssure **builds the assurance argument**.
+
+## Timing evidence classification
+
+Every timing claim carries an explicit evidence class:
+
+* **proven** - backed by a formal / static WCET analysis
+* **measured** - validated by benchmarking under a defined stress pattern
+* **unbounded** - no bound; only for workload classes explicitly declared
+  unbounded
+
+Generated documentation and evidence artifacts must never present
+`measured` as `proven`: "validated under a 2 ms budget" and "WCET proven
+at 2 ms" are different claims.
 
 ---
 
@@ -1337,3 +1444,32 @@ The important architectural boundaries are now explicit:
 **GoMyRobotSim** → simulation
 
 That is the version I would use as the **new frozen architecture baseline**.
+
+# 33. Scope notes for the frozen baseline
+
+Naming: the **Partition Contract** is the user-facing declarative
+specification. The **GoMyRobotOS IR** is the internal compiler
+representation. Related, but they must not be used interchangeably.
+
+The v1 baseline deliberately does **not** include the following; the schema
+and the documentation must not imply otherwise:
+
+* `power` - not part of the v1 contract; reserved only, and not enforced by
+  any backend yet.
+* `fleet` - one flight computer. Multi-node synchronization, voting and
+  failover are future work.
+* Transport mechanisms - grant tables, event channels, virtio and
+  shared-memory ports are backend implementation rules, not contract
+  semantics.
+* Per-field certification mapping - GoMyRobotOS maps evidence onto existing
+  standards (ECSS Q ST 80C, ECSS E ST 40C, and the ARINC 653 / DO-297
+  lineage where useful). It creates no new certification standard.
+* Hardware-specific assumptions in the core architecture - platform
+  features such as system controllers, scrubbing and ECC belong to the
+  Hardware Profile and to Guard stage claims.
+* AI / accelerator criticality classes as contract fields - research
+  direction only, deferred to a future contract revision.
+
+The platform position remains:
+
+> **GoMyRobotOS is not an OS that happens to support several hypervisors. It is a portable partition and assurance platform that compiles one flight-system contract into different execution environments and produces evidence that the intended isolation and recovery properties were actually realized.**
