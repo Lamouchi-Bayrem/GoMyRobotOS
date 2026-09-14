@@ -6,7 +6,9 @@
 
 /* Expandable/collapsible sections in the sidebar navigation.
    Companion to docs/_static/toc-tree.js, which groups each
-   "caption + list" pair into a <details> element. */
+   "caption + list" pair into a <details> element. Sized and colored to
+   match the theme's own menu captions (85%, Roboto Slab, #55a5d9),
+   the same standard as the other sidebar text. */
 .wy-menu-vertical details.gmros-section {
     padding: 0.15em 0 0.35em 0;
 }
@@ -16,11 +18,14 @@
     list-style: none;
     user-select: none;
     -webkit-user-select: none;
-    padding: 0.35em 0.75em 0.35em 0.25em;
-    font-size: 1.05em;
+    height: 32px;
+    line-height: 32px;
+    margin: 12px 0 0;
+    padding: 0 1.618em;
+    font-size: 85%;
+    font-family: "Roboto Slab", ff-tisa-web-pro, Georgia, Arial, sans-serif;
     font-weight: 700;
-    letter-spacing: 0.02em;
-    color: #d9d9d9;
+    color: #55a5d9;
     border-left: 3px solid transparent;
 }
 .wy-menu-vertical summary.gmros-section-toggle::-webkit-details-marker {
