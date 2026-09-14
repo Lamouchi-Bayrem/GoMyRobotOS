@@ -20,12 +20,12 @@ shape of the future, consistent with the
 A contract's `verification.required_tests` names what the partition must
 clear; the project-level program mirrors those names:
 
-* `reproducible_boot` — M1
-* `cpu_isolation`, `memory_isolation`, `irq_isolation`, `timing_bound` —
+* `reproducible_boot` - M1
+* `cpu_isolation`, `memory_isolation`, `irq_isolation`, `timing_bound` -
   M1 (basic), M3 (measured)
-* communication on declared endpoints — M1
-* interference (GMR-INTERF v1) — M3
-* fault containment + recovery timing — M1 (basic) → M3/M5
+* communication on declared endpoints - M1
+* interference (GMR-INTERF v1) - M3
+* fault containment + recovery timing - M1 (basic) → M3/M5
 
 Full methodology: [validation/methodology]
 (../validation/methodology).
@@ -45,7 +45,7 @@ about: an x86-64 number is never written as an NG-ULTRA number.
 ## Tooling policy
 
 * No test tool, CLI flag, framework, or version is referenced anywhere in
-  the documentation until the first code lands at M1 — the anti-
+  the documentation until the first code lands at M1 - the anti-
   hallucination rules extend to tooling.
 * Test *names* (slugs) referenced by contracts must be stable once M1
   ships, because contracts pin them.

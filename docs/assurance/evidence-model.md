@@ -41,11 +41,11 @@ GMR-FLIGHT-MEM-002  →  memory.regions       →   memory_isolation    →   (M
 
 ## Why this shape
 
-1. **Machine-readable**: every input is YAML/JSON/hashes, not prose — an
+1. **Machine-readable**: every input is YAML/JSON/hashes, not prose - an
    assurance process can consume it without a human in the loop.
 2. **Portable by construction**: none of the inputs are backend-specific
    (the backend *version* is a fact about the realization, not about the
-   contract) — which is what makes
+   contract) - which is what makes
    [assurance portability](evidence-graph) a researchable question.
 3. **Final at the partition boundary**: the inputs are *complete at the
    partition level*; external products decide aggregation and argument
@@ -56,5 +56,5 @@ GMR-FLIGHT-MEM-002  →  memory.regions       →   memory_isolation    →   (M
 Not a safety case, not a claim of any standard (e.g., DO-178C or similar)
 conformance, not a "guarantee". It is a *data plane for assurance*,
 used however rigorously the external assurance process chooses. At M0, it
-contains no measured values at all — only the *structure* of what future
+contains no measured values at all - only the *structure* of what future
 measurements will take.

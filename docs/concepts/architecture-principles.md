@@ -1,7 +1,7 @@
 # Architecture principles
 
 These are the rules that the Final Architecture requires every design
-decision to respect. Each maps to one or more ADRs — see
+decision to respect. Each maps to one or more ADRs - see
 [Architecture decisions](../development/architecture-decisions).
 
 ## 1. Describe the semantics once; realize them per target
@@ -41,7 +41,7 @@ GoMyRobotOS owns exactly five core responsibilities (partition definition,
 resource/isolation semantics, backend realization, runtime integration,
 partition-level recovery contract). Fault injection, benchmarking,
 verification execution, assurance arguments, the security chain, and target
-build coordination are sibling products — connecting to GoMyRobotOS, not
+build coordination are sibling products - connecting to GoMyRobotOS, not
 implemented inside it.
 
 *(ADR-0007, ADR-0009, ADR-0010, ADR-0012)*
@@ -68,8 +68,8 @@ recovery belongs to GoMyRobotGuard.
 ## 7. Targets are honestly staged
 
 Not every board is a product target. The initial matrix contains exactly
-three roles — x86-64 (development/reference), NG-ULTRA (flight reference),
-PIC64-HPSC (RISC-V research) — and each carries an explicit maturity label
+three roles - x86-64 (development/reference), NG-ULTRA (flight reference),
+PIC64-HPSC (RISC-V research) - and each carries an explicit maturity label
 (`Development / Reference`, `Flight Reference / Development`, `Research`).
 Xen-on-HPSC is a research track, not a claimed production backend.
 

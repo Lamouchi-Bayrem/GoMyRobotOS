@@ -1,7 +1,7 @@
-# GoMyRobotOS Partition Contract — v1 illustrative example
+# GoMyRobotOS Partition Contract - v1 illustrative example
 #
 # Target:   PIC64-HPSC (next-generation RISC-V research target)
-# Backend:  Xen (research) / WorldGuard (research) — Status: Research (M4)
+# Backend:  Xen (research) / WorldGuard (research) - Status: Research (M4)
 #
 # Identical conceptual partition to examples/x86-64/flight-control.yml and
 # examples/ng-ultra/flight-control.yml. This is what makes HPSC the third

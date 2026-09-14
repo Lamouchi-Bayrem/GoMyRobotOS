@@ -5,7 +5,7 @@ Records. Every ADR has: **context**, **decision**, **consequences**,
 **status**. The M0 baseline is ADR-0001 … ADR-0013.
 
 Rules: the next free number is used for new decisions; an accepted ADR is
-never silently edited — it is *superseded* by a new ADR that points back;
+never silently edited - it is *superseded* by a new ADR that points back;
 existing numbers are never re-used.
 
 ## Index
@@ -28,7 +28,7 @@ existing numbers are never re-used.
 
 ---
 
-### ADR-0001 — GoMyRobotOS is a partition and execution platform
+### ADR-0001 - GoMyRobotOS is a partition and execution platform
 
 * **Context.** The GoMyRobot ecosystem spans flight runtimes, hypervisors,
   BSPs, verification, and assurance; a failure mode to avoid is one
@@ -44,12 +44,12 @@ existing numbers are never re-used.
   them.
 * **Status.** Accepted.
 
-### ADR-0002 — Partition Contract is the central abstraction
+### ADR-0002 - Partition Contract is the central abstraction
 
 * **Context.** Two abstraction candidates: "generate a hypervisor
   configuration" vs. "define what a partition is allowed and required to
   do".
-* **Decision.** The central abstraction is the latter — the Partition
+* **Decision.** The central abstraction is the latter - the Partition
   Contract. It expresses intent and constraints, never backend syntax;
   backend-specific data lives in the backend profile.
 * **Consequences.** The contract is readable across targets; assurance
@@ -57,7 +57,7 @@ existing numbers are never re-used.
   that smells mechanism-specific is a design bug.
 * **Status.** Accepted.
 
-### ADR-0003 — Hypervisors are target-specific backends
+### ADR-0003 - Hypervisors are target-specific backends
 
 * **Context.** Xen, XtratuM/XNG, and (research) hardware WorldGuard all
   "do isolation"; making any one of them the product abstraction would
@@ -70,7 +70,7 @@ existing numbers are never re-used.
   own documented work per target.
 * **Status.** Accepted.
 
-### ADR-0004 — x86-64 is the initial development/reference platform
+### ADR-0004 - x86-64 is the initial development/reference platform
 
 * **Context.** The platform must be iterable in CI, cheap to run, and
   representative enough to develop backends on.
@@ -81,7 +81,7 @@ existing numbers are never re-used.
   be repeated on flight hardware to count as flight evidence.
 * **Status.** Accepted.
 
-### ADR-0005 — NG-ULTRA is the primary flight-oriented reference
+### ADR-0005 - NG-ULTRA is the primary flight-oriented reference
 
 * **Context.** A flight reference with an existing RTEMS + XtratuM/XNG
   ecosystem (ARMv8-R BSP, ecosystem support) keeps the flight path
@@ -92,11 +92,11 @@ existing numbers are never re-used.
   GoMyRobotRT; recorded ecosystem facts stay labeled as ecosystem facts.
 * **Status.** Accepted.
 
-### ADR-0006 — HPSC is the initial RISC-V research target
+### ADR-0006 - HPSC is the initial RISC-V research target
 
 * **Context.** Next-generation RISC-V with hardware partitioning
   (WorldGuard), virtualization, and an independent system controller is
-  the natural third data point for the portability research — but the
+  the natural third data point for the portability research - but the
   Xen RISC-V guest stack is still an active upstream development area.
 * **Decision.** PIC64-HPSC is a `Research` target (M4), with staged work
   (RTEMS baseline; WorldGuard; Xen feasibility). No production claim on
@@ -105,7 +105,7 @@ existing numbers are never re-used.
   HPSC failure is a research finding, not an architecture failure.
 * **Status.** Accepted.
 
-### ADR-0007 — GoMyRobotRT is separate from GoMyRobotOS
+### ADR-0007 - GoMyRobotRT is separate from GoMyRobotOS
 
 * **Context.** Robotics middleware execution (RTEMS, executors, ROS 2
   concepts, hardware abstraction) has a different change rhythm from an
@@ -118,7 +118,7 @@ existing numbers are never re-used.
   on the GoMyRobotRT side; GoMyRobotOS keeps workload-agnostic contract
   fields.
 * **Status.** Accepted.
-### ADR-0008 — ROS 2 Rolling is the primary ROS 2 documentation reference
+### ADR-0008 - ROS 2 Rolling is the primary ROS 2 documentation reference
 
 * **Context.** Multiple ROS 2 distributions exist (Humble, Iron, Jazzy,
   Kilted, Rolling); mixing editions silently produces documentation drift.
@@ -133,11 +133,11 @@ existing numbers are never re-used.
   (../compatibility/ros2)) are checked against Rolling terminology.
 * **Status.** Accepted.
 
-### ADR-0009 — GoMyRobotBSP owns target build and image realization
+### ADR-0009 - GoMyRobotBSP owns target build and image realization
 
 * **Context.** Boot artifacts, hypervisor configuration, RTEMS
   configuration, device trees, Linux images, memory maps, deployment
-  manifests, hashes — someone must own producing them from profiles.
+  manifests, hashes - someone must own producing them from profiles.
 * **Decision.** GoMyRobotBSP consumes (contract + hardware profile +
   backend profile + boot profile + runtime profile) and produces the
   build artifacts. GoMyRobotOS declares *what*; BSP realizes *which
@@ -148,7 +148,7 @@ existing numbers are never re-used.
   Linux-domain images, never a description of GoMyRobotOS itself.
 * **Status.** Accepted.
 
-### ADR-0010 — Fault and radiation modeling belongs outside GoMyRobotOS
+### ADR-0010 - Fault and radiation modeling belongs outside GoMyRobotOS
 
 * **Context.** Fault *generation* (software faults, hardware fault
   models, communication faults, radiation/SEU models) is a different
@@ -162,7 +162,7 @@ existing numbers are never re-used.
   logging obligation.
 * **Status.** Accepted.
 
-### ADR-0011 — GoMyRobotGuard must be independent of the failure domain it recovers
+### ADR-0011 - GoMyRobotGuard must be independent of the failure domain it recovers
 
 * **Context.** A recovery mechanism that lives inside (or depends
   exclusively on) the domain it recovers fails when that domain fails.
@@ -175,7 +175,7 @@ existing numbers are never re-used.
   *management-domain failure*, and *corrupted image* classes.
 * **Status.** Accepted.
 
-### ADR-0012 — Verification and assurance are external platform services
+### ADR-0012 - Verification and assurance are external platform services
 
 * **Context.** Coupling verification execution or assurance-argument
   construction into the platform couples change rhythms and blurs
@@ -189,9 +189,9 @@ existing numbers are never re-used.
   processes.
 * **Status.** Accepted.
 
-### ADR-0013 — Documentation is versioned with the software
+### ADR-0013 - Documentation is versioned with the software
 
-* **Context.** Architecture and contract are the product at M0–M1;
+* **Context.** Architecture and contract are the product at M0-M1;
   undocumented or separately-versioned documentation would drift from
   implementation.
 * **Decision.** The documentation lives in-repo (`docs/`), is built by

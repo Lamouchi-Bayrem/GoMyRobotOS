@@ -2,7 +2,7 @@
 
 **GoMyRobotOS is a partition and execution platform for heterogeneous safety-critical space computers.** It defines a hypervisor-independent contract for execution, isolation, communication, startup, and recovery, then realizes that contract through target-specific backends.
 
-> **Current status: M0 — Architecture and Contract Freeze.**
+> **Current status: M0 - Architecture and Contract Freeze.**
 > GoMyRobotOS is documentation-first: the architecture, the Partition Contract, and the backend
 > model are frozen as a specification. **No target system has been implemented yet.**
 > Every maturity statement in this repository uses the labels
@@ -15,7 +15,7 @@
 Safety-critical flight computers are becoming heterogeneous: x86-64 development and CI
 machines, flight-oriented ARM platforms such as NG-ULTRA, and next-generation RISC-V
 processors such as PIC64-HPSC with hardware spatial partitioning (WorldGuard). Each platform
-offers a different separation mechanism — Xen, XNG/XtratuM, hardware guard bands — and each
+offers a different separation mechanism - Xen, XNG/XtratuM, hardware guard bands - and each
 one typically forces teams to re-derive the same execution-semantics decisions from scratch.
 
 GoMyRobotOS expresses those decisions once, in a **Partition Contract**: a machine-readable,
@@ -25,7 +25,7 @@ platform actually provides.
 
 > **Describe the required execution semantics once; realize them according to the
 > capabilities of the target platform.**
-> The hypervisor is an implementation backend — not the product abstraction.
+> The hypervisor is an implementation backend - not the product abstraction.
 
 ## What GoMyRobotOS is (and is not)
 
@@ -149,7 +149,7 @@ ROS 2 is **a workload**, not the architectural center of GoMyRobotOS.
 
 The official documentation reference for all ROS 2 concepts in this project is
 **ROS 2 Rolling** (<https://docs.ros.org/en/rolling/>). The GoMyRobotOS
-documentation never duplicates ROS 2 documentation — it links to Rolling for
+documentation never duplicates ROS 2 documentation - it links to Rolling for
 standard concepts and documents only the GoMyRobot-specific integration and
 execution guarantees. No ROS 2 support is implemented in this repository today
 (`Status: Research` for GoMyRobotRT).
@@ -191,7 +191,7 @@ See `docs/research/` in the documentation.
 * Documentation home: <https://gomyrobotos.readthedocs.io>
   (Sphinx + MyST Markdown, hosted on Read the Docs, rebuilt by CI on every push)
 * Repository: <https://github.com/gomyrobot/GoMyRobotOS>
-* Architectural source of truth: `GoMyRobotOS.md` (GoMyRobotOS — Final Architecture)
+* Architectural source of truth: `GoMyRobotOS.md` (GoMyRobotOS - Final Architecture)
 * Documentation policy: `docs.md` (Documentation Implementation Prompt)
 
 ## Contributing

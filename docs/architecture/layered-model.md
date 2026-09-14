@@ -35,7 +35,7 @@ and each layer only talks to its neighbors:
 
 The *author-facing* layer: a machine-readable description of intent and
 constraints (execution, isolation, communication, startup, recovery).
-Hypervisor-independent by definition — it cannot mention Xen or XtratuM.
+Hypervisor-independent by definition - it cannot mention Xen or XtratuM.
 See [partition-contract](partition-contract).
 
 ### 2. IR (GoMyRobotOS Intermediate Representation)
@@ -49,7 +49,7 @@ invalidate the contract. See [ir](ir).
 ### 3. Target backend
 
 The *only* layer allowed to be platform-specific. A backend maps IR
-semantics onto what the target actually offers — a hypervisor's domains,
+semantics onto what the target actually offers - a hypervisor's domains,
 an RTOS partition system's slots, or (future) native hardware partitioning.
 See [backend-model](backend-model).
 

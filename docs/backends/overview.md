@@ -32,9 +32,9 @@ backend must satisfy.
 
 ## Pages in this section
 
-* [Xen](xen) — the x86-64 development backend (Planned) and the HPSC research track
-* [XtratuM](xtratum) — the NG-ULTRA hypervisor (Planned)
-* [XNG](xng) — the XNG partitioning/pipeline layer of the NG-ULTRA
+* [Xen](xen) - the x86-64 development backend (Planned) and the HPSC research track
+* [XtratuM](xtratum) - the NG-ULTRA hypervisor (Planned)
+* [XNG](xng) - the XNG partitioning/pipeline layer of the NG-ULTRA
   backend (Planned)
 
 ## What every backend maps
@@ -57,5 +57,5 @@ backend must satisfy.
 2. Backend-specific identifiers never leak into the contract layer; they
    live in the **backend profile** consumed by GoMyRobotBSP.
 3. A backend's documented capabilities are exactly its *validated*
-   capabilities — no backend claims a semantic its target has not
+   capabilities - no backend claims a semantic its target has not
    demonstrated.

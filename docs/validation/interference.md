@@ -23,7 +23,7 @@ accelerators
 
 The methodology is: for each channel, stress one partition, measure the
 damage to another, and record which channels actually move the needle on
-*which backend*. The answer is **different per backend by design** — that
+*which backend*. The answer is **different per backend by design** - that
 delta is what Research Problem 1 (portable semantics) consumes.
 
 ## The experimental design
@@ -49,7 +49,7 @@ Service partition
 * **Monitored partition:** the contract's `timing_budget` and declared
   communication endpoints define the baseline.
 * **Stressor partition:** one channel stressed at a time (then combined),
-  with its own contract bounding its own resources — it stresses *within
+  with its own contract bounding its own resources - it stresses *within
   its own contractual envelope*, which is what makes the comparison fair
   and the result contractual.
 * **Platform sweep:** x86-64 → NG-ULTRA → HPSC, same conceptual
@@ -61,7 +61,7 @@ Service partition
 | Quantity                  | Interpretation for the contract                          |
 | ------------------------- | ----------------------------------------------------------|
 | latency                     | window delay vs budget                                  |
-| jitter                      | variance of the window — the flight-relevant number        |
+| jitter                      | variance of the window - the flight-relevant number        |
 | throughput degradation      | endpoint rate vs `max_rate_hz` declaration                |
 | cache effects               | which cache policies (if any) absorb the damage            |
 | memory bandwidth            | can the declared memory regions hold their envelope?     |
@@ -79,6 +79,6 @@ any interference data: none exists yet
 ```{warning}
 No number on any GoMyRobotOS page is a measured interference result until
 an M3 (or later) artifact publishes it. "Low interference" and similar
-phrases are *forbidden* phrasings in this documentation at M0 — this is an
+phrases are *forbidden* phrasings in this documentation at M0 - this is an
 anti-claim rule as much as a methodology.
 ```

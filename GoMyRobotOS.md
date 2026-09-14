@@ -1,4 +1,4 @@
-# GoMyRobotOS — Final Architecture
+# GoMyRobotOS - Final Architecture
 
 # 1. Product definition
 
@@ -737,7 +737,7 @@ You need to determine which properties can remain invariant.
 
 ---
 
-# 20. Research Problem 1 — Portable partition semantics
+# 20. Research Problem 1 - Portable partition semantics
 
 Compare the same conceptual partition on:
 
@@ -767,7 +767,7 @@ That is the core architectural research contribution.
 
 ---
 
-# 21. Research Problem 2 — Multi-channel interference
+# 21. Research Problem 2 - Multi-channel interference
 
 This should remain one of the strongest research areas.
 
@@ -818,7 +818,7 @@ This is where the HPSC architecture becomes particularly interesting because Wor
 
 ---
 
-# 22. Research Problem 3 — Fault containment and recovery
+# 22. Research Problem 3 - Fault containment and recovery
 
 Standard fault model:
 
@@ -861,7 +861,7 @@ The final result should be a measurable recovery model rather than merely a stat
 
 ---
 
-# 23. Research Problem 4 — Faults caused by the space environment
+# 23. Research Problem 4 - Faults caused by the space environment
 
 This becomes a **GoMyRobotFault / GoMyRobotBench / GoMyRobotAssure** research stream rather than a GoMyRobotOS subsystem.
 
@@ -887,7 +887,7 @@ HPSC and NG-ULTRA provide the hardware stage.
 
 ---
 
-# 24. Research Problem 5 — Assurance portability
+# 24. Research Problem 5 - Assurance portability
 
 This remains one of the most commercially interesting areas.
 
@@ -950,9 +950,9 @@ This lets GoMyRobotOS contribute to ELISA without becoming dependent on it.
 
 # 26. Updated milestone structure
 
-I would now replace the previous M0–M7 plan with a tighter six-stage program.
+I would now replace the previous M0-M7 plan with a tighter six-stage program.
 
-## M0 — Contract and architecture freeze
+## M0 - Contract and architecture freeze
 
 Deliver:
 
@@ -969,7 +969,7 @@ Gate:
 
 ---
 
-## M1 — x86-64 reference platform
+## M1 - x86-64 reference platform
 
 Goal:
 
@@ -1004,7 +1004,7 @@ This becomes the **CI/reproducibility platform**.
 
 ---
 
-## M2 — NG-ULTRA flight reference
+## M2 - NG-ULTRA flight reference
 
 Goal:
 
@@ -1033,7 +1033,7 @@ The existing NG-ULTRA/RTEMS/XNG ecosystem makes this a realistic flight-oriented
 
 ---
 
-## M3 — Interference laboratory
+## M3 - Interference laboratory
 
 Build:
 
@@ -1067,7 +1067,7 @@ HPSC
 
 ---
 
-## M4 — HPSC research
+## M4 - HPSC research
 
 Start with:
 
@@ -1098,7 +1098,7 @@ HPSC's current hardware/software ecosystem makes this a credible research direct
 
 ---
 
-## M5 — Recovery and assurance integration
+## M5 - Recovery and assurance integration
 
 Integrate:
 
@@ -1131,7 +1131,7 @@ Evidence Graph
 
 ---
 
-## M6 — ServiceReady reference
+## M6 - ServiceReady reference
 
 Final demonstration:
 

@@ -1,14 +1,14 @@
-# Partition Contract v1 — Specification
+# Partition Contract v1 - Specification
 
 This is the field reference for **Partition Contract v1**, frozen with
 milestone M0. Fields are grouped as they appear in YAML. Normative status:
 the JSON Schema in
 `schemas/partition-contract.schema.json` is the machine-checkable form of
-this page; if the two ever disagree, an ADR decides which side changes —
+this page; if the two ever disagree, an ADR decides which side changes -
 they must never silently diverge.
 
 The running example in this spec is
-`examples/*/flight-control.yml` — see
+`examples/*/flight-control.yml` - see
 [the annotated example](examples/flight-control).
 
 ## 1. Identity
@@ -25,12 +25,12 @@ partition:
 | ------------------------ | ------ | -------- | -------------------------------------------- |
 | `partition.id`             | string | yes  | unique partition identifier; must stay stable across targets |
 | `partition.name`           | string | yes  | display name                                 |
-| `partition.criticality`    | enum   | yes  | `low`, `medium`, `high`, `critical` — drives how strictly the backend must realize the isolation semantics |
+| `partition.criticality`    | enum   | yes  | `low`, `medium`, `high`, `critical` - drives how strictly the backend must realize the isolation semantics |
 | `partition.trust_domain`   | string | yes  | `flight`, `service`, `platform`, or custom   |
 
 ```{note}
 `criticality` and `trust_domain` are *semantic* tags. The contract does not
-say *how* a `high`/`critical` partition is protected on a given target —
+say *how* a `high`/`critical` partition is protected on a given target -
 the backend (plus the backend profile) decides the enforcement mechanism.
 ```
 
@@ -56,7 +56,7 @@ execution:
 | `execution.timing_budget.budget_us` | int   | no                           | CPU budget per period, µs      |
 
 The timing budget is a **declaration** of the required temporal envelope.
-Whether the target realizes it (and with what fidelity) is measured — see
+Whether the target realizes it (and with what fidelity) is measured - see
 [Temporal isolation](../validation/temporal-isolation). Never treat the
 presence of a budget as a WCET certification.
 
@@ -80,7 +80,7 @@ memory:
 | `memory.regions[].size`           | string | yes  | human-readable size (e.g., `8M`, `512K`) |
 | `memory.regions[].permissions`    | string (r/w/x flags) | yes | per-region permissions |
 
-Region names are referenced elsewhere (e.g., `dma.permitted_regions`) —
+Region names are referenced elsewhere (e.g., `dma.permitted_regions`) -
 they are the portable "address-space geometry" of the partition.
 
 ## 4. Devices, interrupts, DMA
@@ -141,7 +141,7 @@ startup:
 | `startup.boot_artifact`    | string | yes  | image/artifact identifier     |
 | `startup.dependencies`     | str[]  | yes  | partition ids that must start first (empty = none) |
 
-`dependencies` together with `boot_artifact` defines the boot order — the
+`dependencies` together with `boot_artifact` defines the boot order - the
 contractual "startup" concern from the core definition.
 
 ## 7. Security
@@ -179,7 +179,7 @@ recovery:
 | `recovery.escalation_policy`  | str  | yes  | who decides on failed recovery (e.g. `supervisor`) |
 
 Semantics are specified here; the independent mechanism that *enforces*
-them belongs to GoMyRobotGuard (ADR-0011) —
+them belongs to GoMyRobotGuard (ADR-0011) -
 [Recovery model](../architecture/recovery-model).
 
 ## 9. Requirements and verification
@@ -206,9 +206,9 @@ model](../assurance/evidence-model)). Requirement identifiers follow the
 
 The contract intentionally does **not** express:
 
-* backend identifiers (`xen_domN`, `xtratum_partition_id`, …) — they live
+* backend identifiers (`xen_domN`, `xtratum_partition_id`, …) - they live
   in the **backend profile**
-* image *contents* — only image *identity*
-* network-level topology — only declared endpoints with bounds
-* any certification claim — the contract is evidence *input*, not
+* image *contents* - only image *identity*
+* network-level topology - only declared endpoints with bounds
+* any certification claim - the contract is evidence *input*, not
   evidence

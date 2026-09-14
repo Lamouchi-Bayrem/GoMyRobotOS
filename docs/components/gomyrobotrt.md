@@ -35,7 +35,7 @@ GoMyRobotRT
 | hardware abstraction        | the seam between workload code and flight hardware     |
 | flight application interfaces | the stable interfaces mission software programs  against |
 
-GoMyRobotOS consumes or hosts GoMyRobotRT inside managed partitions — the
+GoMyRobotOS consumes or hosts GoMyRobotRT inside managed partitions - the
 hosting mechanics are in the
 [Runtime model](../architecture/runtime-model).
 
@@ -44,16 +44,16 @@ hosting mechanics are in the
 The ROS 2 reference for every concept below is the official
 [ROS 2 Rolling documentation](https://docs.ros.org/en/rolling/). This page
 (and the whole GoMyRobotOS documentation) **never duplicates ROS 2
-documentation** — for each concept we (1) state the standard ROS 2 meaning
+documentation** - for each concept we (1) state the standard ROS 2 meaning
 briefly, (2) link the Rolling page, (3) state GoMyRobotRT's planned
 integration, and (4) identify GoMyRobot-specific constraints or RTEMS
 limitations. Everything in section (3) below is
-`Status: Not implemented / Research` — per the project's
+`Status: Not implemented / Research` - per the project's
 anti-hallucination policy, no ROS 2 feature is claimed as supported by
 GoMyRobotRT before it exists (see
 [Compatibility](../compatibility/ros2)).
 
-### rcl / rclcpp / rclpy — client libraries
+### rcl / rclcpp / rclpy - client libraries
 
 *Standard ROS 2.* `rcl`, `rclcpp` (C++) and `rclpy` (Python) are the client
 libraries above the middleware (RMW); they implement nodes, publishers,
@@ -94,7 +94,7 @@ concepts](https://docs.ros.org/en/rolling/Concepts/About-ROS-2-Middleware.html).
 
 *GoMyRobotRT.* Planned to support ROS 2 pub/sub + services as the flight
 workload primitives. Cross-*partition* communication is **not** the ROS 2
-topic graph — it is the bounded endpoint declared in the GoMyRobotOS
+topic graph - it is the bounded endpoint declared in the GoMyRobotOS
 Partition Contract (`communication.endpoints`). How ROS 2 traffic maps onto
 those contract channels is research work to be documented when implemented.
 **No ROS 2 feature support is claimed at this time.**
@@ -122,7 +122,7 @@ concepts.
 *GoMyRobotRT.* On RTEMS flight partitions the RMW/DDS stack plays a reduced
 role compared to desktop Linux. What runs, how transports bind to contract
 channels, and whether in-process or wire transports are used are research
-decisions — documented only when chosen and implemented.
+decisions - documented only when chosen and implemented.
 
 ### Graph and lifecycle
 
@@ -133,7 +133,7 @@ node](https://docs.ros.org/en/rolling/How-To-Guides/Understanding-ROS-2-Lifecycl
 guide).
 
 *GoMyRobotRT.* Aligning lifecycle states with *partition-level* recovery
-(contract `recovery.*`) is an open integration question — not a claimed
+(contract `recovery.*`) is an open integration question - not a claimed
 feature.
 
 ## Deterministic execution
@@ -142,7 +142,7 @@ Where GoMyRobotRT differs from standard ROS 2 behavior, the documentation
 policy applies: (1) state the standard behavior with the Rolling link,
 (2) state the GoMyRobotRT behavior separately, (3) label it
 (implemented / experimental / planned / research). At M0 every
-GoMyRobotRT "deterministic execution" capability is `Status: Research` —
+GoMyRobotRT "deterministic execution" capability is `Status: Research` -
 defined conceptually, not yet built or measured.
 
 ## Hardware abstraction and health monitoring
@@ -160,7 +160,7 @@ defined conceptually, not yet built or measured.
 The end-state integration is: a GoMyRobotRT ROS 2 (Rolling-based) flight
 workload runs inside a GoMyRobotOS-managed partition on RTEMS, with its
 resources, timing, devices, and recovery declared in the partition's
-contract — demonstrated first on NG-ULTRA (M2), with the same conceptual
+contract - demonstrated first on NG-ULTRA (M2), with the same conceptual
 flight partition booting on x86-64 (M1) before that. This is the
 ServiceReady proof path: the *workload* is invariant; the *execution
 environment* changes per target.

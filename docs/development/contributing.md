@@ -2,11 +2,11 @@
 
 The root `CONTRIBUTING.md` file (repository root) is the process
 reference. This page is the *documentation-authoring* contract everyone
-contributing to `docs/` must honor — it is the enforceable extraction of
+contributing to `docs/` must honor - it is the enforceable extraction of
 the [documentation policy]
 (https://github.com/gomyrobot/GoMyRobotOS/blob/main/docs).
 
-## Status labels — the vocabulary
+## Status labels - the vocabulary
 
 Every non-trivial claim uses exactly one:
 
@@ -45,12 +45,12 @@ happen.
   [architecture-decisions]
   (architecture-decisions), with context / decision / consequence /
   status.
-* No silent editing of an Accepted ADR — supersede with a new number.
+* No silent editing of an Accepted ADR - supersede with a new number.
 * No renumbering of existing ADRs.
 
 ## Milestones
 
-* Milestones are **M0–M6** in the [overview]
+* Milestones are **M0-M6** in the [overview]
   (../milestones/overview). M7 does not exist; editors must not add
   it, rename it, or rescope a milestone page outside of the ADR process.
 
@@ -61,5 +61,5 @@ happen.
   milestone gate.
 * Build hygiene: the doc build must pass with zero warnings
   (CI `docs` job; Read the Docs `fail_on_warning: true`).
-* The toctree in [index.md](../index) reflects the structure — new
+* The toctree in [index.md](../index) reflects the structure - new
   pages must be added to a toctree or they are not part of the site.

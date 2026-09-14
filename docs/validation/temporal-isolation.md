@@ -29,7 +29,7 @@ claim, with what fidelity, and under what interference.
 The temporal side of the M3 interference laboratory runs a
 flight-style partition (monitored) against service-style stressors
 (CPU-bound, cache-thrashing, memory-bandwidth, DMA, IRQ, I/O) and records
-the quantities above — on x86-64 first, then repeated on NG-ULTRA, then
+the quantities above - on x86-64 first, then repeated on NG-ULTRA, then
 HPSC as feasible:
 
 ```text

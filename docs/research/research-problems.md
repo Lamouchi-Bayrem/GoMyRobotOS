@@ -1,10 +1,10 @@
 # Research problems
 
-The five research problems (RP1–RP5) come from the Final Architecture.
-They are **open problems with proposed measurement programs** — none is
+The five research problems (RP1-RP5) come from the Final Architecture.
+They are **open problems with proposed measurement programs** - none is
 solved, and none is presented here as a capability.
 
-## RP1 — Portable partition semantics
+## RP1 - Portable partition semantics
 
 Compare the *same conceptual partition* realized on:
 
@@ -36,14 +36,14 @@ surface* between backends, made observable and comparable by the IR.
 
 **Method note.** "Same conceptual partition" means the identical
 contract (see `examples/*/flight-control.yml`); "realized" means a backend
-that validates and boots it. Differences that emerge — a field that maps
+that validates and boots it. Differences that emerge - a field that maps
 differently on two backends, a guarantee one mechanism gives that another
-cannot, a hardware property no hypervisor exposes — *define* the
+cannot, a hardware property no hypervisor exposes - *define* the
 semantics worth documenting. Contract v1 is expected to evolve as RP1
 produces findings (via ADR), and that evolution is part of the result:
 the frozen M0 contract is the *starting hypothesis*, not the endpoint.
 
-## RP2 — Multi-channel interference
+## RP2 - Multi-channel interference
 
 A partition can interfere through:
 
@@ -67,12 +67,12 @@ Measured per channel: latency, jitter, throughput degradation, cache
 effects, memory bandwidth, interrupt latency, DMA interference.
 
 Why it matters: a contract that says "300 µs budget" is only as strong as
-the list of channels that *cannot* break it — and that list is different
+the list of channels that *cannot* break it - and that list is different
 per backend. HPSC is particularly here, because WorldGuard extends
-partitioning across multiple hardware resource classes — more channels to
+partitioning across multiple hardware resource classes - more channels to
 study, and potentially more to *close*.
 
-## RP3 — Fault containment and recovery
+## RP3 - Fault containment and recovery
 
 Standard fault model and the measured intervals
 (T_detect / T_contain / T_recover / T_resume) are documented in
@@ -84,13 +84,13 @@ failure, watchdog timeout, corrupted image.
 
 The research question is not "does recovery happen" (the contract
 prescribes when it must) but: **can failures be detected, contained, and
-recovered independently of the failed partition — and is that
+recovered independently of the failed partition - and is that
 independence *measured* rather than asserted?** The independence property
 is exactly the ADR-0011 boundary: GoMyRobotOS specifies, GoMyRobotGuard
 implements, and the measurement decides whether the two are doing their
 jobs.
 
-## RP4 — Faults caused by the space environment
+## RP4 - Faults caused by the space environment
 
 > **Ownership: this is a GoMyRobotFault / GoMyRobotBench / /GoMyRobotAssure
 > research stream, not a GoMyRobotOS subsystem.**
@@ -112,7 +112,7 @@ did. NG-ULTRA's radiation-hardened-by-design mechanisms (EDAC,
 configuration scrubbing, memory/configuration protection) are the
 hardware truth the models must correlate with.
 
-## RP5 — Assurance portability
+## RP5 - Assurance portability
 
 The most commercially interesting problem. Given:
 
@@ -128,7 +128,7 @@ Partition P1
 > when the deployment platform changes?**
 
 GoMyRobotOS's role: emit the machine-readable metadata that makes the
-question answerable —
+question answerable -
 
 ```text
 partition configuration
@@ -140,7 +140,7 @@ required tests
 deployment identity
 ```
 
-— and GoMyRobotAssure turns that into the actual evidence graph
+- and GoMyRobotAssure turns that into the actual evidence graph
 ([evidence-graph](../assurance/evidence-graph)). The "retainable core
 vs. re-measure set" split is the deliverable of RP5 as research.
 ## Status of all five

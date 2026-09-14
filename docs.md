@@ -212,7 +212,7 @@ GoMyRobotRT follows the ROS 2 executor model described in the
 ROS 2 Rolling documentation.
 
 See:
-[ROS 2 Rolling — Executors](https://docs.ros.org/en/rolling/...)
+[ROS 2 Rolling - Executors](https://docs.ros.org/en/rolling/...)
 
 GoMyRobotRT may impose additional deterministic execution constraints
 for flight workloads.
@@ -481,31 +481,31 @@ Do not attempt to mirror the entire ROS 2 documentation locally.
 Create:
 
 ```text
-ADR-0001 — GoMyRobotOS is a partition and execution platform
+ADR-0001 - GoMyRobotOS is a partition and execution platform
 
-ADR-0002 — Partition Contract is the central abstraction
+ADR-0002 - Partition Contract is the central abstraction
 
-ADR-0003 — Hypervisors are target-specific backends
+ADR-0003 - Hypervisors are target-specific backends
 
-ADR-0004 — x86-64 is the initial development/reference platform
+ADR-0004 - x86-64 is the initial development/reference platform
 
-ADR-0005 — NG-ULTRA is the primary flight-oriented reference
+ADR-0005 - NG-ULTRA is the primary flight-oriented reference
 
-ADR-0006 — HPSC is the initial RISC-V research target
+ADR-0006 - HPSC is the initial RISC-V research target
 
-ADR-0007 — GoMyRobotRT is separate from GoMyRobotOS
+ADR-0007 - GoMyRobotRT is separate from GoMyRobotOS
 
-ADR-0008 — ROS 2 Rolling is the primary ROS 2 documentation reference
+ADR-0008 - ROS 2 Rolling is the primary ROS 2 documentation reference
 
-ADR-0009 — GoMyRobotBSP owns target build/image realization
+ADR-0009 - GoMyRobotBSP owns target build/image realization
 
-ADR-0010 — Fault and radiation modeling belongs outside GoMyRobotOS
+ADR-0010 - Fault and radiation modeling belongs outside GoMyRobotOS
 
-ADR-0011 — GoMyRobotGuard must be independent of the failure domain it recovers
+ADR-0011 - GoMyRobotGuard must be independent of the failure domain it recovers
 
-ADR-0012 — Verification and assurance are external platform services
+ADR-0012 - Verification and assurance are external platform services
 
-ADR-0013 — Documentation is versioned with the software
+ADR-0013 - Documentation is versioned with the software
 ```
 
 ---
@@ -743,19 +743,19 @@ unless actual evidence exists.
 
 Document four primary research questions:
 
-### R1 — Portable partition semantics
+### R1 - Portable partition semantics
 
 Can one contract describe equivalent partition behavior across heterogeneous backends?
 
-### R2 — Multi-channel interference
+### R2 - Multi-channel interference
 
 How do CPU, cache, memory, DMA, interrupt, and I/O contention affect critical workloads?
 
-### R3 — Fault containment and recovery
+### R3 - Fault containment and recovery
 
 Can failures be detected, contained, and recovered independently of the failed partition?
 
-### R4 — Assurance portability
+### R4 - Assurance portability
 
 How much of the verification/evidence argument can move with the partition when hardware/backend changes?
 
@@ -770,19 +770,19 @@ They are research problems.
 Use:
 
 ```text
-M0 — Architecture and Contract Freeze
+M0 - Architecture and Contract Freeze
 
-M1 — x86-64 Reference Partition
+M1 - x86-64 Reference Partition
 
-M2 — NG-ULTRA Flight Reference
+M2 - NG-ULTRA Flight Reference
 
-M3 — Interference Laboratory
+M3 - Interference Laboratory
 
-M4 — HPSC Research
+M4 - HPSC Research
 
-M5 — Recovery and Assurance Integration
+M5 - Recovery and Assurance Integration
 
-M6 — ServiceReady Reference Platform
+M6 - ServiceReady Reference Platform
 ```
 
 Each milestone contains:

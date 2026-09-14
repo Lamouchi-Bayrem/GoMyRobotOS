@@ -25,14 +25,14 @@ full ROS 2 Rolling runtime compatibility
 The first is a *documentation choice* (this project uses the official
 Rolling documentation as the authority for ROS 2 terminology and API
 names). The second is an *implementation property* that does **not**
-currently exist — nothing in this repository executes, integrates, or
+currently exist - nothing in this repository executes, integrates, or
 wraps ROS 2 at all, and the documentation does not imply otherwise.
 
 ## Concept-by-concept status
 
 The table lists the ROS 2 concepts this project's documentation refers
 to, with the status of *GoMyRobotRT* support. (GoMyRobotOS has no ROS 2
-"support" level at all — it manages an execution environment; see the
+"support" level at all - it manages an execution environment; see the
 policy page
 [components/ros2-rolling]
 (../components/ros2-rolling).)
@@ -44,8 +44,8 @@ policy page
 | executor | Not implemented | deterministic execution constraints are *planned research*, not standard ROS 2 |
 | publisher / subscription | Not implemented | cross-partition traffic maps to *contract endpoints*, not the topic graph |
 | service | Not implemented | planned as a workload primitive |
-| action | Not implemented | no plan published yet — documented only if planned later |
-| parameter | Not implemented | — |
+| action | Not implemented | no plan published yet - documented only if planned later |
+| parameter | Not implemented | - |
 | QoS | Not implemented | which profiles survive a bounded partition: research |
 | callback group | Not implemented | standard meaning preserved; RT-side behavior TBD by research |
 | middleware / RMW / DDS | Not implemented | role on RTEMS partitions: open research |
@@ -61,7 +61,7 @@ Rules for any future update to this table (documentation policy):
    + label (implemented / experimental / planned).
 3. No GoMyRobot-named alternatives to standard concepts (`GoMyRobotNode`
    etc. are prohibited).
-4. This page is updated whenever GoMyRobotRT lands a ROS 2 integration —
+4. This page is updated whenever GoMyRobotRT lands a ROS 2 integration -
    it must never drift from the component page
    [components/gomyrobotrt]
    (../components/gomyrobotrt).

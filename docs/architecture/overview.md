@@ -75,14 +75,14 @@ GoMyRobotRT) run inside the managed partitions.
 Each sibling product has its own page in
 [Components](../components/gomyrobotrt):
 
-* [GoMyRobotRT](../components/gomyrobotrt) — deterministic flight runtime
-* [ROS 2 (Rolling reference)](../components/ros2-rolling) — workload reference
-* [GoMyRobotBSP](../components/gomyrobotbsp) — target realization / build
-* [GoMyRobotGuard](../components/gomyrobotguard) — independent recovery
-* [GoMyRobotFault](../components/gomyrobotfault) — fault and radiation modeling
-* [GoMyRobotBench](../components/gomyrobotbench) — physical / HIL experiments
-* [GoMyRobotVerify](../components/gomyrobotverify) — verification execution
-* [GoMyRobotAssure](../components/gomyrobotassure) — evidence graph / safety argument
+* [GoMyRobotRT](../components/gomyrobotrt) - deterministic flight runtime
+* [ROS 2 (Rolling reference)](../components/ros2-rolling) - workload reference
+* [GoMyRobotBSP](../components/gomyrobotbsp) - target realization / build
+* [GoMyRobotGuard](../components/gomyrobotguard) - independent recovery
+* [GoMyRobotFault](../components/gomyrobotfault) - fault and radiation modeling
+* [GoMyRobotBench](../components/gomyrobotbench) - physical / HIL experiments
+* [GoMyRobotVerify](../components/gomyrobotverify) - verification execution
+* [GoMyRobotAssure](../components/gomyrobotassure) - evidence graph / safety argument
 
 ## Backend matrix (summary)
 
@@ -103,14 +103,14 @@ Each sibling product has its own page in
 
 ## Five core responsibilities
 
-1. **Partition definition** — the contract and its validation
-2. **Resource / isolation semantics** — CPU, memory, interrupt, DMA,
+1. **Partition definition** - the contract and its validation
+2. **Resource / isolation semantics** - CPU, memory, interrupt, DMA,
    device, communication, timing semantics in the IR
-3. **Backend realization** — the Backend API and the backends implementing
+3. **Backend realization** - the Backend API and the backends implementing
    it
-4. **Runtime integration** — hosting GoMyRobotRT (and other workloads)
+4. **Runtime integration** - hosting GoMyRobotRT (and other workloads)
    inside managed partitions
-5. **Partition-level recovery contract** — what a partition must do when
+5. **Partition-level recovery contract** - what a partition must do when
    something goes wrong (implemented independently, by GoMyRobotGuard)
 
 Everything else connects to these five responsibilities but is not

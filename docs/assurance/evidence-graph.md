@@ -1,7 +1,7 @@
 # Assurance: Evidence graph
 
 The **Evidence Graph** is the artifact that completes the assurance chain:
-it is the representation of *why a property holds* — which requirement,
+it is the representation of *why a property holds* - which requirement,
 which contract field, which test, which measurement, on which deployment
 identity, with which image hash.
 
@@ -46,7 +46,7 @@ documents GoMyRobotOS's obligations as a **producer of graph inputs**:
 
 ## Graph nodes vs. edges (blank at M0)
 
-The intended edges — *requirement → field → test → result* — are exactly
+The intended edges - *requirement → field → test → result* - are exactly
 the [requirement chain]
 (evidence-model.md#requirement-field-test-result-chain) from the
 evidence-model page. **No edge on this graph is yet backed by a measured
@@ -62,8 +62,8 @@ retained automatically?** The inputs that are portable by construction
 (requirements, contract fields, required tests, deployment identity)
 form the "retainable core"; the target-bound inputs (backend behavior,
 measured results) form the "re-measure" set. Mapping that split is
-Research Problem 5 — see
-[research-problems](../research/research-problems) — and is the commercial core of
+Research Problem 5 - see
+[research-problems](../research/research-problems) - and is the commercial core of
 the project.
 
 `Status: data plane defined (M0); populated graph: does not exist yet;

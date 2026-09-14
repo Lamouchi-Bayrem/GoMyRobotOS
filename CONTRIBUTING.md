@@ -48,7 +48,7 @@ contribution, including prose, schemas, and examples:
 6. **Do not create documentation pages merely to fill the tree.** Pages must
    contain meaningful content, and the content must be traceable to the Final
    Architecture or to a recorded Architecture Decision.
-7. **Milestones are M0–M6.** Do not create M7 unless a future architecture
+7. **Milestones are M0-M6.** Do not create M7 unless a future architecture
    decision establishes a separate milestone.
 
 ## Architecture decisions

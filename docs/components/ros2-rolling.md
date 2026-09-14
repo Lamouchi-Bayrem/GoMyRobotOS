@@ -45,7 +45,7 @@ is the official Rolling documentation:
 
 <https://docs.ros.org/en/rolling/>
 
-This project documents terminology and API names consistent with Rolling —
+This project documents terminology and API names consistent with Rolling -
 including `rcl`, `rclcpp`, `rclpy`, executors, nodes, publishers,
 subscriptions, services, actions, parameters, QoS, callback groups,
 middleware / RMW, DDS, the ROS 2 graph, and lifecycle concepts.
@@ -71,7 +71,7 @@ explicitly required, and even then it is labeled as such.
 
   A GoMyRobot-specific abstraction may be introduced only when there is a
   real architectural reason (e.g., the *partition contract*, which has none
-  of these names — it is about execution domains, not ROS 2 objects).
+  of these names - it is about execution domains, not ROS 2 objects).
 
 ## When GoMyRobotRT behavior differs from ROS 2
 
@@ -87,7 +87,7 @@ look cleaner.
 
 ## Linking rule
 
-Use direct links to the official Rolling documentation wherever relevant —
+Use direct links to the official Rolling documentation wherever relevant -
 the preferred pattern is:
 
 > See the official

@@ -7,7 +7,7 @@
 ## What "spatial isolation" means here
 
 Nothing in one partition reaches into another partition's declared space:
-memory regions, DMA targets, interrupt lines, or devices — except through
+memory regions, DMA targets, interrupt lines, or devices - except through
 a declared `communication` endpoint.
 
 ## The isolation invariants (per contract field)
@@ -33,12 +33,12 @@ attempt unowned interrupt/driver → contained?   recorded?
 ```
 
 This is Research Problem 3's "illegal memory access / illegal MMIO / DMA
-violation" fault classes — see [Fault
+violation" fault classes - see [Fault
 injection](fault-injection) and
 [Research problem 3](../research/research-problems).
 
 Expected deliverable: a table, per backend, of *which* spatial invariants
-are *enforced*, *how* (backend mechanism), and *demonstrated* when —
+are *enforced*, *how* (backend mechanism), and *demonstrated* when -
 empty until M1/M2 validation runs exist.
 
 ## Status
@@ -53,7 +53,7 @@ any enforcement evidence:      none exists yet
 Xen (IOMMU-backed DMA restrictions), XtratuM/XNG (partition memory maps),
 and WorldGuard (hardware guard bands) each realize spatial isolation
 differently; that difference is *the point* of measuring it rather than
-assuming it — see [Research
+assuming it - see [Research
 problem 1](../research/research-problems) (portable partition
 semantics).
 ```

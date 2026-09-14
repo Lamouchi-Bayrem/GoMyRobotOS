@@ -1,7 +1,7 @@
 # Concepts overview
 
-This section explains *what* GoMyRobotOS is at the conceptual level — the
-definitions, the model, and the principles — before the [Architecture
+This section explains *what* GoMyRobotOS is at the conceptual level - the
+definitions, the model, and the principles - before the [Architecture
 section](../architecture/overview) explains *how* it is mechanically
 designed.
 
@@ -27,9 +27,9 @@ The hypervisor is a backend.
 | ------------------- | -------------------------------------------------------------------------- |
 | Partition           | A controlled execution domain with explicitly allocated resources          |
 | Partition Contract  | The machine-readable, hypervisor-independent description of a partition    |
-| IR                  | GoMyRobotOS Intermediate Representation — the stable internal model between contract and backends |
+| IR                  | GoMyRobotOS Intermediate Representation - the stable internal model between contract and backends |
 | Backend             | A target-specific mechanism (e.g., Xen, XNG/XtratuM) that realizes the IR  |
-| Workload            | The software running inside a partition — e.g., a GoMyRobotRT ROS 2 workflow |
+| Workload            | The software running inside a partition - e.g., a GoMyRobotRT ROS 2 workflow |
 | GoMyRobotRT         | The sibling product that executes the robotics workload inside a partition |
 
 ## Architecture in one diagram
@@ -80,7 +80,7 @@ GoMyRobotOS is **not** RTEMS, Linux, ROS 2, Xen, XtratuM/XNG, Yocto, a BSP, a
 simulator, a radiation-testing framework, a complete fault-injection platform,
 or a safety-case platform. Those technologies remain components of the larger
 GoMyRobot ecosystem, and the boundaries between them are architectural
-decisions — see [ADR list](../development/architecture-decisions).
+decisions - see [ADR list](../development/architecture-decisions).
 
 ## Reading order
 

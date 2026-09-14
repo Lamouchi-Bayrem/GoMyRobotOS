@@ -2,7 +2,7 @@
 
 ## The central innovation
 
-The central artifact of GoMyRobotOS is the **Partition Contract** — the
+The central artifact of GoMyRobotOS is the **Partition Contract** - the
 machine-readable execution contract that decouples *what a partition is
 allowed and required to do* from *which mechanism realizes it*.
 
@@ -20,7 +20,7 @@ The abstraction **is**:
 1. **Portability is the research claim.** If the same partition cannot be
    described once and realized on multiple targets, the project has no
    research contribution. The contract is the object being compared across
-   x86-64 + Xen, NG-ULTRA + XNG/XtratuM, and HPSC + hardware partitioning —
+   x86-64 + Xen, NG-ULTRA + XNG/XtratuM, and HPSC + hardware partitioning -
    see [Research problem 1](../research/research-problems).
 2. **Assurance depends on it.** Machine-readable configuration, image
    identity, required tests, and requirement identifiers are declared *in*

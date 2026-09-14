@@ -1,9 +1,9 @@
-# GoMyRobotOS Partition Contract — v1 illustrative example
+# GoMyRobotOS Partition Contract - v1 illustrative example
 #
 # Target:   NG-ULTRA (space / flight reference; four Cortex-R52 cores)
-# Backend:  XNG / XtratuM — Status: Planned (M2)
+# Backend:  XNG / XtratuM - Status: Planned (M2)
 #
-# Identical conceptual partition to examples/x86-64/flight-control.yml —
+# Identical conceptual partition to examples/x86-64/flight-control.yml -
 # the portability design (RP1). Validated against
 # schemas/partition-contract.schema.json by CI; not yet realized.
 

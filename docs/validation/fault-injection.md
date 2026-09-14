@@ -3,9 +3,9 @@
 ## The boundary, stated again
 
 * **GoMyRobotOS** declares *what a partition must do when a fault occurs*
-  (contract `recovery.*` — see
+  (contract `recovery.*` - see
   [Recovery model](../architecture/recovery-model)).
-* **GoMyRobotFault** provides *how faults are generated* — the fault
+* **GoMyRobotFault** provides *how faults are generated* - the fault
   recipes, injection harnesses, and models, including radiation-like
   models. See [GoMyRobotFault](../components/gomyrobotfault).
 
@@ -46,14 +46,14 @@ For each fault class, per partition, per backend:
   timeout, …),
 * **did the contractual action happen** (`restart` / `safe_state` /
   escalation) *and* within what measured time,
-* **did the other partitions survive** (containment — see
+* **did the other partitions survive** (containment - see
   [Spatial isolation](spatial-isolation) for the boundary-violation
   variants),
 * **what is recorded** as evidence (the metadata consumed by
   GoMyRobotVerify / GoMyRobotAssure).
 
 That is the [recovery timing model]
-(recovery) — T_detect, T_contain, T_recover, T_resume.
+(recovery) - T_detect, T_contain, T_recover, T_resume.
 
 ## Radiation: the honesty rule
 

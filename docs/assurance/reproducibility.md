@@ -1,7 +1,7 @@
 # Assurance: Reproducibility
 
 Reproducibility is the minimum discipline that makes any assurance claim
-*reviewable* — if a run cannot be reproduced, its evidence is an
+*reviewable* - if a run cannot be reproduced, its evidence is an
 assertion.
 
 ## Three reproducibility pillars in GoMyRobotOS
@@ -10,13 +10,13 @@ assertion.
 
 The same contract + the same backend + the same target hardware profile
 must produce the same booted system. M1 lists "reproducible boot" as a
-test *before* anything fancier — and the M1 gate is "boots and isolates
+test *before* anything fancier - and the M1 gate is "boots and isolates
 partitions": a system that cannot reproducibly boot has no further
 validation credibility at all.
 
 ### 2. Reproducible measurements
 
-M3's gate is literal: **interference measurements are reproducible** —
+M3's gate is literal: **interference measurements are reproducible** -
 same stress recipe, same monitored partition, same backend, same numbers
 (within documented tolerance) on rerun. Measurement reproducibility is a
 gate, not a byproduct, because the entire research program is built on
@@ -28,7 +28,7 @@ Every piece of evidence carries the identity data the [evidence
 model](evidence-model) lists: image hashes, backend version,
 deployment identity, hardware profile. BSP's
 `hashes` and `build metadata` outputs exist specifically for this: two
-people with the same manifest should be able to reconstruct what ran —
+people with the same manifest should be able to reconstruct what ran -
 not just what *might* have run.
 
 ## How far reproducibility reaches

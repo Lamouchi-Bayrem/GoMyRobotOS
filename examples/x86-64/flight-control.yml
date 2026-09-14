@@ -1,13 +1,13 @@
-# GoMyRobotOS Partition Contract — v1 illustrative example
+# GoMyRobotOS Partition Contract - v1 illustrative example
 #
 # Target:   x86-64 (development / reference)
-# Backend:  Xen — Status: Planned (M1)
+# Backend:  Xen - Status: Planned (M1)
 #
 # This contract is the SPECIFICATION EXAMPLE from the Final Architecture
 # (M0 deliverable). It is validated against
 # schemas/partition-contract.schema.json by CI, but NO backend has
 # realized it yet. The identical conceptual partition is used on
-# NG-ULTRA and HPSC — that invariance is the research design (RP1).
+# NG-ULTRA and HPSC - that invariance is the research design (RP1).
 
 partition:
   id: flight-control

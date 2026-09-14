@@ -29,7 +29,7 @@ GoMyRobotRT
 The architecture records that NG-ULTRA has an established ecosystem around
 RTEMS and XtratuM/XNG, that existing RTEMS work lists an ARMv8-R NG-ULTRA
 BSP, and that NanoXplore's ecosystem includes RTEMS and XtratuM/XNG
-support. Those are *ecosystem facts used to justify the backend choice* —
+support. Those are *ecosystem facts used to justify the backend choice* -
 not claims by this repository.
 
 ## What M2 must produce

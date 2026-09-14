@@ -1,7 +1,7 @@
 # Milestones overview
 
-GoMyRobotOS runs a six-stage program, M0–M6, frozen at architecture
-review. Each milestone has — and is judged by — an acceptance gate.
+GoMyRobotOS runs a six-stage program, M0-M6, frozen at architecture
+review. Each milestone has - and is judged by - an acceptance gate.
 **M7 does not exist and must not be referenced** unless a future
 architecture decision establishes it.
 
@@ -19,7 +19,7 @@ architecture decision establishes it.
 
 | Milestone | Status                          |
 | --------- | ------------------------------- |
-| M0        | **In progress** — this documentation is the freeze artifact |
+| M0        | **In progress** - this documentation is the freeze artifact |
 | M1        | `Planned`                       |
 | M2        | `Planned`                       |
 | M3        | `Planned`                       |

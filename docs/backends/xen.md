@@ -20,7 +20,7 @@ Partition Contract
 
 The map from IR constructs to Xen-side mechanisms (cpu pinning, domain
 memory, interrupt routing, device attachment, event channels) is designed
-as part of Milestone M1's "Xen backend" work item — it will be documented
+as part of Milestone M1's "Xen backend" work item - it will be documented
 *when implemented*, with its validated properties only.
 
 ## x86-64 status
@@ -30,7 +30,7 @@ parser, validator, IR, the Xen backend itself, boot/deployment, and basic
 partition monitoring; tests: reproducible boot, CPU allocation, memory
 isolation, communication, basic fault containment.
 
-## HPSC status — research track
+## HPSC status - research track
 
 Xen on RISC-V (i.e., hosting RTEMS/Linux guests on PIC64-HPSC) is an
 **active development area upstream**: contemporary Xen development is

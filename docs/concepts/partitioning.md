@@ -4,7 +4,7 @@
 
 A **partition** is a controlled execution domain with explicitly described
 resources. A partition is *not defined by the isolation mechanism that
-realizes it* — it is defined by the [Partition Contract](../contract/overview).
+realizes it* - it is defined by the [Partition Contract](../contract/overview).
 
 Concretely, a partition contract declares:
 
@@ -30,8 +30,8 @@ separation mechanisms:
 
 * a **process or container** is tied to one OS's semantics;
 * a **VM / domain** is tied to one hypervisor's model;
-* a **partition** is a semantic object — CPU, memory, time, interrupts,
-  devices, DMA, communication, startup, recovery — that *each* target
+* a **partition** is a semantic object - CPU, memory, time, interrupts,
+  devices, DMA, communication, startup, recovery - that *each* target
   backend must realize with whatever it offers: Xen domains on x86-64,
   XtratuM partitions on NG-ULTRA, and (as research) hardware WorldGuard
   partitioning on HPSC.
@@ -60,10 +60,10 @@ partitions with different criticalities and runtimes, under one supervisor:
 
 Each column is partitioned independently; the Supervisor (GoMyRobotGuard)
 must not depend exclusively on any single partition in order to recover the
-others — see [GoMyRobotGuard](../components/gomyrobotguard) and
+others - see [GoMyRobotGuard](../components/gomyrobotguard) and
 ADR-0011.
 
-## Partition and partition contract — the distinction
+## Partition and partition contract - the distinction
 
 The *contract* is the description; the *partition* is the running realization
 of that description on a specific target using a specific backend. One

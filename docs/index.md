@@ -5,7 +5,7 @@
 > contract for execution, isolation, communication, startup, and recovery,
 > then realizes that contract through target-specific backends.
 
-```{attention} Project status: M0 — Architecture and Contract Freeze
+```{attention} Project status: M0 - Architecture and Contract Freeze
 GoMyRobotOS is documentation-first. The architecture, the Partition
 Contract, and the backend model are frozen as a specification. **No target
 system has been implemented yet.** Every maturity statement in these pages
@@ -16,12 +16,12 @@ therefore uses one of the labels: `Stable`, `Experimental`, `Research`,
 ## How to read this documentation
 
 * The architectural source of truth is the repository file `GoMyRobotOS.md`
-  (GoMyRobotOS — Final Architecture). These pages document that architecture;
+  (GoMyRobotOS - Final Architecture). These pages document that architecture;
   they never supersede it.
 * **ROS 2 Rolling** is the authoritative external reference for all ROS 2
   concepts: see the official
   [ROS 2 Rolling documentation](https://docs.ros.org/en/rolling/).
-  This project never duplicates ROS 2 documentation — it links to it and
+  This project never duplicates ROS 2 documentation - it links to it and
   documents only GoMyRobot-specific integration and guarantees
   ([compatibility/ros2](compatibility/ros2)).
 * Architecture changes are traceable to numbered Architecture Decision

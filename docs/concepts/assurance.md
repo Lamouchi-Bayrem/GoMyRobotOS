@@ -1,7 +1,7 @@
 # Assurance positioning
 
 GoMyRobotOS is deliberately **not** a safety-case platform. This page pins
-down exactly where assurance sits relative to the partition platform —
+down exactly where assurance sits relative to the partition platform -
 it is frequently the most misunderstood boundary in the architecture.
 
 ## The boundary
@@ -50,8 +50,8 @@ deployment identity
 together with the requirement identifiers declared in each contract
 (e.g., `GMR-FLIGHT-CPU-001`) and the tests the contract declares as
 required (`cpu_isolation`, `memory_isolation`, `irq_isolation`,
-`timing_bound` in the v1 example). That traceability — requirement →
-contract field → declared test → measured result — is the raw material an
+`timing_bound` in the v1 example). That traceability - requirement →
+contract field → declared test → measured result - is the raw material an
 external assurance case can use.
 
 ## What GoMyRobotOS explicitly does not claim
@@ -73,11 +73,11 @@ sort exists to claim.
 
 1. **Coupling risk**: embedding verification in the platform couples the
    platform's change rhythm to the assurance process's evidence
-   requirements — and the reverse.
+   requirements - and the reverse.
 2. **Reuse**: the same configuration and deployment metadata can feed
    independent verification, traceability, and supply-chain (SBOM)
    processes.
 3. **Honesty**: the project's research contribution is about *portable,
-   measurable partition semantics* — see
-   [Assurance portability](../research/research-problems) — not about
+   measurable partition semantics* - see
+   [Assurance portability](../research/research-problems) - not about
    asserting safety.

@@ -5,7 +5,7 @@ GoMyRobotOS is at milestone **M0** (Architecture and Contract Freeze).
 There is no GoMyRobotOS binary, daemon, or command-line tool to install
 today, and none of the described targets host a GoMyRobotOS deployment.
 
-`Status: Not implemented` — the first implementations land at milestone
+`Status: Not implemented` - the first implementations land at milestone
 **M1** (x86-64 reference partition), which will:
 
 * parse and validate a Partition Contract
@@ -56,6 +56,6 @@ When milestone M1 ships, this page will be updated with:
 * the QEMU-based CI configuration used for reproducible boot testing
 
 Until then, avoid documentation that references GoMyRobotOS tool names, CLI
-flags, or deployment commands — the architecture deliberately does not
+flags, or deployment commands - the architecture deliberately does not
 define them yet, and inventing them would violate the project's
 anti-hallucination policy.

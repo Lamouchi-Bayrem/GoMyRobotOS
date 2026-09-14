@@ -40,8 +40,8 @@ illegal MMIO, DMA violation, interrupt abuse, CPU starvation, resource
 exhaustion, service-domain crash, management-domain failure, watchdog
 timeout, corrupted image.
 
-The last three — *service-domain crash*, *management-domain failure*,
-and *corrupted image* — are where the GoMyRobotGuard independence rule
+The last three - *service-domain crash*, *management-domain failure*,
+and *corrupted image* - are where the GoMyRobotGuard independence rule
 (ADR-0011) gets exercised hardest: the recovery action must be taken by
 something that does **not** depend on the failed domain
 ([GoMyRobotGuard](../components/gomyrobotguard)).
@@ -72,6 +72,6 @@ timing model (T_* table):             Status: Planned (M3+; automated into
 ```{warning}
 No GoMyRobotOS documentation page states a recovery time ("recovers in
 < N ms") until such a measurement exists. A recovery plan being *declared*
-in a contract is not a recovery time being *achieved* — the anti-hallucination
+in a contract is not a recovery time being *achieved* - the anti-hallucination
 rules treat these as different facts.
 ```

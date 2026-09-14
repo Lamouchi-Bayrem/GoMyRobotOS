@@ -23,21 +23,21 @@ GoMyRobotBench
   health/recovery hooks to observe, the deployment identity to log.
 
 That division keeps GoMyRobotOS from becoming "an everything
-measurement/safety product" — the bench is the experiment platform, the OS
+measurement/safety product" - the bench is the experiment platform, the OS
 is the object under experiment that exposes contractual semantics.
 
 ## Where Bench shows up in the plan
 
-* **M1** — basic fault containment and reproducible boot on x86-64 run
+* **M1** - basic fault containment and reproducible boot on x86-64 run
   through bench-style test harnesses in CI.
-* **M3 — Interference laboratory.** Bench builds **GMR-INTERF v1**:
+* **M3 - Interference laboratory.** Bench builds **GMR-INTERF v1**:
   stressors (CPU, cache, memory, DMA, IRQ, I/O) and
   metrics (latency, jitter, throughput, interference) run progressively on
   x86-64 → NG-ULTRA → HPSC. The science goals are in
   [Research problem 2 (multi-channel
   interference)](../research/research-problems) and
   [Validation: Interference](../validation/interference).
-* **M5+** — fault, test, and timing results from Bench, Verify, and
+* **M5+** - fault, test, and timing results from Bench, Verify, and
   Fault feed the
   [evidence graph](../assurance/evidence-graph)
   automatically.

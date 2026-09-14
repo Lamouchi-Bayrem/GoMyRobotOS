@@ -3,7 +3,7 @@
 All notable changes to GoMyRobotOS are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
-GoMyRobotOS has not produced software releases yet — it is at milestone **M0**
+GoMyRobotOS has not produced software releases yet - it is at milestone **M0**
 (Architecture and Contract Freeze). This changelog therefore tracks
 documentation and specification changes.
 
@@ -17,7 +17,7 @@ documentation and specification changes.
   (`docs/contract/`), JSON Schema
   (`schemas/partition-contract.schema.json`), and illustrative examples per
   target (`examples/x86-64`, `examples/ng-ultra`, `examples/hpsc`).
-* Milestone plan **M0–M6** and acceptance gates
+* Milestone plan **M0-M6** and acceptance gates
   (`docs/milestones/`).
 * Architecture Decision Records ADR-0001 … ADR-0013
   (`docs/development/architecture-decisions.md`).

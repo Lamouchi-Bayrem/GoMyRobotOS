@@ -1,4 +1,4 @@
-# Partition Contract — Overview
+# Partition Contract - Overview
 
 The Partition Contract is the central artifact of GoMyRobotOS: a
 machine-readable, **hypervisor-independent** description of what a
@@ -6,7 +6,7 @@ partition is allowed (and required) to do.
 
 ```{important}
 The question a contract answers is not *"how do I make a Xen domain?"* or
-*"how do I make an XtratuM partition?"* — it is *"what may this execution
+*"how do I make an XtratuM partition?"* - it is *"what may this execution
 domain do, and what must it do, regardless of mechanism?"*
 ```
 

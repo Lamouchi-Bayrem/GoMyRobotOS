@@ -5,7 +5,7 @@
 
 ## What XNG is in the GoMyRobotOS model
 
-XNG is the **partitioning / pipeline layer** of the NG-ULTRA backend —
+XNG is the **partitioning / pipeline layer** of the NG-ULTRA backend -
 the side that deals in *partition specifications* (partition slots,
 resource assignment, the inter-partition structure of the system) down the
 `XNG / XtratuM → RTEMS` chain, whereas XtratuM is the hypervisor that
@@ -21,7 +21,7 @@ NG-ULTRA Backend
 
 Both together satisfy the backend's mapping duties
 (IR → target mechanisms: cpus, memory, interrupts, DMA, devices, channels,
-boot ordering) — see [Backend
+boot ordering) - see [Backend
 model](../architecture/backend-model).
 
 ## Why a separate page

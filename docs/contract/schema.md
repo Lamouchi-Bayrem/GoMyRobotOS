@@ -1,4 +1,4 @@
-# Partition Contract v1 — Schema
+# Partition Contract v1 - Schema
 
 ## Location
 
@@ -18,7 +18,7 @@ evolve together under ADR control.
   `communication`, `startup`, `security`, `recovery`, `requirements`,
   `verification`.
 * The schema intentionally has **no backend-specific keys**: no
-  `xen_*`, `xtratum_*`, `xng_*` properties exist in v1 — that is the
+  `xen_*`, `xtratum_*`, `xng_*` properties exist in v1 - that is the
   machine-level expression of ADR-0002/0003 ("hypervisors are backends").
 
 ## What the schema enforces today

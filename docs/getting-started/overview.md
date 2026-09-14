@@ -21,8 +21,8 @@ GoMyRobotOS core is:
 4. **Runtime integration**
 5. **Partition-level recovery contract**
 
-Everything else — fault injection, benchmarking, verification execution,
-safety cases, security tooling, target build coordination — connects to these
+Everything else - fault injection, benchmarking, verification execution,
+safety cases, security tooling, target build coordination - connects to these
 five responsibilities without being implemented by GoMyRobotOS.
 
 ## Where to read next
