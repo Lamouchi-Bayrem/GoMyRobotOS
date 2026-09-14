@@ -20,9 +20,23 @@ copyright = "2026, The GoMyRobotOS Authors"
 version = "M0"
 release = "M0"
 
+language = "en"
+
 extensions = [
     "myst_parser",
+    "sphinx_copybutton",
 ]
+
+# Parity with the ROS 2 documentation build (ros2_documentation@lyrical):
+# keep the sidebar navigation fully expanded and unbounded in depth,
+# use the same highlight palette, and suppress the same copybutton lines.
+html_theme_options = {
+    "collapse_navigation": False,
+    "sticky_navigation": True,
+    "navigation_depth": -1,
+}
+pygments_style = "sphinx"
+copybutton_exclude = ".linenos, .gp, .go"
 
 html_theme = "sphinx_rtd_theme"
 html_title = "GoMyRobotOS Documentation"
