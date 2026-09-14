@@ -9,7 +9,7 @@ The split is precise:
   occurs* - the `recovery.*` contract fields, the recovery hooks, the
   escalation surface ([Recovery
   model](../architecture/recovery-model)).
-* **GoMyRobotFault defines:** *how the fault is generated* - the fault
+* **[GoMyRobotFault](https://gomyrobot.com/products/fault/) defines:** *how the fault is generated* - the fault
   library, the fault recipes, and the harnesses that apply them.
 
 ## Fault classes
@@ -82,7 +82,7 @@ correlation
 
 The science result is: *how well do software-level fault models predict
 containment and recovery behavior for space-relevant hardware fault
-mechanisms* - a GoMyRobotFault / GoMyRobotBench / GoMyRobotAssure research
+mechanisms* - a GoMyRobotFault / [GoMyRobotBench](https://gomyrobot.com/products/bench/) / [GoMyRobotAssure](https://gomyrobot.com/products/assure/) research
 stream, not a GoMyRobotOS subsystem
 ([Research problem 4](../research/research-problems)).
 

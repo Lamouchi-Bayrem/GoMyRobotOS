@@ -18,11 +18,11 @@ existing numbers are never re-used.
 | 0004 | x86-64 is the initial development/reference platform | Accepted |
 | 0005 | NG-ULTRA is the primary flight-oriented reference  | Accepted |
 | 0006 | HPSC is the initial RISC-V research target         | Accepted |
-| 0007 | GoMyRobotRT is separate from GoMyRobotOS           | Accepted |
+| 0007 | [GoMyRobotRT](https://gomyrobot.com/products/rt/) is separate from GoMyRobotOS           | Accepted |
 | 0008 | ROS 2 Rolling is the primary ROS 2 documentation reference | Accepted |
-| 0009 | GoMyRobotBSP owns target build/image realization   | Accepted |
+| 0009 | [GoMyRobotBSP](https://gomyrobot.com/products/bsp/) owns target build/image realization   | Accepted |
 | 0010 | Fault and radiation modeling belongs outside GoMyRobotOS | Accepted |
-| 0011 | GoMyRobotGuard must be independent of the failure domain it recovers | Accepted |
+| 0011 | [GoMyRobotGuard](https://gomyrobot.com/products/guard/) must be independent of the failure domain it recovers | Accepted |
 | 0012 | Verification and assurance are external platform services | Accepted |
 | 0013 | Documentation is versioned with the software       | Accepted |
 
@@ -154,7 +154,7 @@ existing numbers are never re-used.
   models, communication faults, radiation/SEU models) is a different
   discipline from fault *response policy*.
 * **Decision.** GoMyRobotOS declares what a partition does when a fault
-  occurs (contract `recovery.*`); GoMyRobotFault generates faults and
+  occurs (contract `recovery.*`); [GoMyRobotFault](https://gomyrobot.com/products/fault/) generates faults and
   models radiation effects; QEMU models *effects* and never reproduces
   radiation physics.
 * **Consequences.** "Radiation" and "robustness" are results of that
@@ -182,7 +182,7 @@ existing numbers are never re-used.
   evidence/interpretation boundaries.
 * **Decision.** GoMyRobotOS emits evidence inputs (config manifest,
   required properties, test requirements, deployment metadata, recovery
-  log); GoMyRobotVerify and GoMyRobotAssure are external consumers.
+  log); [GoMyRobotVerify](https://gomyrobot.com/products/verify/) and [GoMyRobotAssure](https://gomyrobot.com/products/assure/) are external consumers.
 * **Consequences.** The documentation claims no certification, WCET, or
   immunity from interference; the assurance data plane is documented as a
   data plane; future assurance statements must trace to external

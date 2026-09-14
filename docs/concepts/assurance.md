@@ -29,7 +29,7 @@ GoMyRobotOS
 
 * **GoMyRobotOS produces evidence inputs.** It does not judge them,
   complete them, or present them as an assurance case.
-* **GoMyRobotVerify and GoMyRobotAssure are external platform services.**
+* **[GoMyRobotVerify](https://gomyrobot.com/products/verify/) and [GoMyRobotAssure](https://gomyrobot.com/products/assure/) are external platform services.**
   The architecture treats them as consumers of GoMyRobotOS artifacts
   (ADR-0012), not as subsystems to embed.
 

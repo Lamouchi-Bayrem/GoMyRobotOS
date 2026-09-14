@@ -55,7 +55,7 @@ backend must satisfy.
 
 1. Backends consume the **IR**, never the raw contract format.
 2. Backend-specific identifiers never leak into the contract layer; they
-   live in the **backend profile** consumed by GoMyRobotBSP.
+   live in the **backend profile** consumed by [GoMyRobotBSP](https://gomyrobot.com/products/bsp/).
 3. A backend's documented capabilities are exactly its *validated*
    capabilities - no backend claims a semantic its target has not
    demonstrated.

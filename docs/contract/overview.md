@@ -83,7 +83,7 @@ Capability Manifest").
 
 1. **No backend syntax.** The contract must not contain `xen_dom0`,
    `xtratum_partition_id`, `xng_specific_option`, or similar. Backend data
-   lives in the **backend profile** consumed by GoMyRobotBSP.
+   lives in the **backend profile** consumed by [GoMyRobotBSP](https://gomyrobot.com/products/bsp/).
 2. **Machine-checkable intent.** Every field exists either to (a) bound a
    resource, (b) declare an ownership/permission, (c) order startup, or
    (d) declare a recovery/reassurance hook. If a field serves none of

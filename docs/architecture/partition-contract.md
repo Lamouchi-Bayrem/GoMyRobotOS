@@ -83,7 +83,7 @@ xng_specific_option
 
 unless the property genuinely cannot be expressed at the portable semantic
 layer. Backend-specific information belongs in the **backend profile**
-consumed by GoMyRobotBSP, not in the contract. This rule is what separates
+consumed by [GoMyRobotBSP](https://gomyrobot.com/products/bsp/), not in the contract. This rule is what separates
 "GoMyRobotOS is a platform" (ADR-0002, ADR-0003) from "GoMyRobotOS is a set
 of hypervisor configuration generators."
 

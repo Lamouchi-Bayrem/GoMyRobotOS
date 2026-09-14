@@ -55,7 +55,7 @@ NG-ULTRA.
   multi-channel interference question of Research Problem 2
   ([interference](../validation/interference)).
 * The **independent system controller** is the natural substrate for
-  GoMyRobotGuard's independence requirement on a RISC-V target
+  [GoMyRobotGuard](https://gomyrobot.com/products/guard/)'s independence requirement on a RISC-V target
   ([GoMyRobotGuard](../components/gomyrobotguard)).
 * As the third realization of the same conceptual partition, HPSC is what
   turns "portability" from a two-point comparison into a research claim

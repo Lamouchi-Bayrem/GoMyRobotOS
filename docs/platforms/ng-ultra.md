@@ -16,7 +16,7 @@ includes RTEMS and XtratuM/XNG support.
 NG-ULTRA is also explicitly **radiation-hardened-by-design**, with
 mechanisms such as EDAC, configuration scrubbing, and
 memory/configuration protection - hardware behavior that the
-fault-modeling stream (GoMyRobotFault) correlates against, and that no
+fault-modeling stream ([GoMyRobotFault](https://gomyrobot.com/products/fault/)) correlates against, and that no
 simulation can reproduce.
 
 ## Realization path

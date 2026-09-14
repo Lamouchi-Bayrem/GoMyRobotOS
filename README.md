@@ -135,7 +135,7 @@ specification, JSON Schema, and examples live in the documentation
 
 ## Relationship with GoMyRobotRT
 
-> **GoMyRobotRT executes the robotics workload.**
+> **[GoMyRobotRT](https://gomyrobot.com/products/rt/) executes the robotics workload.**
 > **GoMyRobotOS controls the execution environment in which that workload runs.**
 
 GoMyRobotRT remains a separate product: RTEMS, deterministic executors, robotics
@@ -183,7 +183,7 @@ execution guarantees. No ROS 2 support is implemented in this repository today
 Core research problems: portable partition semantics, multi-channel interference
 (CPU, cache, memory, DMA, interrupts, I/O), fault containment and recovery, and
 assurance portability. Space-environment fault modeling is researched through
-GoMyRobotFault / GoMyRobotBench / GoMyRobotAssure rather than inside GoMyRobotOS.
+[GoMyRobotFault](https://gomyrobot.com/products/fault/) / [GoMyRobotBench](https://gomyrobot.com/products/bench/) / [GoMyRobotAssure](https://gomyrobot.com/products/assure/) rather than inside GoMyRobotOS.
 See `docs/research/` in the documentation.
 
 ## Documentation

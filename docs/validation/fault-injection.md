@@ -5,7 +5,7 @@
 * **GoMyRobotOS** declares *what a partition must do when a fault occurs*
   (contract `recovery.*` - see
   [Recovery model](../architecture/recovery-model)).
-* **GoMyRobotFault** provides *how faults are generated* - the fault
+* **[GoMyRobotFault](https://gomyrobot.com/products/fault/)** provides *how faults are generated* - the fault
   recipes, injection harnesses, and models, including radiation-like
   models. See [GoMyRobotFault](../components/gomyrobotfault).
 
@@ -50,7 +50,7 @@ For each fault class, per partition, per backend:
   [Spatial isolation](spatial-isolation) for the boundary-violation
   variants),
 * **what is recorded** as evidence (the metadata consumed by
-  GoMyRobotVerify / GoMyRobotAssure).
+  [GoMyRobotVerify](https://gomyrobot.com/products/verify/) / [GoMyRobotAssure](https://gomyrobot.com/products/assure/)).
 
 That is the [recovery timing model]
 (recovery) - T_detect, T_contain, T_recover, T_resume.

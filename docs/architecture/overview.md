@@ -48,7 +48,7 @@ three deliverables frozen at M0:
 
 Everything below the `Target realization` line is *not* GoMyRobotOS: the
 target platforms realize the IR with backends, and the workloads (including
-GoMyRobotRT) run inside the managed partitions.
+[GoMyRobotRT](https://gomyrobot.com/products/rt/)) run inside the managed partitions.
 
 ## The surrounding ecosystem
 
@@ -111,7 +111,7 @@ Each sibling product has its own page in
 4. **Runtime integration** - hosting GoMyRobotRT (and other workloads)
    inside managed partitions
 5. **Partition-level recovery contract** - what a partition must do when
-   something goes wrong (implemented independently, by GoMyRobotGuard)
+   something goes wrong (implemented independently, by [GoMyRobotGuard](https://gomyrobot.com/products/guard/))
 
 Everything else connects to these five responsibilities but is not
 implemented by GoMyRobotOS.

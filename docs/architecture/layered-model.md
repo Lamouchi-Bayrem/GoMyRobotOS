@@ -61,7 +61,7 @@ health/recovery hooks.
 
 ### 5. GoMyRobotRT and the workload
 
-The *workload* layer. GoMyRobotRT executes robotics workloads on RTEMS,
+The *workload* layer. [GoMyRobotRT](https://gomyrobot.com/products/rt/) executes robotics workloads on RTEMS,
 including ROS 2 concepts; ROS 2 is the robotics middleware/workload
 environment and is **not** the architectural center of GoMyRobotOS. See
 [GoMyRobotRT](../components/gomyrobotrt) and

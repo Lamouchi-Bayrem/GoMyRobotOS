@@ -34,9 +34,9 @@ achievement claim.
 | Problem | Primary products involved                    | Milestones       |
 | ------- | ---------------------------------------------| ----------------- |
 | RP1     | GoMyRobotOS (contract/IR/backend comparison)  | M1 → M2 → M4, M6 |
-| RP2     | GoMyRobotOS + GoMyRobotBench (GMR-INTERF)      | M3               |
+| RP2     | GoMyRobotOS + [GoMyRobotBench](https://gomyrobot.com/products/bench/) (GMR-INTERF)      | M3               |
 | RP3     | GoMyRobotOS (recovery contract) + Fault + Guard | M1, M3, M5     |
-| RP4     | GoMyRobotFault / Bench / Assure (not GoMyRobotOS) | via M3/M5    |
+| RP4     | [GoMyRobotFault](https://gomyrobot.com/products/fault/) / Bench / Assure (not GoMyRobotOS) | via M3/M5    |
 | RP5     | GoMyRobotOS (evidence inputs) + Verify + Assure | M5             |
 
 ## Milestone mapping (summary)

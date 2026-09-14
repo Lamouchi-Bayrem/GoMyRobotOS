@@ -52,7 +52,7 @@ backend enforces them with what fidelity is a backend matter - and it is
 ## Runtime integration
 
 The software that *runs* inside a partition is the workload. For the
-flight-oriented reference stack, the workload is **GoMyRobotRT**:
+flight-oriented reference stack, the workload is **[GoMyRobotRT](https://gomyrobot.com/products/rt/)**:
 
 ```text
                 GoMyRobotOS
@@ -93,7 +93,7 @@ The two remain separate products
 
 Not every workload is a flight partition. The reference deployment shapes
 also include service domains running Linux (built, where applicable, by the
-GoMyRobotBSP target-build pipeline using Yocto/OpenEmbedded - see
+[GoMyRobotBSP](https://gomyrobot.com/products/bsp/) target-build pipeline using Yocto/OpenEmbedded - see
 [Yocto's role](../components/gomyrobotbsp)). GoMyRobotOS
 still manages those domains as partitions: startup order, recovery
 behavior, and health monitoring are contractual.

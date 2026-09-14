@@ -41,7 +41,7 @@ exhaustion, service-domain crash, management-domain failure, watchdog
 timeout, corrupted image.
 
 The last three - *service-domain crash*, *management-domain failure*,
-and *corrupted image* - are where the GoMyRobotGuard independence rule
+and *corrupted image* - are where the [GoMyRobotGuard](https://gomyrobot.com/products/guard/) independence rule
 (ADR-0011) gets exercised hardest: the recovery action must be taken by
 something that does **not** depend on the failed domain
 ([GoMyRobotGuard](../components/gomyrobotguard)).

@@ -33,7 +33,7 @@ The Final Architecture and its target matrix write the backend as
   specification, and vice versa
 * keeps the ADR-0003 rule visible: both are backend-level details,
   **neither** may leak into the contract or IR vocabulary
-* makes backend-profile authoring (GoMyRobotBSP) unambiguous: the profile
+* makes backend-profile authoring ([GoMyRobotBSP](https://gomyrobot.com/products/bsp/)) unambiguous: the profile
   carries the XNG/XtratuM-specific data, the contract does not
 
 ## Status and scope at M0

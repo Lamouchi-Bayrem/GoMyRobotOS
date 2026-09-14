@@ -58,7 +58,7 @@ partitions with different criticalities and runtimes, under one supervisor:
                GoMyRobotGuard
 ```
 
-Each column is partitioned independently; the Supervisor (GoMyRobotGuard)
+Each column is partitioned independently; the Supervisor ([GoMyRobotGuard](https://gomyrobot.com/products/guard/))
 must not depend exclusively on any single partition in order to recover the
 others - see [GoMyRobotGuard](../components/gomyrobotguard) and
 ADR-0011.

@@ -1,6 +1,6 @@
 # GoMyRobotAssure
 
-GoMyRobotAssure **consumes artifacts rather than being embedded inside
+[GoMyRobotAssure](https://gomyrobot.com/products/assure/) **consumes artifacts rather than being embedded inside
 GoMyRobotOS**. The flow it completes:
 
 ```text

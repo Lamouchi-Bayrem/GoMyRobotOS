@@ -1,6 +1,6 @@
 # GoMyRobotGuard
 
-GoMyRobotGuard remains a separate product because its responsibility is
+[GoMyRobotGuard](https://gomyrobot.com/products/guard/) remains a separate product because its responsibility is
 **independent recovery and runtime safety enforcement**
 ([ADR-0011](../development/architecture-decisions)).
 

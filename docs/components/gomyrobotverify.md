@@ -52,13 +52,13 @@ recovery timing) is documented in the
 
 ## Boundaries
 
-* GoMyRobotVerify decides *how* verification runs (harnesses,
+* [GoMyRobotVerify](https://gomyrobot.com/products/verify/) decides *how* verification runs (harnesses,
   environments, schedules, regression policy).
 * GoMyRobotOS decides *what* must be verified per partition (contract
   requirements) and *what ran* (deployment metadata).
 * Neither claims certification. Verification execution and result
   aggregation are engineering activities; any assurance statement derived
-  from them belongs to GoMyRobotAssure, and no assurance statement exists
+  from them belongs to [GoMyRobotAssure](https://gomyrobot.com/products/assure/), and no assurance statement exists
   at M0 at all.
 
 `Status: External product; integration with GoMyRobotOS artifacts is

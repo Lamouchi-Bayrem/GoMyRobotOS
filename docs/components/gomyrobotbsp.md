@@ -1,6 +1,6 @@
 # GoMyRobotBSP
 
-GoMyRobotBSP owns **target realization and build coordination**.
+[GoMyRobotBSP](https://gomyrobot.com/products/bsp/) owns **target realization and build coordination**.
 
 > **GoMyRobotBSP is the target realization/build system.** It is not
 > GoMyRobotOS.

@@ -1,6 +1,6 @@
 # GoMyRobotBench
 
-GoMyRobotBench owns the **physical experiment infrastructure** of the
+[GoMyRobotBench](https://gomyrobot.com/products/bench/) owns the **physical experiment infrastructure** of the
 GoMyRobot stack.
 
 ```text

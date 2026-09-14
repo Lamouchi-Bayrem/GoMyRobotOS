@@ -29,7 +29,7 @@ The hypervisor is a backend.
 | Partition Contract  | The machine-readable, hypervisor-independent description of a partition    |
 | IR                  | GoMyRobotOS Intermediate Representation - the stable internal model between contract and backends |
 | Backend             | A target-specific mechanism (e.g., Xen, XNG/XtratuM) that realizes the IR  |
-| Workload            | The software running inside a partition - e.g., a GoMyRobotRT ROS 2 workflow |
+| Workload            | The software running inside a partition - e.g., a [GoMyRobotRT](https://gomyrobot.com/products/rt/) ROS 2 workflow |
 | GoMyRobotRT         | The sibling product that executes the robotics workload inside a partition |
 
 ## Architecture in one diagram

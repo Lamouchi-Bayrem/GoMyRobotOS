@@ -86,13 +86,13 @@ The research question is not "does recovery happen" (the contract
 prescribes when it must) but: **can failures be detected, contained, and
 recovered independently of the failed partition - and is that
 independence *measured* rather than asserted?** The independence property
-is exactly the ADR-0011 boundary: GoMyRobotOS specifies, GoMyRobotGuard
+is exactly the ADR-0011 boundary: GoMyRobotOS specifies, [GoMyRobotGuard](https://gomyrobot.com/products/guard/)
 implements, and the measurement decides whether the two are doing their
 jobs.
 
 ## RP4 - Faults caused by the space environment
 
-> **Ownership: this is a GoMyRobotFault / GoMyRobotBench / /GoMyRobotAssure
+> **Ownership: this is a [GoMyRobotFault](https://gomyrobot.com/products/fault/) / [GoMyRobotBench](https://gomyrobot.com/products/bench/) / /[GoMyRobotAssure](https://gomyrobot.com/products/assure/)
 > research stream, not a GoMyRobotOS subsystem.**
 
 Question:

@@ -1,6 +1,6 @@
 # GoMyRobotRT
 
-GoMyRobotRT is the **deterministic flight runtime** of the GoMyRobot stack.
+[GoMyRobotRT](https://gomyrobot.com/products/rt/) is the **deterministic flight runtime** of the GoMyRobot stack.
 It remains a separate product from GoMyRobotOS.
 
 > **GoMyRobotRT executes the robotics workload.**

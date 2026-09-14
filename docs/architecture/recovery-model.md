@@ -58,7 +58,7 @@ The division of labor is therefore strict:
 
 * **GoMyRobotOS exposes recovery *semantics*** - contract fields,
   recovery hooks on the runtime model, and the escalation surface.
-* **GoMyRobotGuard implements the *independent recovery mechanism*** -
+* **[GoMyRobotGuard](https://gomyrobot.com/products/guard/) implements the *independent recovery mechanism*** -
   monitoring flight, service, and platform/hypervisor domains and taking
   restart / isolate / reset actions:
 

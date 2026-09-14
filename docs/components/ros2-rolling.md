@@ -34,7 +34,7 @@ Hardware
 
 The boundary is:
 
-> **ROS 2 defines the robotics software model; GoMyRobotRT makes that model
+> **ROS 2 defines the robotics software model; [GoMyRobotRT](https://gomyrobot.com/products/rt/) makes that model
 > usable in the deterministic flight runtime; GoMyRobotOS controls the
 > execution environment in which the workload runs.**
 

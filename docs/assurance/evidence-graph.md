@@ -29,7 +29,7 @@ GoMyRobotOS
        Evidence Graph
 ```
 
-The graph is *owned and structured by GoMyRobotAssure*. This page
+The graph is *owned and structured by [GoMyRobotAssure](https://gomyrobot.com/products/assure/)*. This page
 documents GoMyRobotOS's obligations as a **producer of graph inputs**:
 
 ## Graph inputs GoMyRobotOS emits

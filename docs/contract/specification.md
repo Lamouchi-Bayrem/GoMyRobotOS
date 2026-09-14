@@ -180,7 +180,7 @@ security:
 | `security.secure_boot_required`   | bool | yes  | whether the boot path must verify the image identity |
 
 `update` / `rollback` semantics (part of the conceptual minimum field set)
-are carried in v1 by GoMyRobotSecure / GoMyRobotBSP metadata; the contract
+are carried in v1 by [GoMyRobotSecure](https://gomyrobot.com/products/secure/) / [GoMyRobotBSP](https://gomyrobot.com/products/bsp/) metadata; the contract
 pins `image_identity` so those processes have a stable target.
 
 ## 8. Recovery
@@ -203,7 +203,7 @@ recovery:
 | `recovery.guard_independence_stage` | enum | no | `0` (co-resident software Guard) \| `1` (companion MCU / system controller) \| `2` (validated, per-fault timing in the evidence graph) - every recovery claim records the stage it was demonstrated under |
 
 Semantics are specified here; the independent mechanism that *enforces*
-them belongs to GoMyRobotGuard (ADR-0011) -
+them belongs to [GoMyRobotGuard](https://gomyrobot.com/products/guard/) (ADR-0011) -
 [Recovery model](../architecture/recovery-model) and [independence
 staging](../components/gomyrobotguard).
 
@@ -222,8 +222,8 @@ verification:
     - timing_bound
 ```
 
-These two groups are the traceability hooks consumed by GoMyRobotVerify
-and GoMyRobotAssure ([evidence
+These two groups are the traceability hooks consumed by [GoMyRobotVerify](https://gomyrobot.com/products/verify/)
+and [GoMyRobotAssure](https://gomyrobot.com/products/assure/) ([evidence
 model](../assurance/evidence-model)). Requirement identifiers follow the
 `GMR-<CONTEXT>-<AREA>-<NNN>` scheme; test names are stable slugs.
 

@@ -48,7 +48,7 @@ implemented inside it.
 
 ## 5. The robotics workload stays a workload
 
-ROS 2 is a workload environment carried by GoMyRobotRT. GoMyRobotOS manages
+ROS 2 is a workload environment carried by [GoMyRobotRT](https://gomyrobot.com/products/rt/). GoMyRobotOS manages
 the execution environment; it does not redefine robotics middleware
 concepts. Standard ROS 2 terminology is reused verbatim; the only ROS 2
 documentation reference is
@@ -61,7 +61,7 @@ documentation reference is
 The component responsible for recovering a failed component must not depend
 exclusively on the failed component. GoMyRobotOS therefore *specifies*
 recovery semantics in the contract; the *implementation* of independent
-recovery belongs to GoMyRobotGuard.
+recovery belongs to [GoMyRobotGuard](https://gomyrobot.com/products/guard/).
 
 *(ADR-0011)*
 
@@ -80,7 +80,7 @@ Xen-on-HPSC is a research track, not a claimed production backend.
 GoMyRobotOS produces machine-readable evidence inputs (configuration, image
 identity, required properties, test requirements, deployment metadata).
 Whether they support a safety argument is decided outside the platform, by
-GoMyRobotVerify and GoMyRobotAssure. No WCET, certification, or
+[GoMyRobotVerify](https://gomyrobot.com/products/verify/) and [GoMyRobotAssure](https://gomyrobot.com/products/assure/). No WCET, certification, or
 "interference-free" claims exist until measured.
 
 *(ADR-0012)*

@@ -7,7 +7,7 @@ ROS 2 Documentation Reference: Rolling
 Primary reference:
 https://docs.ros.org/en/rolling/
 
-GoMyRobotRT ROS 2 compatibility:
+[GoMyRobotRT](https://gomyrobot.com/products/rt/) ROS 2 compatibility:
 Not implemented (this repository does not contain GoMyRobotRT).
 Roadmap status: Planned research (see GoMyRobotRT page); no feature is
 claimed as supported until implemented and documented.
