@@ -1,6 +1,6 @@
 # GoMyRobotOS — Final Architecture
 
-## 1. Product definition
+# 1. Product definition
 
 ### GoMyRobotOS
 
@@ -95,6 +95,15 @@ The clean separation is:
 And:
 
 ```text
+GoMyRobotGuard
+       │
+       ├── independent recovery
+       └── runtime safety enforcement
+
+GoMyRobotSim
+       │
+       └── simulation of flight workloads
+
 GoMyRobotSecure
        │
        ├── secure boot
@@ -198,6 +207,8 @@ verification:
     - timing_bound
 ```
 
+The example is meant to be representative; the full field set (including cache policy and update/rollback) is defined in the contract specification.
+
 The contract describes **intent and constraints**, not backend syntax.
 
 ---
@@ -256,8 +267,8 @@ The initial GoMyRobotOS target matrix should be:
 
 | Target     | Role                            | Status   |
 | ---------- | ------------------------------- | -------- |
-| x86-64     | development/reference           | Primary  |
-| NG-ULTRA   | space/flight reference          | Primary  |
+| x86-64     | development/reference           | Planned  |
+| NG-ULTRA   | space/flight reference          | Planned  |
 | PIC64-HPSC | next-generation RISC-V research | Research |
 
 ## x86-64
@@ -349,7 +360,7 @@ Its responsibility is:
 ```text
 GoMyRobotRT
  ├── RTEMS
- ├── nano-ros
+ ├── nano-ros (legacy name for ROS 2 on RTEMS support)
  ├── rcl/rclcpp
  ├── deterministic executors
  ├── robotics middleware
@@ -867,7 +878,7 @@ memory corruption
 configuration corruption
 transient execution faults
 communication corruption
-watchdog events
+watchdog timeouts (indicate a fault, not cause it)
 ```
 
 QEMU and simulation provide the early stage.
@@ -1265,7 +1276,7 @@ The final architecture is therefore:
              ▼               ▼                ▼
           x86-64         NG-ULTRA           HPSC
              │               │                │
-            Xen          XNG/XtratuM       Xen / WG*
+            Xen          XNG/XtratuM       Xen / WorldGuard*
              │               │                │
              └───────────────┼────────────────┘
                              ▼
@@ -1310,7 +1321,7 @@ And the deeper research statement is:
 
 > **GoMyRobotOS investigates whether partition semantics and their associated evidence can remain portable and measurable across heterogeneous space-computing architectures and separation mechanisms.**
 
-That is a cleaner architecture than the original v8.
+That is a cleaner architecture than the earlier design iterations (v8 and before).
 
 The important architectural boundaries are now explicit:
 
