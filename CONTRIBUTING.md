@@ -23,11 +23,12 @@ as a specification (milestone **M0**), and no target system has been implemented
 
 ## Non-negotiable documentation rules
 
-These rules come from the documentation policy (`docs.md`) and apply to every
-contribution, including prose, schemas, and examples:
+These rules apply to every contribution, including prose, schemas, and
+examples:
 
-1. **Single source of truth.** `GoMyRobotOS.md` (Final Architecture) is the
-   primary source of truth. Do not invent architecture.
+1. **Single source of truth.** The documentation sources in this
+   repository (under `docs/`) are the primary source of truth. Do not
+   invent architecture.
 2. **Never invent.** Never introduce APIs, command-line tools, hardware support,
    hypervisor support, RTEMS/ROS 2 support claims, certification claims, safety
    properties, benchmark results, or timing results that the repository does not
@@ -72,7 +73,7 @@ documentation.
 ## Reporting problems
 
 * Architecture inconsistencies: file an issue referencing the conflicting
-  sections of `GoMyRobotOS.md`.
+  documentation pages.
 * Documentation build failures: issues are detected automatically by the
   `docs` GitHub Action (`.github/workflows/docs.yml`).
 

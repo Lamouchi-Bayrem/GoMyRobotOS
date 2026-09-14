@@ -14,7 +14,7 @@ partition:
   criticality: high
   trust_domain: flight
   # Capability tags for the backend Capability Manifest check
-  # (see GoMyRobotOS.md section 5). Partial match = waiver in the
+  # (see docs/architecture/backend-model for the check). Partial match = waiver in the
   # evidence graph; no match = build failure.
   capabilities_required:
     - cache_partitioning

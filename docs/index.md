@@ -15,9 +15,9 @@ therefore uses one of the labels: `Stable`, `Experimental`, `Research`,
 
 ## How to read this documentation
 
-* The architectural source of truth is the repository file `GoMyRobotOS.md`
-  (GoMyRobotOS - Final Architecture). These pages document that architecture;
-  they never supersede it.
+* These pages **are** the documentation source of truth for GoMyRobotOS -
+  the architecture, the contract, and the process are defined here and in
+  the accompanying schema and examples.
 * **ROS 2 Rolling** is the authoritative external reference for all ROS 2
   concepts: see the official
   [ROS 2 Rolling documentation](https://docs.ros.org/en/rolling/).
@@ -62,6 +62,7 @@ architecture/ir
 architecture/backend-model
 architecture/runtime-model
 architecture/recovery-model
+architecture/frozen-baseline
 ```
 
 ```{toctree}

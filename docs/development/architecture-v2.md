@@ -4,12 +4,12 @@
 This document is **not** the current baseline.
 ```
 
-The v2 architecture draft (`gomyrobotos-architecture-v2.md` at the
-repository root) is a richer, heavier specification that the team has
-reviewed but **not adopted** as the architecture baseline. The frozen M0
-architecture remains `GoMyRobotOS.md` (repository root): its 6
-milestones, its three targets (x86-64 / NG-ULTRA / PIC64-HPSC), and the
-abstractions defined there.
+The v2 architecture draft is a richer, heavier specification that the team
+has reviewed but **not adopted** as the architecture baseline. It has been
+removed from the repository after its selected sections were integrated;
+the frozen M0 architecture is documented in this site - its 6 milestones,
+its three targets (x86-64 / NG-ULTRA / PIC64-HPSC), and the abstractions
+defined here.
 
 Five ideas from the v2 draft were selected for integration into the M0
 baseline; their normative text now lives in the pages this site points
@@ -27,10 +27,9 @@ Explicitly **not** pulled into the core v1 baseline (and the M0
 architecture must not imply them): `power` as an active contract concept,
 `fleet` as an abstraction, transport-mechanism requirements in the
 contract, clause-level certification mapping as a hard dependency, and
-hardware-specific assumptions in the core architecture. See section 33
-("Scope notes for the frozen baseline") of `GoMyRobotOS.md` in the
-repository root.
+hardware-specific assumptions in the core architecture. The full
+exclusion list is normative in the
+[frozen baseline scope notes](../architecture/frozen-baseline).
 
-The v2 file is kept at the repository root as a record of the design
-space discussed; do not edit it to follow the baseline (nor the reverse)
-- future intake happens by ADR against the M0 baseline.
+Future intake of v2-class ideas happens by ADR against the documented
+baseline.

@@ -19,7 +19,6 @@ today, and none of the described targets host a GoMyRobotOS deployment.
 
 The M0 deliverables are specification artifacts, all in this repository:
 
-* The Final Architecture document: `GoMyRobotOS.md`
 * This documentation (Sphinx + MyST), including the Partition Contract v1
   specification: [Specification](../contract/specification)
 * The Partition Contract JSON Schema:

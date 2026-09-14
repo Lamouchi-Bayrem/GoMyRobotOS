@@ -191,8 +191,8 @@ See `docs/research/` in the documentation.
 * Documentation home: <https://gomyrobotos.readthedocs.io>
   (Sphinx + MyST Markdown, hosted on Read the Docs, rebuilt by CI on every push)
 * Repository: <https://github.com/gomyrobot/GoMyRobotOS>
-* Architectural source of truth: `GoMyRobotOS.md` (GoMyRobotOS - Final Architecture)
-* Documentation policy: `docs.md` (Documentation Implementation Prompt)
+* Architectural, contract, and process documentation: this site
+  (Sphinx + MyST sources under `docs/`, built by CI and hosted above)
 
 ## Contributing
 
