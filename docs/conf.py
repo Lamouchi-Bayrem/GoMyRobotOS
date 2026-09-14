@@ -34,6 +34,9 @@ html_theme_options = {
     "collapse_navigation": False,
     "sticky_navigation": True,
     "navigation_depth": -1,
+    # Breadcrumb link target: "edit" -> the GitHub *edit* screen of the
+    # exact source file of each page (default "blob" only shows the file).
+    "vcs_pageview_mode": "edit",
 }
 pygments_style = "sphinx"
 copybutton_exclude = ".linenos, .gp, .go"
@@ -45,5 +48,16 @@ html_logo = "_static/gomyrobotos-logo.svg"
 # Content-width overlay, kept identical to the ROS 2 documentation
 # site (docs.ros.org/_static/custom.css).
 html_css_files = ["custom.css"]
+
+# "View on GitHub" and "Edit on GitHub" links in the theme footer:
+# every rendered page links to its own source file in the repository.
+# Works identically for the GitHub Pages build and Read the Docs.
+html_context = {
+    "display_github": True,
+    "github_user": "gomyrobot",
+    "github_repo": "GoMyRobotOS",
+    "github_version": "main",
+    "conf_py_path": "/docs/",
+}
 
 exclude_patterns = ["Thumbs.db", ".DS_Store", "**/.DS_Store", "_build"]

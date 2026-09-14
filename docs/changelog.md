@@ -73,6 +73,10 @@ documentation and specification changes.
   `.github/workflows/gh-pages.yml`: the site is now deployed through
   the Pages infrastructure (Settings → Pages → Source: GitHub
   Actions) and no longer pushed to a `gh-pages` branch.
+* Every documentation page now carries a GitHub link in the breadcrumb
+  that opens the edit screen of exactly that page's source file
+  (`html_context` + `vcs_pageview_mode: edit`, repo
+  `gomyrobot/GoMyRobotOS`, branch `main`, sources under `docs/`).
 
 ### Fixed
 
