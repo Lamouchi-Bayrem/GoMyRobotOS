@@ -6,10 +6,10 @@ Fault injection and fault modeling **remain outside GoMyRobotOS**
 The split is precise:
 
 * **GoMyRobotOS defines:** *what the partition should do when a fault
-  occurs* - the `recovery.*` contract fields, the recovery hooks, the
+  occurs*, the `recovery.*` contract fields, the recovery hooks, the
   escalation surface ([Recovery
   model](../architecture/recovery-model)).
-* **[GoMyRobotFault](https://gomyrobot.com/products/fault/) defines:** *how the fault is generated* - the fault
+* **[GoMyRobotFault](https://gomyrobot.com/products/fault/) defines:** *how the fault is generated*, the fault
   library, the fault recipes, and the harnesses that apply them.
 
 ## Fault classes
@@ -28,7 +28,7 @@ image corruption
 ```
 
 Validating GoMyRobotOS's recovery semantics against these classes is one of
-the declared verification areas - see
+the declared verification areas, see
 [Validation: Fault injection](../validation/fault-injection).
 
 ## Radiation belongs here, not in GoMyRobotOS
@@ -52,7 +52,7 @@ Radiation / SEU / TID models
      verification evidence
 ```
 
-QEMU can therefore *model radiation-induced fault effects* - but QEMU does
+QEMU can therefore *model radiation-induced fault effects*, but QEMU does
 **not** reproduce the physical radiation environment. The documentation
 never describes QEMU as "radiation", and never describes a QEMU experiment
 as radiation-qualification evidence.
@@ -82,7 +82,7 @@ correlation
 
 The science result is: *how well do software-level fault models predict
 containment and recovery behavior for space-relevant hardware fault
-mechanisms* - a GoMyRobotFault / [GoMyRobotBench](https://gomyrobot.com/products/bench/) / [GoMyRobotAssure](https://gomyrobot.com/products/assure/) research
+mechanisms*, a GoMyRobotFault / [GoMyRobotBench](https://gomyrobot.com/products/bench/) / [GoMyRobotAssure](https://gomyrobot.com/products/assure/) research
 stream, not a GoMyRobotOS subsystem
 ([Research problem 4](../research/research-problems)).
 

@@ -5,7 +5,7 @@ This is the canonical v1 example carried in the M0 baseline
 site). It is identical in
 `examples/x86-64/flight-control.yml`,
 `examples/ng-ultra/flight-control.yml`, and
-`examples/hpsc/flight-control.yml` - the whole point being that *one*
+`examples/hpsc/flight-control.yml`, the whole point being that *one*
 conceptual partition is described once, for three targets.
 
 ```{warning} Illustrative contract
@@ -101,17 +101,17 @@ verification:
 | `recovery`           | partition-level recovery contract                           |
 | `requirements`/`verification` | assurance traceability                             |
 
-Target-side reading (how each target *may* realize this contract - always
+Target-side reading (how each target *may* realize this contract, always
 subject to backend documents and validation):
 
-* **x86-64** [platform](../../platforms/x86-64) - Xen backend (M1):
+* **x86-64** [platform](../../platforms/x86-64): Xen backend (M1):
   pinned vcpu, pinned memory, PIRQ/direct device assignment, Inter-Processing
   Bounded Channel (this wording is a target-specific expression, not part of
   the contract).
-* **NG-ULTRA** [platform](../../platforms/ng-ultra) - XNG/XtratuM
+* **NG-ULTRA** [platform](../../platforms/ng-ultra): XNG/XtratuM
   backend (M2): partition slot, static scheduler, dedicated IRQ routing.
-* **HPSC** [platform](../../platforms/hpsc) - research (M4): hardware
+* **HPSC** [platform](../../platforms/hpsc): research (M4): hardware
   WorldGuard partitioning plus Xen feasibility work.
 
 The specific realization is documented per backend
-([backends](../../backends/overview)), **never** in the contract - and always labeled with its current status.
+([backends](../../backends/overview)), **never** in the contract, and always labeled with its current status.

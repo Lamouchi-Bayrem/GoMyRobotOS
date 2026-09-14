@@ -1,4 +1,4 @@
-# Architecture v2 (working draft) - superseded for the M0 baseline
+# Architecture v2 (working draft), superseded for the M0 baseline
 
 ```{attention}
 This document is **not** the current baseline.
@@ -7,7 +7,7 @@ This document is **not** the current baseline.
 The v2 architecture draft is a richer, heavier specification that the team
 has reviewed but **not adopted** as the architecture baseline. It has been
 removed from the repository after its selected sections were integrated;
-the frozen M0 architecture is documented in this site - its 6 milestones,
+the frozen M0 architecture is documented in this site, its 6 milestones,
 its three targets (x86-64 / NG-ULTRA / PIC64-HPSC), and the abstractions
 defined here.
 

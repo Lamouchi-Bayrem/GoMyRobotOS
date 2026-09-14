@@ -1,4 +1,4 @@
-# Partition Contract v1 - Specification
+# Partition Contract v1 Specification
 
 This is the field reference for **Partition Contract v1**, frozen with
 milestone M0. Fields are grouped as they appear in YAML. Normative status:
@@ -8,7 +8,7 @@ this page; if the two ever disagree, an ADR decides which side changes -
 they must never silently diverge.
 
 The running example in this spec is
-`examples/*/flight-control.yml` - see
+`examples/*/flight-control.yml`, see
 [the annotated example](examples/flight-control).
 
 ## 1. Identity
@@ -27,9 +27,9 @@ partition:
 | ------------------------ | ------ | -------- | -------------------------------------------- |
 | `partition.id`             | string | yes  | unique partition identifier; must stay stable across targets |
 | `partition.name`           | string | yes  | display name                                 |
-| `partition.criticality`    | enum   | yes  | `low`, `medium`, `high`, `critical` - drives how strictly the backend must realize the isolation semantics |
+| `partition.criticality`    | enum   | yes  | `low`, `medium`, `high`, `critical`, drives how strictly the backend must realize the isolation semantics |
 | `partition.trust_domain`   | string | yes  | `flight`, `service`, `platform`, or custom   |
-| `partition.capabilities_required` | str[] | no | capability tags the target backend must cover (checked against its Capability Manifest; partial match = waiver, no match = build fails - no silent semantic downgrade) |
+| `partition.capabilities_required` | str[] | no | capability tags the target backend must cover (checked against its Capability Manifest; partial match = waiver, no match = build fails, no silent semantic downgrade) |
 
 ```{note}
 `criticality` and `trust_domain` are *semantic* tags. The contract does not
@@ -63,11 +63,11 @@ execution:
 | `execution.timing_budget.wcet_evidence_class` | enum | no | `proven` (formal/static WCET analysis) \| `measured` (validated under a defined stress pattern) \| `unbounded` |
 
 The timing budget is a **declaration** of the required temporal envelope.
-Whether the target realizes it (and with what fidelity) is measured - see
+Whether the target realizes it (and with what fidelity) is measured, see
 [Temporal isolation](../validation/temporal-isolation). Never treat the
 presence of a budget as a WCET certification, and never document
 `measured` as `proven`: the two classes mean different things
-([evidence model - timing evidence
+([evidence model, timing evidence
 classification](../assurance/evidence-model)).
 
 ## 3. Memory
@@ -136,14 +136,14 @@ communication:
 | `communication.endpoints[].name`                 | str  | yes  | endpoint label           |
 | `communication.endpoints[].max_message_size`     | int  | yes  | bytes per message        |
 | `communication.endpoints[].max_rate_hz`          | num  | yes  | maximum message rate (Hz) |
-| `communication.endpoints[].channel`               | enum | no   | `sampling` (last-value-wins) \| `queuing` (bounded queue) - a channel class, not a transport |
+| `communication.endpoints[].channel`               | enum | no   | `sampling` (last-value-wins) \| `queuing` (bounded queue), a channel class, not a transport |
 | `communication.endpoints[].latency_budget_us`     | int  | no   | end-to-end latency budget (µs) |
 | `communication.endpoints[].buffer_ownership`      | enum | no   | `producer` \| `consumer` \| `shared` |
 | `communication.endpoints[].overflow_policy`       | enum | no   | queuing channels: `block` \| `drop_oldest` \| `drop_newest` \| `fault` |
 
 The channel class is the *semantic* of the endpoint; which mechanism
 implements it on a target (shared-memory region, hypervisor-mediated port,
-grant table, ...) is backend implementation detail - see [contract
+grant table, ...) is backend implementation detail, see [contract
 overview](overview).
 
 Communication between partitions runs **only** over declared endpoints.
@@ -163,7 +163,7 @@ startup:
 | `startup.boot_artifact`    | string | yes  | image/artifact identifier     |
 | `startup.dependencies`     | str[]  | yes  | partition ids that must start first (empty = none) |
 
-`dependencies` together with `boot_artifact` defines the boot order - the
+`dependencies` together with `boot_artifact` defines the boot order, the
 contractual "startup" concern from the core definition.
 
 ## 7. Security
@@ -200,7 +200,7 @@ recovery:
 | `recovery.restart_policy`     | str  | yes  | `restart` \| `safe_state` \| escalate-style policy |
 | `recovery.safe_state`         | str  | yes  | predefined fallback state               |
 | `recovery.escalation_policy`  | str  | yes  | who decides on failed recovery (e.g. `supervisor`) |
-| `recovery.guard_independence_stage` | enum | no | `0` (co-resident software Guard) \| `1` (companion MCU / system controller) \| `2` (validated, per-fault timing in the evidence graph) - every recovery claim records the stage it was demonstrated under |
+| `recovery.guard_independence_stage` | enum | no | `0` (co-resident software Guard) \| `1` (companion MCU / system controller) \| `2` (validated, per-fault timing in the evidence graph), every recovery claim records the stage it was demonstrated under |
 
 Semantics are specified here; the independent mechanism that *enforces*
 them belongs to [GoMyRobotGuard](https://gomyrobot.com/products/guard/) (ADR-0011) -
@@ -231,9 +231,9 @@ model](../assurance/evidence-model)). Requirement identifiers follow the
 
 The contract intentionally does **not** express:
 
-* backend identifiers (`xen_domN`, `xtratum_partition_id`, …) - they live
+* backend identifiers (`xen_domN`, `xtratum_partition_id`, …), they live
   in the **backend profile**
-* image *contents* - only image *identity*
-* network-level topology - only declared endpoints with bounds
-* any certification claim - the contract is evidence *input*, not
+* image *contents*, only image *identity*
+* network-level topology, only declared endpoints with bounds
+* any certification claim, the contract is evidence *input*, not
   evidence

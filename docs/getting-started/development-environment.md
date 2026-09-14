@@ -18,7 +18,7 @@ Local build: see [Installation](installation).
 
 ## Planned platform environments (from milestone M1 onward)
 
-### x86-64 - development and reference
+### x86-64 development and reference
 
 `Status: Development / Reference` as a platform role; backend implementation
 `Status: Planned` (M1).
@@ -34,7 +34,7 @@ moving to space targets. It provides:
 * backend development
 * reproducible regression tests
 
-### NG-ULTRA - flight reference
+### NG-ULTRA flight reference
 
 `Status: Flight Reference / Development` as a platform role; integration
 work `Status: Planned` (M2).
@@ -42,7 +42,7 @@ work `Status: Planned` (M2).
 The M0 baseline records that NG-ULTRA (four Cortex-R52 cores) has an
 established ecosystem around RTEMS and XtratuM/XNG, and that existing RTEMS
 work lists an ARMv8-R NG-ULTRA BSP. The NG-ULTRA development environment
-therefore builds on that ecosystem - the GoMyRobotOS integration itself is
+therefore builds on that ecosystem, the GoMyRobotOS integration itself is
 the planned work:
 
 ```text
@@ -59,7 +59,7 @@ RTEMS
 GoMyRobotRT
 ```
 
-### PIC64-HPSC - RISC-V research
+### PIC64-HPSC RISC-V research
 
 `Status: Research` (M4).
 
@@ -67,7 +67,7 @@ HPSC work is a research track: RTEMS baseline, WorldGuard investigation,
 and Xen feasibility (host bring-up, domain creation, virtual timer,
 interrupts, memory, RTEMS guest). Xen's RISC-V guest support is an active
 development area, so HPSC must never be described as a supported production
-platform - see [HPSC](../platforms/hpsc).
+platform, see [HPSC](../platforms/hpsc).
 
 ```{note}
 No target-environment toolchain (cross compilers, QEMU machine types,

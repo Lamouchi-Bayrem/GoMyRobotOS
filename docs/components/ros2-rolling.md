@@ -71,7 +71,7 @@ explicitly required, and even then it is labeled as such.
 
   A GoMyRobot-specific abstraction may be introduced only when there is a
   real architectural reason (e.g., the *partition contract*, which has none
-  of these names - it is about execution domains, not ROS 2 objects).
+  of these names, it is about execution domains, not ROS 2 objects).
 
 ## When GoMyRobotRT behavior differs from ROS 2
 

@@ -1,7 +1,7 @@
 # Assurance: Reproducibility
 
 Reproducibility is the minimum discipline that makes any assurance claim
-*reviewable* - if a run cannot be reproduced, its evidence is an
+*reviewable*, if a run cannot be reproduced, its evidence is an
 assertion.
 
 ## Three reproducibility pillars in GoMyRobotOS
@@ -10,7 +10,7 @@ assertion.
 
 The same contract + the same backend + the same target hardware profile
 must produce the same booted system. M1 lists "reproducible boot" as a
-test *before* anything fancier - and the M1 gate is "boots and isolates
+test *before* anything fancier, and the M1 gate is "boots and isolates
 partitions": a system that cannot reproducibly boot has no further
 validation credibility at all.
 

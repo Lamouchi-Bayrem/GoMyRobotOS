@@ -21,7 +21,7 @@ NG-ULTRA Backend
 
 Both together satisfy the backend's mapping duties
 (IR → target mechanisms: cpus, memory, interrupts, DMA, devices, channels,
-boot ordering) - see [Backend
+boot ordering), see [Backend
 model](../architecture/backend-model).
 
 ## Why a separate page

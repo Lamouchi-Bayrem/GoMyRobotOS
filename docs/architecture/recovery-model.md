@@ -45,7 +45,7 @@ T_detect  T_contain  T_recover  T_resume
 ```
 
 The frozen M0 baseline requires the end result to be a **measurable
-recovery model** - not merely a statement that "recovery exists". Until
+recovery model**, not merely a statement that "recovery exists". Until
 milestone M3+ produces these measurements, no recovery time claims exist
 in this documentation.
 
@@ -56,7 +56,7 @@ in this documentation.
 
 The division of labor is therefore strict:
 
-* **GoMyRobotOS exposes recovery *semantics*** - contract fields,
+* **GoMyRobotOS exposes recovery *semantics***, contract fields,
   recovery hooks on the runtime model, and the escalation surface.
 * **[GoMyRobotGuard](https://gomyrobot.com/products/guard/) implements the *independent recovery mechanism*** -
   monitoring flight, service, and platform/hypervisor domains and taking
@@ -82,7 +82,7 @@ The division of labor is therefore strict:
 
 On HPSC this boundary has hardware teeth: the device includes an
 independent system-controller processor suitable for monitoring and fault
-management - a candidate for Guard's independence (research track, M4).
+management, a candidate for Guard's independence (research track, M4).
 
 ## Recovery as assurance evidence
 

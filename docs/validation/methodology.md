@@ -1,10 +1,10 @@
-# Validation - Methodology
+# Validation Methodology
 
 This section describes how GoMyRobotOS validates its *own* claims:
 reproducible boot, functional runtime validation, temporal isolation,
 spatial isolation, interference, fault injection, and recovery timing.
 
-## First rule: what validation is - and is not
+## First rule: what validation is and is not
 
 ```{warning} No certification claims exist at M0
 GoMyRobotOS validation is an engineering research methodology. The

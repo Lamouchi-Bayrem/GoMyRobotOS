@@ -28,10 +28,10 @@ target artifacts   target artifacts
 
 * The **contract** is author-facing, human-auditable intent.
 * The **IR (GoMyRobotOS Intermediate Representation)** is the stable
-  internal representation shared by all backends - see
+  internal representation shared by all backends, see
   [IR](../architecture/ir).
 * A **backend** is the only layer allowed to know about Xen, XtratuM/XNG,
-  or raw hardware - see [Backend model](../architecture/backend-model).
+  or raw hardware, see [Backend model](../architecture/backend-model).
 
 ## What "execution" means per partition
 
@@ -45,7 +45,7 @@ A partition's execution profile is fixed by its contract:
 
 Deterministic execution properties (fixed priorities, bounded budgets,
 static allocation) are *declared in the contract*; whether the target
-backend enforces them with what fidelity is a backend matter - and it is
+backend enforces them with what fidelity is a backend matter, and it is
 *measured in validation*, not assumed (see
 [Temporal isolation](../validation/temporal-isolation)).
 
@@ -80,7 +80,7 @@ flight-oriented reference stack, the workload is **[GoMyRobotRT](https://gomyrob
      RTEMS     ROS 2 APIs
 ```
 
-* **GoMyRobotOS** hosts or consumes GoMyRobotRT - it controls the
+* **GoMyRobotOS** hosts or consumes GoMyRobotRT, it controls the
   execution environment.
 * **GoMyRobotRT** executes the robotics workload (deterministic executors,
   robotics middleware including ROS 2 concepts, hardware abstraction) -
@@ -93,7 +93,7 @@ The two remain separate products
 
 Not every workload is a flight partition. The reference deployment shapes
 also include service domains running Linux (built, where applicable, by the
-[GoMyRobotBSP](https://gomyrobot.com/products/bsp/) target-build pipeline using Yocto/OpenEmbedded - see
+[GoMyRobotBSP](https://gomyrobot.com/products/bsp/) target-build pipeline using Yocto/OpenEmbedded, see
 [Yocto's role](../components/gomyrobotbsp)). GoMyRobotOS
 still manages those domains as partitions: startup order, recovery
 behavior, and health monitoring are contractual.

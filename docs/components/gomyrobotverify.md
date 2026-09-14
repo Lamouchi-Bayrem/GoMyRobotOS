@@ -36,9 +36,9 @@ GoMyRobotOS
 
 Every partition contract carries the traceability hooks Verify needs:
 
-* `requirements:` - requirement identifiers the partition must satisfy
+* `requirements:`, requirement identifiers the partition must satisfy
   (e.g., `GMR-FLIGHT-CPU-001`, `GMR-FLIGHT-MEM-002` in the v1 example)
-* `verification.required_tests:` - the tests the contract declares as
+* `verification.required_tests:`, the tests the contract declares as
   mandatory (e.g., `cpu_isolation`, `memory_isolation`, `irq_isolation`,
   `timing_bound` in the v1 example)
 * configuration manifest, image identity, and deployment artifacts -

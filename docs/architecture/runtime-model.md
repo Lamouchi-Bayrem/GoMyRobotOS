@@ -29,9 +29,9 @@ GoMyRobotRT
 ROS 2 (Rolling-based) robotics workload
 ```
 
-GoMyRobotRT's own responsibilities - RTEMS integration, nano-ros,
+GoMyRobotRT's own responsibilities, RTEMS integration, nano-ros,
 rcl/rclcpp, deterministic executors, robotics middleware, hardware
-abstraction, flight application interfaces - are documented in
+abstraction, flight application interfaces, are documented in
 [GoMyRobotRT](../components/gomyrobotrt). From the runtime-model
 perspective, GoMyRobotRT is a *workload artifact*: its boot path, resource
 needs, and health behavior are declared in the hosting partition's
@@ -41,24 +41,24 @@ contract.
 
 For each managed partition, GoMyRobotOS's runtime side provides:
 
-* **deployment** - placing boot artifacts (from the contract's
+* **deployment**, placing boot artifacts (from the contract's
   `startup.boot_artifact`) into the backend's boot flow, in dependency
   order (from `startup.dependencies`),
-* **lifecycle** - start, stop, restart as contractual recovery actions
+* **lifecycle**, start, stop, restart as contractual recovery actions
   prescribe (implemented by [GoMyRobotGuard](https://gomyrobot.com/products/guard/), *specified* here),
-* **health** - partition-level health observation usable by the recovery
+* **health**, partition-level health observation usable by the recovery
   mechanism,
-* **metadata** - the deployment manifest and hashes an assurance process
+* **metadata**, the deployment manifest and hashes an assurance process
   consumes (the flow to [GoMyRobotVerify](https://gomyrobot.com/products/verify/) / [GoMyRobotAssure](https://gomyrobot.com/products/assure/)).
 
-`Status: Planned` - the runtime layer is implemented at M1-M2 together
+`Status: Planned`, the runtime layer is implemented at M1-M2 together
 with the first backends. No runtime interfaces are defined yet beyond the
 contract fields above.
 
 ## Service domains (Linux)
 
 Deploys that include a service domain use a Linux image built by
-**[GoMyRobotBSP](https://gomyrobot.com/products/bsp/)** - which is where Yocto/OpenEmbedded lives when a Linux
+**[GoMyRobotBSP](https://gomyrobot.com/products/bsp/)**, which is where Yocto/OpenEmbedded lives when a Linux
 domain exists:
 
 ```text

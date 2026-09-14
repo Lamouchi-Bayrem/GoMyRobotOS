@@ -3,9 +3,9 @@
 ## The boundary, stated again
 
 * **GoMyRobotOS** declares *what a partition must do when a fault occurs*
-  (contract `recovery.*` - see
+  (contract `recovery.*`, see
   [Recovery model](../architecture/recovery-model)).
-* **[GoMyRobotFault](https://gomyrobot.com/products/fault/)** provides *how faults are generated* - the fault
+* **[GoMyRobotFault](https://gomyrobot.com/products/fault/)** provides *how faults are generated*, the fault
   recipes, injection harnesses, and models, including radiation-like
   models. See [GoMyRobotFault](../components/gomyrobotfault).
 
@@ -46,14 +46,14 @@ For each fault class, per partition, per backend:
   timeout, …),
 * **did the contractual action happen** (`restart` / `safe_state` /
   escalation) *and* within what measured time,
-* **did the other partitions survive** (containment - see
+* **did the other partitions survive** (containment, see
   [Spatial isolation](spatial-isolation) for the boundary-violation
   variants),
 * **what is recorded** as evidence (the metadata consumed by
   [GoMyRobotVerify](https://gomyrobot.com/products/verify/) / [GoMyRobotAssure](https://gomyrobot.com/products/assure/)).
 
 That is the [recovery timing model]
-(recovery) - T_detect, T_contain, T_recover, T_resume.
+(recovery), T_detect, T_contain, T_recover, T_resume.
 
 ## Radiation: the honesty rule
 
@@ -81,7 +81,7 @@ implementation**, or the **assurance profile**:
 | --------------------------------------- | --------------------------------------------------- |
 | SEU: SRAM / register corruption         | Hardware Profile (ECC / scrubbing) + Guard re-verification |
 | Configuration / hypervisor-state corruption | Guard re-verification on watchdog cadence       |
-| Single-event latchup                    | power-domain handling (current limiting, power cycling) under Guard control - not a software partitioning feature |
+| Single-event latchup                    | power-domain handling (current limiting, power cycling) under Guard control, not a software partitioning feature |
 | Common-mode hypervisor failure          | only claimable from Guard Stage 1 onwards ([GoMyRobotGuard](../components/gomyrobotguard)) |
 
 GoMyRobotOS does not become a hardware platform specification.

@@ -41,11 +41,11 @@ GMR-FLIGHT-MEM-002  →  memory.regions       →   memory_isolation    →   (M
 
 ## Why this shape
 
-1. **Machine-readable**: every input is YAML/JSON/hashes, not prose - an
+1. **Machine-readable**: every input is YAML/JSON/hashes, not prose, an
    assurance process can consume it without a human in the loop.
 2. **Portable by construction**: none of the inputs are backend-specific
    (the backend *version* is a fact about the realization, not about the
-   contract) - which is what makes
+   contract), which is what makes
    [assurance portability](evidence-graph) a researchable question.
 3. **Final at the partition boundary**: the inputs are *complete at the
    partition level*; external products decide aggregation and argument
@@ -56,9 +56,9 @@ GMR-FLIGHT-MEM-002  →  memory.regions       →   memory_isolation    →   (M
 Every timing claim in the evidence graph carries an explicit evidence
 class:
 
-* **proven** - backed by a formal / static WCET analysis
-* **measured** - validated by benchmarking under a defined stress pattern
-* **unbounded** - no bound; only for workload classes explicitly declared
+* **proven**, backed by a formal / static WCET analysis
+* **measured**, validated by benchmarking under a defined stress pattern
+* **unbounded**, no bound; only for workload classes explicitly declared
   unbounded
 
 Documentation and artifacts must never present `measured` as `proven`:
@@ -74,4 +74,4 @@ used however rigorously the external assurance process chooses. GoMyRobotOS
 maps evidence onto existing standards (the ECSS Q ST 80C / ECSS E ST 40C
 lineage, and ARINC 653 where useful); it creates no new certification
 standard. At M0, it contains no measured values at
-all - only the *structure* of what future measurements will take.
+all, only the *structure* of what future measurements will take.

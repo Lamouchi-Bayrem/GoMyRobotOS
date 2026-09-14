@@ -1,4 +1,4 @@
-# Partition Contract - Overview
+# Partition Contract Overview
 
 The Partition Contract is the central artifact of GoMyRobotOS: a
 machine-readable, **hypervisor-independent** description of what a
@@ -6,7 +6,7 @@ partition is allowed (and required) to do.
 
 ```{important}
 The question a contract answers is not *"how do I make a Xen domain?"* or
-*"how do I make an XtratuM partition?"* - it is *"what may this execution
+*"how do I make an XtratuM partition?"*, it is *"what may this execution
 domain do, and what must it do, regardless of mechanism?"*
 ```
 
@@ -45,7 +45,7 @@ may know mechanism names.
 ## Channel semantics
 
 Communication endpoints are typed by **channel class**, not by transport
-mechanism - modeled on the ARINC 653 sampling/queuing port distinction:
+mechanism, modeled on the ARINC 653 sampling/queuing port distinction:
 
 * **`sampling`**: periodic state data; last value wins; bounded staleness.
   Used for continuously updated telemetry-style data (joint state, sensor
@@ -66,7 +66,7 @@ Every channel declaration carries the same properties:
 
 Each backend maps these semantics to its own mechanism (shared-memory
 regions, hypervisor-mediated ports, grant tables, and so on). The
-transport choice is **backend implementation detail** - declared in the
+transport choice is **backend implementation detail**, declared in the
 backend's documentation, never in the contract.
 
 ## Capability requirements

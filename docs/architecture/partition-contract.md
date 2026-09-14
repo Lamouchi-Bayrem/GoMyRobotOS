@@ -2,7 +2,7 @@
 
 ## The central innovation
 
-The central artifact of GoMyRobotOS is the **Partition Contract** - the
+The central artifact of GoMyRobotOS is the **Partition Contract**, the
 machine-readable execution contract that decouples *what a partition is
 allowed and required to do* from *which mechanism realizes it*.
 
@@ -90,7 +90,7 @@ of hypervisor configuration generators."
 ## Contract ≠ IR
 
 This page describes the **Partition Contract**: the user-facing,
-declarative specification - what a partition may do, with requirements.
+declarative specification, what a partition may do, with requirements.
 The **GoMyRobotOS IR** (see [IR](ir)) is the internal, normalized
 compiler representation every backend consumes. The two are related but
 must not be used interchangeably in documents, interfaces, or commits.

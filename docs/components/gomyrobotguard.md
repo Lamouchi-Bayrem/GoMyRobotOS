@@ -35,7 +35,7 @@ semantics are triggered.
 
 ## Division of labor with GoMyRobotOS
 
-* **GoMyRobotOS exposes recovery *semantics*** - the contract fields
+* **GoMyRobotOS exposes recovery *semantics***, the contract fields
   (`watchdog`, `restart_policy`, `safe_state`, `escalation_policy`), the
   recovery hooks on the runtime model, and the escalation surface. See the
   [Recovery

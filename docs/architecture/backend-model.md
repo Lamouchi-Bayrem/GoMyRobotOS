@@ -7,7 +7,7 @@ GoMyRobotOS is the thin layer that:
 
 1. consumes the GoMyRobotOS IR (never the raw contract), and
 2. realizes the declared execution semantics using what the target actually
-   offers - a hypervisor, an RTOS partition system, or (future) native
+   offers, a hypervisor, an RTOS partition system, or (future) native
    hardware partitioning.
 
 ```text
@@ -43,7 +43,7 @@ target mechanisms:
 | recovery hooks            | watchdog/restart surfaces the recovery model can consume   |
 
 A backend *may* exploit extra target capabilities (hardware guard bands,
-EDAC, system controllers) - as long as the contract/IR never depend on
+EDAC, system controllers), as long as the contract/IR never depend on
 them.
 
 ## Initial backends and their status
@@ -111,5 +111,5 @@ later without contract changes.
 
 * read the raw contract format directly (they take the IR)
 * expose backend-specific identifiers to the contract layer
-* claim semantics the target has not demonstrated - the backend's
+* claim semantics the target has not demonstrated, the backend's
   documented capabilities are exactly its validated capabilities

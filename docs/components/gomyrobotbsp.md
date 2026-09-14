@@ -41,7 +41,7 @@ build metadata
 The split matters: contract + IR are what GoMyRobotOS *owns*; the profiles
 (Hardware, Backend, Boot, Runtime) are what GoMyRobotBSP *consumes* to turn
 semantics into buildable targets. Backend-specific information therefore
-lives in the **backend profile** - never in the contract itself
+lives in the **backend profile**, never in the contract itself
 ([ADR-0002](../development/architecture-decisions),
 [ADR-0009](../development/architecture-decisions)).
 
@@ -49,7 +49,7 @@ lives in the **backend profile** - never in the contract itself
 
 ```{important}
 **GoMyRobotOS is not Yocto-based.** Yocto/OpenEmbedded may be used by
-GoMyRobotBSP to construct Linux deployment images - and only when a Linux
+GoMyRobotBSP to construct Linux deployment images, and only when a Linux
 domain is part of the deployment.
 ```
 

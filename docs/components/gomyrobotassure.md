@@ -32,7 +32,7 @@ GoMyRobotOS
 * **GoMyRobotOS produces evidence inputs.**
 * **GoMyRobotAssure builds the assurance argument.**
 
-The "Evidence Graph" is the representation of the assurance case - which
+The "Evidence Graph" is the representation of the assurance case, which
 requirement is supported by which contract field, which test, which
 measurement, on which deployment identity, with which image hash. This is
 what the [evidence model](../assurance/evidence-model) and
@@ -60,12 +60,12 @@ That is Research Problem 5
 ([assurance portability](../research/research-problems)). GoMyRobotOS
 supports it by emitting the portable metadata
 (configuration, hardware profile, backend version, image hash, resource
-allocation, required tests, deployment identity) - GoMyRobotAssure
+allocation, required tests, deployment identity), GoMyRobotAssure
 decides what of it survives a target change.
 
 ```{warning}
 No assurance argument, no certification claim, and no safety standard
-conclusion exists at M0 - and none will be framed in this documentation
+conclusion exists at M0, and none will be framed in this documentation
 unless it is produced by a real, external assurance process. This page
 documents the *data plane* only.
 ```

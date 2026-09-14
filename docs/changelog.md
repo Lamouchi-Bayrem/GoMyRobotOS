@@ -3,7 +3,7 @@
 All notable changes to GoMyRobotOS are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
-GoMyRobotOS has not produced software releases yet - it is at milestone **M0**
+GoMyRobotOS has not produced software releases yet, it is at milestone **M0**
 (Architecture and Contract Freeze). This changelog therefore tracks
 documentation and specification changes.
 
@@ -28,7 +28,7 @@ documentation and specification changes.
   IPC channel classes (`sampling` / `queuing`) with channel properties,
   `timing.wcet_bound_us` + `wcet_evidence_class`,
   `recovery.guard_independence_stage`, and
-  `partition.capabilities_required` - all additive; the three
+  `partition.capabilities_required`, all additive; the three
   illustrative examples stay in lockstep.
 * Five architecture items selected from the reviewed v2 draft
   (ADR-0014 through ADR-0018): backend capability manifest and the
@@ -67,7 +67,7 @@ documentation and specification changes.
   Ubuntu 24.04 LTS; `.github/workflows/docs.yml` pinned to Ubuntu
   26.04 LTS (still published as preview on GitHub-hosted runners;
   Ubuntu 24.04 LTS is the stable fallback). `.readthedocs.yaml` keeps
-  `ubuntu-24.04` - the latest LTS documented by Read the Docs.
+  `ubuntu-24.04`, the latest LTS documented by Read the Docs.
 * GitHub Pages moved to the official Actions deployment model
   (`actions/upload-pages-artifact` + `actions/deploy-pages`) in
   `.github/workflows/gh-pages.yml`: the site is now deployed through
@@ -86,10 +86,10 @@ documentation and specification changes.
   rest of the diagram already uses (the 5-character left arrow became
   the 2-character one, and the double-segment fork frame became the
   single-segment form). No double-hyphen sequences remain in
-  documentation prose - only structural markdown table-divider lines
+  documentation prose, only structural markdown table-divider lines
   and section rules, plus the logo SVG's XML comment, are untouched.
 * Browser tab titles now show exactly the page name: `html_title` is
-  left empty in `docs/conf.py`, so the " - GoMyRobotOS Documentation"
+  left empty in `docs/conf.py`, so the ", GoMyRobotOS Documentation"
   suffix (and its dash) no longer follows every page title in the tab
   bar; the sidebar brand still comes from `project` and is
   unaffected.

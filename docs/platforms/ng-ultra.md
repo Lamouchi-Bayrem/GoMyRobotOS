@@ -1,6 +1,6 @@
 # Platform: NG-ULTRA
 
-**Role:** space / flight reference - the first genuine space-oriented
+**Role:** space / flight reference, the first genuine space-oriented
 execution reference.
 **Status:** `Flight Reference / Development`; the GoMyRobotOS
 XNG/XtratuM realization is `Planned` (M2).
@@ -9,13 +9,13 @@ XNG/XtratuM realization is `Planned` (M2).
 
 Per the M0 baseline: NG-ULTRA is the first genuine space-oriented
 execution reference. The platform has four Cortex-R52 cores and an
-established ecosystem around RTEMS and XtratuM/XNG - existing RTEMS work
+established ecosystem around RTEMS and XtratuM/XNG, existing RTEMS work
 explicitly lists an ARMv8-R NG-ULTRA BSP, and NanoXplore's ecosystem
 includes RTEMS and XtratuM/XNG support.
 
 NG-ULTRA is also explicitly **radiation-hardened-by-design**, with
 mechanisms such as EDAC, configuration scrubbing, and
-memory/configuration protection - hardware behavior that the
+memory/configuration protection, hardware behavior that the
 fault-modeling stream ([GoMyRobotFault](https://gomyrobot.com/products/fault/)) correlates against, and that no
 simulation can reproduce.
 
@@ -39,7 +39,7 @@ GoMyRobotRT
 
 M2 demonstrates: real target boot, partition configuration, resource
 ownership, an RTEMS workload, timing measurement, and basic fault
-containment - the acceptance gate being that NG-ULTRA executes *the same
+containment, the acceptance gate being that NG-ULTRA executes *the same
 conceptual flight partition* as x86-64
 ([M2](../milestones/m2)).
 
@@ -57,7 +57,7 @@ conceptual flight partition* as x86-64
 ## Role in the research program
 
 NG-ULTRA is the primary non-x86 arm of the portable-partition-semantics
-comparison (x86-64 + Xen **vs** NG-ULTRA + XNG/XtratuM) - Research
-Problem 1 - and the first repetition target of the M3 interference
+comparison (x86-64 + Xen **vs** NG-ULTRA + XNG/XtratuM), Research
+Problem 1, and the first repetition target of the M3 interference
 laboratory; see [Research
 agenda](../research/agenda).

@@ -55,7 +55,7 @@ Partition
 
 Normalization means, for example, that a declared cpu-set, scheduling policy,
 priority, and timing budget together form an *execution requirement* the
-backends can reason about uniformly - rather than three fields three
+backends can reason about uniformly, rather than three fields three
 backends interpret three different ways.
 
 The backend then determines how those semantics are expressed on the

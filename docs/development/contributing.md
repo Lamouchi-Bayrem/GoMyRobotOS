@@ -4,7 +4,7 @@ GoMyRobotOS is an early-stage, documentation-first system: the
 architecture and the Partition Contract are frozen as a specification
 (milestone **M0**), and no target system has been implemented yet.
 
-This page is the single contributing reference - the process, plus the
+This page is the single contributing reference, the process, plus the
 documentation-authoring contract every contribution to `docs/` must
 honor (the enforceable extraction of the documentation policy).
 
@@ -45,7 +45,7 @@ honor (the enforceable extraction of the documentation policy).
    *Page discipline* below).
 7. **Milestones are M0-M6** (see *Milestones* below).
 
-## Status labels - the vocabulary
+## Status labels: the vocabulary
 
 Every non-trivial claim uses exactly one:
 
@@ -86,7 +86,7 @@ happen.
   [architecture-decisions]
   (architecture-decisions), with context / decision / consequence /
   status.
-* No silent editing of an Accepted ADR - supersede it with a new ADR
+* No silent editing of an Accepted ADR, supersede it with a new ADR
   that references it.
 * No renumbering of existing ADRs.
 * A PR that changes architecture without an ADR should be sent back.
@@ -104,7 +104,7 @@ happen.
   milestone gate.
 * Build hygiene: the doc build must pass with zero warnings
   (CI `docs` job; Read the Docs `fail_on_warning: true`).
-* The toctree in [index.md](../index) reflects the structure - new
+* The toctree in [index.md](../index) reflects the structure, new
   pages must be added to a toctree or they are not part of the site.
 
 ## Code conventions

@@ -3,7 +3,7 @@
 Isolation in GoMyRobotOS is a contract-level concept: the Partition Contract
 declares *what must not be shared or reachable* between partitions. How that
 declaration is enforced is a property of the target backend (Xen,
-XNG/XtratuM, hardware WorldGuard - or future mechanisms), which is exactly
+XNG/XtratuM, hardware WorldGuard, or future mechanisms), which is exactly
 the layer the contract deliberately ignores.
 
 ## Isolation dimensions in the contract
@@ -32,7 +32,7 @@ hardware guard bands such as WorldGuard on HPSC).
 ```{warning} No "interference-free" claims
 The M0 baseline explicitly forbids claiming complete freedom from
 interference. What the architecture does claim is that interference has
-*measured, contractual boundaries* - and that those boundaries must be
+*measured, contractual boundaries*, and that those boundaries must be
 *measured*, not asserted (see
 [Interference validation](../validation/interference) and
 [Research problems](../research/research-problems)).
@@ -42,6 +42,6 @@ interference. What the architecture does claim is that interference has
 
 Determining which isolation properties can remain *invariant* across x86-64
 + Xen, NG-ULTRA + XNG/XtratuM, and HPSC + hardware partitioning is Research
-Problem 1 - portable partition semantics. That question, not the existence of
+Problem 1, portable partition semantics. That question, not the existence of
 any given mechanism, motivates the contract: the contract is what makes
 difference-based reasoning between targets possible.
