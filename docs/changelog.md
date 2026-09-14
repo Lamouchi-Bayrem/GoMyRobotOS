@@ -77,6 +77,17 @@ documentation and specification changes.
   that opens the edit screen of exactly that page's source file
   (`html_context` + `vcs_pageview_mode: edit`, repo
   `gomyrobot/GoMyRobotOS`, branch `main`, sources under `docs/`).
+* Documentation home is now the GitHub Pages site
+  (<https://gomyrobot.github.io/GoMyRobotOS/>); the Read the Docs site
+  continues as a read-only mirror for the transition period (README and
+  `docs/getting-started/installation.md` updated accordingly).
+* Double-dash cleanup in `docs/architecture/backend-model.md`: the
+  capability-check figure now uses the single-hyphen arrow style the
+  rest of the diagram already uses (the 5-character left arrow became
+  the 2-character one, and the double-segment fork frame became the
+  single-segment form). No double-hyphen sequences remain in
+  documentation prose - only structural markdown table-divider lines
+  and section rules, plus the logo SVG's XML comment, are untouched.
 
 ### Fixed
 

@@ -10,3 +10,6 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local build output (the gh-pages workflow builds to build/ghpages)
+build/

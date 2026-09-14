@@ -79,9 +79,9 @@ contract's `capabilities_required` list against that backend's manifest:
 Partition Contract
        |
        v
-Capability check  <----  Backend Capability Manifest
+Capability check  <-  Backend Capability Manifest
        |
-   +---+---+
+   +-+-+
    |       |
 match   partial / no match
    |       |

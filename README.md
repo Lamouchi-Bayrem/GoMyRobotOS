@@ -188,12 +188,14 @@ See `docs/research/` in the documentation.
 
 ## Documentation
 
-* Documentation home: <https://gomyrobotos.readthedocs.io>
-  (Sphinx + MyST Markdown, hosted on Read the Docs, rebuilt by CI on every push)
+* Documentation home: <https://gomyrobot.github.io/GoMyRobotOS/>
+  (Sphinx + MyST, built by CI and deployed to GitHub Pages on every
+  push to `main`)
+* Also mirrored, read-only, on Read the Docs:
+  <https://gomyrobotos.readthedocs.io> (kept for the transition period)
 * Repository: <https://github.com/gomyrobot/GoMyRobotOS>
 * All documentation sources live under a single folder: `docs/`
-  (Sphinx + MyST, including the contributing and changelog pages),
-  built by CI and hosted above
+  (Sphinx + MyST, including the contributing and changelog pages)
 
 ## Contributing
 
